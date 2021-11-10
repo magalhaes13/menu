@@ -29,10 +29,21 @@ namespace menu.telas
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_cliente));
+            this.SuspendLayout();
+            // 
+            // cadastro_cliente
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "cadastro_cliente";
+            this.ClientSize = new System.Drawing.Size(1179, 629);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "cadastro_cliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cliente";
+            this.Load += new System.EventHandler(this.cadastro_cliente_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

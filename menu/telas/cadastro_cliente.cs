@@ -16,5 +16,10 @@ namespace menu.telas
         {
             InitializeComponent();
         }
+
+        private void cadastro_cliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

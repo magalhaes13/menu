@@ -50,7 +50,7 @@ namespace menu
             this.panelCabecalho.Controls.Add(this.label1);
             this.panelCabecalho.Location = new System.Drawing.Point(-5, -1);
             this.panelCabecalho.Name = "panelCabecalho";
-            this.panelCabecalho.Size = new System.Drawing.Size(1692, 46);
+            this.panelCabecalho.Size = new System.Drawing.Size(1692, 56);
             this.panelCabecalho.TabIndex = 0;
             this.panelCabecalho.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCabecalho_Paint);
             this.panelCabecalho.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -81,9 +81,9 @@ namespace menu
             this.panel3.Controls.Add(this.COMPRAS);
             this.panel3.Controls.Add(this.VENDAS);
             this.panel3.Controls.Add(this.CLIENTES);
-            this.panel3.Location = new System.Drawing.Point(-1, 40);
+            this.panel3.Location = new System.Drawing.Point(1, 51);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(170, 675);
+            this.panel3.Size = new System.Drawing.Size(171, 600);
             this.panel3.TabIndex = 1;
             // 
             // CONTAS
