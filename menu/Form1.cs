@@ -75,5 +75,9 @@ namespace menu
             this.ClientSize.Height - this.Form.Height + 16);
         }
 
+        private void VENDAS_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -31,13 +31,13 @@ namespace menu
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panelConteudo));
             this.panelCabecalho = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.CLIENTES = new System.Windows.Forms.Button();
-            this.VENDAS = new System.Windows.Forms.Button();
-            this.COMPRAS = new System.Windows.Forms.Button();
             this.CONTAS = new System.Windows.Forms.Button();
+            this.COMPRAS = new System.Windows.Forms.Button();
+            this.VENDAS = new System.Windows.Forms.Button();
+            this.CLIENTES = new System.Windows.Forms.Button();
             this.panelCabecalho.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -50,21 +50,10 @@ namespace menu
             this.panelCabecalho.Controls.Add(this.label1);
             this.panelCabecalho.Location = new System.Drawing.Point(-5, -1);
             this.panelCabecalho.Name = "panelCabecalho";
-            this.panelCabecalho.Size = new System.Drawing.Size(807, 46);
+            this.panelCabecalho.Size = new System.Drawing.Size(1692, 46);
             this.panelCabecalho.TabIndex = 0;
             this.panelCabecalho.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCabecalho_Paint);
             this.panelCabecalho.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(104, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "SISTEMA DE VENDAS";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -72,6 +61,17 @@ namespace menu
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(157, 387);
             this.panel2.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(56, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "SISTEMA DE VENDAS";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel3
             // 
@@ -83,8 +83,36 @@ namespace menu
             this.panel3.Controls.Add(this.CLIENTES);
             this.panel3.Location = new System.Drawing.Point(-1, 40);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(170, 395);
+            this.panel3.Size = new System.Drawing.Size(170, 675);
             this.panel3.TabIndex = 1;
+            // 
+            // CONTAS
+            // 
+            this.CONTAS.Location = new System.Drawing.Point(3, 278);
+            this.CONTAS.Name = "CONTAS";
+            this.CONTAS.Size = new System.Drawing.Size(168, 45);
+            this.CONTAS.TabIndex = 3;
+            this.CONTAS.Text = "CONTAS";
+            this.CONTAS.UseVisualStyleBackColor = true;
+            // 
+            // COMPRAS
+            // 
+            this.COMPRAS.Location = new System.Drawing.Point(3, 194);
+            this.COMPRAS.Name = "COMPRAS";
+            this.COMPRAS.Size = new System.Drawing.Size(168, 45);
+            this.COMPRAS.TabIndex = 2;
+            this.COMPRAS.Text = "COMPRAS";
+            this.COMPRAS.UseVisualStyleBackColor = true;
+            // 
+            // VENDAS
+            // 
+            this.VENDAS.Location = new System.Drawing.Point(3, 109);
+            this.VENDAS.Name = "VENDAS";
+            this.VENDAS.Size = new System.Drawing.Size(168, 45);
+            this.VENDAS.TabIndex = 2;
+            this.VENDAS.Text = "VENDAS";
+            this.VENDAS.UseVisualStyleBackColor = true;
+            this.VENDAS.Click += new System.EventHandler(this.VENDAS_Click);
             // 
             // CLIENTES
             // 
@@ -97,43 +125,17 @@ namespace menu
             this.CLIENTES.UseVisualStyleBackColor = true;
             this.CLIENTES.Click += new System.EventHandler(this.CLIENTES_Click);
             // 
-            // VENDAS
-            // 
-            this.VENDAS.Location = new System.Drawing.Point(3, 109);
-            this.VENDAS.Name = "VENDAS";
-            this.VENDAS.Size = new System.Drawing.Size(168, 45);
-            this.VENDAS.TabIndex = 2;
-            this.VENDAS.Text = "VENDAS";
-            this.VENDAS.UseVisualStyleBackColor = true;
-            // 
-            // COMPRAS
-            // 
-            this.COMPRAS.Location = new System.Drawing.Point(3, 194);
-            this.COMPRAS.Name = "COMPRAS";
-            this.COMPRAS.Size = new System.Drawing.Size(168, 45);
-            this.COMPRAS.TabIndex = 2;
-            this.COMPRAS.Text = "COMPRAS";
-            this.COMPRAS.UseVisualStyleBackColor = true;
-            // 
-            // CONTAS
-            // 
-            this.CONTAS.Location = new System.Drawing.Point(3, 278);
-            this.CONTAS.Name = "CONTAS";
-            this.CONTAS.Size = new System.Drawing.Size(168, 45);
-            this.CONTAS.TabIndex = 3;
-            this.CONTAS.Text = "CONTAS";
-            this.CONTAS.UseVisualStyleBackColor = true;
-            // 
             // panelConteudo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1542, 684);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelCabecalho);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "panelConteudo";
             this.Text = "PanelConteudo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
