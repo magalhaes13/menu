@@ -60,6 +60,30 @@
     <Compile Include="telas\cadastro_cliente.Designer.cs">
       <DependentUpon>cadastro_cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="telas\cadastro_vendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\cadastro_vendas.Designer.cs">
+      <DependentUpon>cadastro_vendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telas\cadastro_produto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\cadastro_produto.Designer.cs">
+      <DependentUpon>cadastro_produto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telas\compra_produto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\compra_produto.Designer.cs">
+      <DependentUpon>compra_produto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telas\contas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\contas.Designer.cs">
+      <DependentUpon>contas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +98,18 @@
     </Compile>
     <EmbeddedResource Include="telas\cadastro_cliente.resx">
       <DependentUpon>cadastro_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas\cadastro_vendas.resx">
+      <DependentUpon>cadastro_vendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas\cadastro_produto.resx">
+      <DependentUpon>cadastro_produto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas\compra_produto.resx">
+      <DependentUpon>compra_produto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas\contas.resx">
+      <DependentUpon>contas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
