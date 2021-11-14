@@ -57,10 +57,7 @@ namespace menu.telas
             connection.Close();
         }
 
-        private bool validaCliente()
-        {
-
-        }
+        
 
         private void PESQUISA_Click(object sender, EventArgs e)
         {
