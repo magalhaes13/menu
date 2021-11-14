@@ -32,29 +32,29 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_produto));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBoxNomeProd = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxValor = new System.Windows.Forms.TextBox();
+            this.ExcluirProduto = new System.Windows.Forms.Button();
+            this.SalvarProduto = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxValor = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxNomeProd = new System.Windows.Forms.TextBox();
+            this.tabPagePESQUISA = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SalvarProduto = new System.Windows.Forms.Button();
-            this.ExcluirProduto = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tabPagePESQUISA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPagePESQUISA);
             this.tabControl1.Location = new System.Drawing.Point(12, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -79,48 +79,23 @@ namespace menu.telas
             this.tabPage1.Text = "PRODUTO";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // ExcluirProduto
             // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1107, 505);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "PESQUISA";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.ExcluirProduto.Location = new System.Drawing.Point(177, 180);
+            this.ExcluirProduto.Name = "ExcluirProduto";
+            this.ExcluirProduto.Size = new System.Drawing.Size(75, 23);
+            this.ExcluirProduto.TabIndex = 7;
+            this.ExcluirProduto.Text = "EXCLUIR";
+            this.ExcluirProduto.UseVisualStyleBackColor = true;
             // 
-            // textBoxNomeProd
+            // SalvarProduto
             // 
-            this.textBoxNomeProd.Location = new System.Drawing.Point(87, 75);
-            this.textBoxNomeProd.Name = "textBoxNomeProd";
-            this.textBoxNomeProd.Size = new System.Drawing.Size(165, 20);
-            this.textBoxNomeProd.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "NOME";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(310, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "VALOR";
-            // 
-            // textBoxValor
-            // 
-            this.textBoxValor.Location = new System.Drawing.Point(355, 75);
-            this.textBoxValor.Name = "textBoxValor";
-            this.textBoxValor.Size = new System.Drawing.Size(165, 20);
-            this.textBoxValor.TabIndex = 2;
+            this.SalvarProduto.Location = new System.Drawing.Point(45, 180);
+            this.SalvarProduto.Name = "SalvarProduto";
+            this.SalvarProduto.Size = new System.Drawing.Size(75, 23);
+            this.SalvarProduto.TabIndex = 6;
+            this.SalvarProduto.Text = "SALVAR";
+            this.SalvarProduto.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -138,6 +113,50 @@ namespace menu.telas
             this.textBoxDescricao.Size = new System.Drawing.Size(165, 20);
             this.textBoxDescricao.TabIndex = 4;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(310, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "VALOR";
+            // 
+            // textBoxValor
+            // 
+            this.textBoxValor.Location = new System.Drawing.Point(355, 75);
+            this.textBoxValor.Name = "textBoxValor";
+            this.textBoxValor.Size = new System.Drawing.Size(165, 20);
+            this.textBoxValor.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(42, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "NOME";
+            // 
+            // textBoxNomeProd
+            // 
+            this.textBoxNomeProd.Location = new System.Drawing.Point(87, 75);
+            this.textBoxNomeProd.Name = "textBoxNomeProd";
+            this.textBoxNomeProd.Size = new System.Drawing.Size(165, 20);
+            this.textBoxNomeProd.TabIndex = 0;
+            // 
+            // tabPagePESQUISA
+            // 
+            this.tabPagePESQUISA.Controls.Add(this.dataGridView1);
+            this.tabPagePESQUISA.Location = new System.Drawing.Point(4, 22);
+            this.tabPagePESQUISA.Name = "tabPagePESQUISA";
+            this.tabPagePESQUISA.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePESQUISA.Size = new System.Drawing.Size(1107, 505);
+            this.tabPagePESQUISA.TabIndex = 1;
+            this.tabPagePESQUISA.Text = "PESQUISA";
+            this.tabPagePESQUISA.UseVisualStyleBackColor = true;
+            this.tabPagePESQUISA.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -149,6 +168,7 @@ namespace menu.telas
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(633, 180);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Nome
             // 
@@ -165,24 +185,6 @@ namespace menu.telas
             this.Descrição.HeaderText = "Drecrição";
             this.Descrição.Name = "Descrição";
             // 
-            // SalvarProduto
-            // 
-            this.SalvarProduto.Location = new System.Drawing.Point(45, 180);
-            this.SalvarProduto.Name = "SalvarProduto";
-            this.SalvarProduto.Size = new System.Drawing.Size(75, 23);
-            this.SalvarProduto.TabIndex = 6;
-            this.SalvarProduto.Text = "SALVAR";
-            this.SalvarProduto.UseVisualStyleBackColor = true;
-            // 
-            // ExcluirProduto
-            // 
-            this.ExcluirProduto.Location = new System.Drawing.Point(177, 180);
-            this.ExcluirProduto.Name = "ExcluirProduto";
-            this.ExcluirProduto.Size = new System.Drawing.Size(75, 23);
-            this.ExcluirProduto.TabIndex = 7;
-            this.ExcluirProduto.Text = "EXCLUIR";
-            this.ExcluirProduto.UseVisualStyleBackColor = true;
-            // 
             // cadastro_produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,7 +198,7 @@ namespace menu.telas
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
+            this.tabPagePESQUISA.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -208,7 +210,7 @@ namespace menu.telas
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxNomeProd;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPagePESQUISA;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxDescricao;
         private System.Windows.Forms.Label label2;
