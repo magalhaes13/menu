@@ -25,7 +25,7 @@ namespace menu.telas
 
         private void cadastro_produto_Load(object sender, EventArgs e)
         {
-            connection = new MySqlConnection("Server=Localhost;Database=ProjetoCadastro;Uid-root;Pwd=");
+            connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid-root;Pwd=");
         }
 
         private void SalvarProduto_Click(object sender, EventArgs e)

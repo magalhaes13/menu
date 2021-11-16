@@ -17,7 +17,7 @@ namespace menu.telas
         MySqlCommand command;
         MySqlDataAdapter adapter;
         MySqlDataReader reader;
-        string sql;
+        string strSQL;
         
         public cadastro_cliente()
         {
@@ -26,33 +26,48 @@ namespace menu.telas
 
         private void cadastro_cliente_Load(object sender, EventArgs e)
         {
-            connection = new MySqlConnection("Server=Localhost;Database=ProjetoCadastro;Uid-root;Pwd=");
+            connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=");
             
         }
 
-        private void salvar_cliente_Click(object sender, EventArgs e)
+        private void del_cliente()
+        {
+            strSQL = "DELETE FROM CLIENTE WHERE ID = @ID";
+
+
+        }
+
+        private void save_cliente()
         {
             connection.Open();
-            sql = "INSERT INTO CLIENTES(NOME, SOBRENOME, CPF, BAIRRO, TELEFONE) VALUES (@NOME, @CIDADE, @BAIRRO, @CEP, @ENDERECO, @UF, @TELEFONE, @EMAIL )";
-            command = new MySqlCommand(sql, connection);
+            strSQL = "INSERT INTO CLIENTE(NOME, CIDADE, BAIRRO, CPF, ENDERECO, UF, TELEFONE, EMAIL) VALUES (@NOME, @CIDADE, @BAIRRO, @CPF, @ENDERECO, @UF, @TELEFONE, @EMAIL )";
+            command = new MySqlCommand(strSQL, connection);
             command.Parameters.AddWithValue("@NOME", TextBoxNome.Text);
-            command.Parameters.AddWithValue("@CIDADE", TextBoxNome.Text);
-            command.Parameters.AddWithValue("@BAIRRO", TextBoxNome.Text);
-            command.Parameters.AddWithValue("@CEP", TextBoxNome.Text);
-            command.Parameters.AddWithValue("@ENDERECO", TextBoxNome.Text);
-            command.Parameters.AddWithValue("@UF", TextBoxNome.Text);
-            command.Parameters.AddWithValue("@TELEFONE", TextBoxNome.Text);
-            command.Parameters.AddWithValue("@EMAIL", TextBoxNome.Text);
+            command.Parameters.AddWithValue("@CIDADE", textBoxCidade.Text);
+            command.Parameters.AddWithValue("@BAIRRO", textBoxBairro.Text);
+            command.Parameters.AddWithValue("@CPF", textBoxCpf.Text);
+            command.Parameters.AddWithValue("@ENDERECO", textBoxEndereco.Text);
+            command.Parameters.AddWithValue("@UF", textBoxUf.Text);
+            command.Parameters.AddWithValue("@TELEFONE", textBoxTelefone.Text);
+            command.Parameters.AddWithValue("@EMAIL", textBoxEmail.Text);
 
             command.ExecuteNonQuery();
             connection.Close();
+
+            MessageBox.Show("SALVO COM SUCESSO");
+
             readCliente();
+        }
+        private void salvar_cliente_Click(object sender, EventArgs e)
+        {
+            save_cliente();
+
         }
 
         private void readCliente()
         {
             connection.Open();
-            sql = "SELECT * FROM CLIENTES";
+            strSQL = "SELECT * FROM CLIENTE";
             command.ExecuteNonQuery();
             connection.Close();
         }
@@ -62,6 +77,11 @@ namespace menu.telas
         private void PESQUISA_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void delet_cliente_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

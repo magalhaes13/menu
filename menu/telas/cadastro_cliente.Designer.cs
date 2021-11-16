@@ -32,11 +32,12 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_cliente));
             this.pg_cadastro = new System.Windows.Forms.TabControl();
             this.CADASTRO = new System.Windows.Forms.TabPage();
+            this.delet_cliente = new System.Windows.Forms.Button();
             this.textBoxUf = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxBairro = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxCep = new System.Windows.Forms.TextBox();
+            this.textBoxCpf = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxEndereco = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,12 +52,11 @@ namespace menu.telas
             this.TextBoxNome = new System.Windows.Forms.TextBox();
             this.PESQUISA = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delet_cliente = new System.Windows.Forms.Button();
             this.pg_cadastro.SuspendLayout();
             this.CADASTRO.SuspendLayout();
             this.PESQUISA.SuspendLayout();
@@ -80,7 +80,7 @@ namespace menu.telas
             this.CADASTRO.Controls.Add(this.label8);
             this.CADASTRO.Controls.Add(this.textBoxBairro);
             this.CADASTRO.Controls.Add(this.label7);
-            this.CADASTRO.Controls.Add(this.textBoxCep);
+            this.CADASTRO.Controls.Add(this.textBoxCpf);
             this.CADASTRO.Controls.Add(this.label6);
             this.CADASTRO.Controls.Add(this.textBoxEndereco);
             this.CADASTRO.Controls.Add(this.label5);
@@ -100,6 +100,16 @@ namespace menu.telas
             this.CADASTRO.TabIndex = 0;
             this.CADASTRO.Text = "CADASTRO";
             this.CADASTRO.UseVisualStyleBackColor = true;
+            // 
+            // delet_cliente
+            // 
+            this.delet_cliente.Location = new System.Drawing.Point(487, 184);
+            this.delet_cliente.Name = "delet_cliente";
+            this.delet_cliente.Size = new System.Drawing.Size(75, 23);
+            this.delet_cliente.TabIndex = 17;
+            this.delet_cliente.Text = "EXCLUIR";
+            this.delet_cliente.UseVisualStyleBackColor = true;
+            this.delet_cliente.Click += new System.EventHandler(this.delet_cliente_Click);
             // 
             // textBoxUf
             // 
@@ -133,21 +143,21 @@ namespace menu.telas
             this.label7.TabIndex = 13;
             this.label7.Text = "BAIRRO";
             // 
-            // textBoxCep
+            // textBoxCpf
             // 
-            this.textBoxCep.Location = new System.Drawing.Point(899, 59);
-            this.textBoxCep.Name = "textBoxCep";
-            this.textBoxCep.Size = new System.Drawing.Size(114, 20);
-            this.textBoxCep.TabIndex = 12;
+            this.textBoxCpf.Location = new System.Drawing.Point(899, 59);
+            this.textBoxCpf.Name = "textBoxCpf";
+            this.textBoxCpf.Size = new System.Drawing.Size(114, 20);
+            this.textBoxCpf.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(865, 62);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.Size = new System.Drawing.Size(27, 13);
             this.label6.TabIndex = 11;
-            this.label6.Text = "CEP";
+            this.label6.Text = "CPF";
             // 
             // textBoxEndereco
             // 
@@ -255,7 +265,7 @@ namespace menu.telas
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
+            this.NOME,
             this.Column2,
             this.Column3,
             this.Column4,
@@ -265,10 +275,11 @@ namespace menu.telas
             this.dataGridView1.Size = new System.Drawing.Size(676, 292);
             this.dataGridView1.TabIndex = 0;
             // 
-            // Column1
+            // NOME
             // 
-            this.Column1.HeaderText = "Nome";
-            this.Column1.Name = "Column1";
+            this.NOME.DataPropertyName = "NOME";
+            this.NOME.HeaderText = "Nome";
+            this.NOME.Name = "NOME";
             // 
             // Column2
             // 
@@ -289,15 +300,6 @@ namespace menu.telas
             // 
             this.Column5.HeaderText = "Bairro";
             this.Column5.Name = "Column5";
-            // 
-            // delet_cliente
-            // 
-            this.delet_cliente.Location = new System.Drawing.Point(487, 184);
-            this.delet_cliente.Name = "delet_cliente";
-            this.delet_cliente.Size = new System.Drawing.Size(75, 23);
-            this.delet_cliente.TabIndex = 17;
-            this.delet_cliente.Text = "EXCLUIR";
-            this.delet_cliente.UseVisualStyleBackColor = true;
             // 
             // cadastro_cliente
             // 
@@ -334,19 +336,19 @@ namespace menu.telas
         private System.Windows.Forms.TabPage PESQUISA;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button salvar_cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.TextBox textBoxUf;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxBairro;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxCep;
+        private System.Windows.Forms.TextBox textBoxCpf;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxEndereco;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button delet_cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
