@@ -26,15 +26,24 @@ namespace menu.telas
 
         private void cadastro_cliente_Load(object sender, EventArgs e)
         {
-            connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=");
-            
+            connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=");         
         }
 
         private void del_cliente()
         {
             strSQL = "DELETE FROM CLIENTE WHERE ID = @ID";
+        }
 
-
+        private void limpar_cliente()
+        {
+            TextBoxNome.Text = " ";
+            textBoxBairro.Text = " ";
+            textBoxCidade.Text = " ";
+            textBoxCpf.Text = " ";
+            textBoxEmail.Text = " ";
+            textBoxEndereco.Text = " ";
+            textBoxTelefone.Text = " ";
+            textBoxUf.Text = " ";
         }
 
         private void save_cliente()
@@ -56,18 +65,20 @@ namespace menu.telas
 
             MessageBox.Show("SALVO COM SUCESSO");
 
-            readCliente();
         }
+
         private void salvar_cliente_Click(object sender, EventArgs e)
         {
             save_cliente();
+            limpar_cliente();
 
         }
 
         private void readCliente()
         {
             connection.Open();
-            strSQL = "SELECT * FROM CLIENTE";
+            strSQL = "SELECT * FROM cliente";
+            command = new MySqlCommand(strSQL, connection);
             command.ExecuteNonQuery();
             connection.Close();
         }
@@ -76,12 +87,63 @@ namespace menu.telas
 
         private void PESQUISA_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void delet_cliente_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void textBoxPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button_Atualizar_Click(object sender, EventArgs e)
+        {
+            //connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=");
+            //dataGridView1.DataSource = new DataGridView();
+
+
+            try
+            {
+                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+                MySqlConnection conexao = new MySqlConnection(conect);
+
+                conexao.Open();
+
+                if (conexao.State == ConnectionState.Open)
+                {
+                    string comando = "SELECT * FROM CLIENTE";
+
+                    MySqlCommand cmd = new MySqlCommand(comando, conexao);
+
+                    DataTable dt = new DataTable();
+
+                    MySqlDataAdapter dados = new MySqlDataAdapter();
+                    dados.SelectCommand = cmd;
+
+                    dados.Fill(dt);
+
+                    this.dataGridView1.DataSource = dt;
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, ex.Number.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+
+
+
         }
     }
 }

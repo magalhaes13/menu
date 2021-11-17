@@ -51,12 +51,18 @@ namespace menu.telas
             this.label1 = new System.Windows.Forms.Label();
             this.TextBoxNome = new System.Windows.Forms.TextBox();
             this.PESQUISA = new System.Windows.Forms.TabPage();
+            this.button_Atualizar = new System.Windows.Forms.Button();
+            this.button_Pesquisar = new System.Windows.Forms.Button();
+            this.textBoxPesquisa = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TELEFONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BAIRRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pg_cadastro.SuspendLayout();
             this.CADASTRO.SuspendLayout();
             this.PESQUISA.SuspendLayout();
@@ -251,6 +257,9 @@ namespace menu.telas
             // 
             // PESQUISA
             // 
+            this.PESQUISA.Controls.Add(this.button_Atualizar);
+            this.PESQUISA.Controls.Add(this.button_Pesquisar);
+            this.PESQUISA.Controls.Add(this.textBoxPesquisa);
             this.PESQUISA.Controls.Add(this.dataGridView1);
             this.PESQUISA.Location = new System.Drawing.Point(4, 22);
             this.PESQUISA.Name = "PESQUISA";
@@ -261,19 +270,57 @@ namespace menu.telas
             this.PESQUISA.UseVisualStyleBackColor = true;
             this.PESQUISA.Click += new System.EventHandler(this.PESQUISA_Click);
             // 
+            // button_Atualizar
+            // 
+            this.button_Atualizar.Location = new System.Drawing.Point(474, 73);
+            this.button_Atualizar.Name = "button_Atualizar";
+            this.button_Atualizar.Size = new System.Drawing.Size(37, 36);
+            this.button_Atualizar.TabIndex = 3;
+            this.button_Atualizar.Text = "<>";
+            this.button_Atualizar.UseVisualStyleBackColor = true;
+            this.button_Atualizar.Click += new System.EventHandler(this.button_Atualizar_Click);
+            // 
+            // button_Pesquisar
+            // 
+            this.button_Pesquisar.Location = new System.Drawing.Point(42, 82);
+            this.button_Pesquisar.Name = "button_Pesquisar";
+            this.button_Pesquisar.Size = new System.Drawing.Size(75, 23);
+            this.button_Pesquisar.TabIndex = 2;
+            this.button_Pesquisar.Text = "PESQUISA";
+            this.button_Pesquisar.UseVisualStyleBackColor = true;
+            // 
+            // textBoxPesquisa
+            // 
+            this.textBoxPesquisa.Location = new System.Drawing.Point(132, 82);
+            this.textBoxPesquisa.Multiline = true;
+            this.textBoxPesquisa.Name = "textBoxPesquisa";
+            this.textBoxPesquisa.Size = new System.Drawing.Size(194, 23);
+            this.textBoxPesquisa.TabIndex = 1;
+            this.textBoxPesquisa.TextChanged += new System.EventHandler(this.textBoxPesquisa_TextChanged);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_CLIENTE,
             this.NOME,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(42, 123);
+            this.CPF,
+            this.EMAIL,
+            this.TELEFONE,
+            this.CIDADE,
+            this.BAIRRO,
+            this.UF});
+            this.dataGridView1.Location = new System.Drawing.Point(42, 115);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(676, 292);
+            this.dataGridView1.Size = new System.Drawing.Size(1063, 292);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // ID_CLIENTE
+            // 
+            this.ID_CLIENTE.DataPropertyName = "ID_CLIENTE";
+            this.ID_CLIENTE.HeaderText = "ID";
+            this.ID_CLIENTE.Name = "ID_CLIENTE";
             // 
             // NOME
             // 
@@ -281,25 +328,41 @@ namespace menu.telas
             this.NOME.HeaderText = "Nome";
             this.NOME.Name = "NOME";
             // 
-            // Column2
+            // CPF
             // 
-            this.Column2.HeaderText = "Email";
-            this.Column2.Name = "Column2";
+            this.CPF.DataPropertyName = "CPF";
+            this.CPF.HeaderText = "CPF";
+            this.CPF.Name = "CPF";
             // 
-            // Column3
+            // EMAIL
             // 
-            this.Column3.HeaderText = "Telefone";
-            this.Column3.Name = "Column3";
+            this.EMAIL.DataPropertyName = "EMAIL";
+            this.EMAIL.HeaderText = "Email";
+            this.EMAIL.Name = "EMAIL";
             // 
-            // Column4
+            // TELEFONE
             // 
-            this.Column4.HeaderText = "Cidade";
-            this.Column4.Name = "Column4";
+            this.TELEFONE.DataPropertyName = "TELEFONE";
+            this.TELEFONE.HeaderText = "Telefone";
+            this.TELEFONE.Name = "TELEFONE";
             // 
-            // Column5
+            // CIDADE
             // 
-            this.Column5.HeaderText = "Bairro";
-            this.Column5.Name = "Column5";
+            this.CIDADE.DataPropertyName = "CIDADE";
+            this.CIDADE.HeaderText = "Cidade";
+            this.CIDADE.Name = "CIDADE";
+            // 
+            // BAIRRO
+            // 
+            this.BAIRRO.DataPropertyName = "BAIRRO";
+            this.BAIRRO.HeaderText = "Bairro";
+            this.BAIRRO.Name = "BAIRRO";
+            // 
+            // UF
+            // 
+            this.UF.DataPropertyName = "UF";
+            this.UF.HeaderText = "UF";
+            this.UF.Name = "UF";
             // 
             // cadastro_cliente
             // 
@@ -316,6 +379,7 @@ namespace menu.telas
             this.CADASTRO.ResumeLayout(false);
             this.CADASTRO.PerformLayout();
             this.PESQUISA.ResumeLayout(false);
+            this.PESQUISA.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -345,10 +409,16 @@ namespace menu.telas
         private System.Windows.Forms.TextBox textBoxEndereco;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button delet_cliente;
+        private System.Windows.Forms.Button button_Pesquisar;
+        private System.Windows.Forms.TextBox textBoxPesquisa;
+        private System.Windows.Forms.Button button_Atualizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_CLIENTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CIDADE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BAIRRO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UF;
     }
 }
