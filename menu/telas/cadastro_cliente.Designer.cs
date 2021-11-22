@@ -32,6 +32,7 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_cliente));
             this.pg_cadastro = new System.Windows.Forms.TabControl();
             this.CADASTRO = new System.Windows.Forms.TabPage();
+            this.textIDESCONDIDO = new System.Windows.Forms.TextBox();
             this.delet_cliente = new System.Windows.Forms.Button();
             this.textBoxUf = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -63,6 +64,7 @@ namespace menu.telas
             this.CIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BAIRRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonLimpar = new System.Windows.Forms.Button();
             this.pg_cadastro.SuspendLayout();
             this.CADASTRO.SuspendLayout();
             this.PESQUISA.SuspendLayout();
@@ -81,6 +83,8 @@ namespace menu.telas
             // 
             // CADASTRO
             // 
+            this.CADASTRO.Controls.Add(this.buttonLimpar);
+            this.CADASTRO.Controls.Add(this.textIDESCONDIDO);
             this.CADASTRO.Controls.Add(this.delet_cliente);
             this.CADASTRO.Controls.Add(this.textBoxUf);
             this.CADASTRO.Controls.Add(this.label8);
@@ -106,6 +110,15 @@ namespace menu.telas
             this.CADASTRO.TabIndex = 0;
             this.CADASTRO.Text = "CADASTRO";
             this.CADASTRO.UseVisualStyleBackColor = true;
+            // 
+            // textIDESCONDIDO
+            // 
+            this.textIDESCONDIDO.Location = new System.Drawing.Point(509, 3);
+            this.textIDESCONDIDO.Name = "textIDESCONDIDO";
+            this.textIDESCONDIDO.Size = new System.Drawing.Size(53, 20);
+            this.textIDESCONDIDO.TabIndex = 19;
+            this.textIDESCONDIDO.Visible = false;
+            this.textIDESCONDIDO.TextChanged += new System.EventHandler(this.textIDESCONDIDO_TextChanged);
             // 
             // delet_cliente
             // 
@@ -364,6 +377,16 @@ namespace menu.telas
             this.UF.HeaderText = "UF";
             this.UF.Name = "UF";
             // 
+            // buttonLimpar
+            // 
+            this.buttonLimpar.Location = new System.Drawing.Point(584, 184);
+            this.buttonLimpar.Name = "buttonLimpar";
+            this.buttonLimpar.Size = new System.Drawing.Size(75, 23);
+            this.buttonLimpar.TabIndex = 20;
+            this.buttonLimpar.Text = "LIMPAR";
+            this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
+            // 
             // cadastro_cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,5 +443,7 @@ namespace menu.telas
         private System.Windows.Forms.DataGridViewTextBoxColumn CIDADE;
         private System.Windows.Forms.DataGridViewTextBoxColumn BAIRRO;
         private System.Windows.Forms.DataGridViewTextBoxColumn UF;
+        private System.Windows.Forms.TextBox textIDESCONDIDO;
+        private System.Windows.Forms.Button buttonLimpar;
     }
 }
