@@ -98,8 +98,6 @@ namespace menu.telas
             connection.Close();
         }
 
-        
-
         private void PESQUISA_Click(object sender, EventArgs e)
         {
             
@@ -107,17 +105,13 @@ namespace menu.telas
 
         private void deletar_cliente()
         {
-
-        }
-        private void delet_cliente_Click(object sender, EventArgs e)
-        {
             try
             {
                 connection.Open();
                 strSQL = "DELETE FROM CLIENTE WHERE ID_CLIENTE = @ID_CLIENTE";
-                command =  new MySqlCommand(strSQL, connection);
+                command = new MySqlCommand(strSQL, connection);
 
-                command.Parameters.AddWithValue("@ID_CLIENTE",Convert.ToInt32 (textIDESCONDIDO.Text));
+                command.Parameters.AddWithValue("@ID_CLIENTE", Convert.ToInt32(textIDESCONDIDO.Text));
 
                 command.ExecuteNonQuery();
                 connection.Close();
@@ -125,11 +119,15 @@ namespace menu.telas
                 limpar_cliente();
 
             }
-            catch(Exception erro)
+            catch (Exception erro)
             {
                 connection.Close();
                 MessageBox.Show("ERRO AO EXCLUIR" + erro);
             }
+        }
+        private void delet_cliente_Click(object sender, EventArgs e)
+        {
+            deletar_cliente();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -154,7 +152,7 @@ namespace menu.telas
             textBoxTelefone.Text = indexTELEFONE.ToString();
             textBoxEmail.Text = indexEMAIL.ToString();
 
-            pg_cadastro.TabIndex = 1;
+            pg_cadastro.SelectedIndex = 0;
 
         }
 

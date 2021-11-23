@@ -32,6 +32,8 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_produto));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.LimparProduto = new System.Windows.Forms.Button();
+            this.txtIDPRODUTOESCONDIDO = new System.Windows.Forms.TextBox();
             this.ExcluirProduto = new System.Windows.Forms.Button();
             this.SalvarProduto = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,10 +43,12 @@ namespace menu.telas
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNomeProd = new System.Windows.Forms.TextBox();
             this.tabPagePESQUISA = new System.Windows.Forms.TabPage();
+            this.button_AtualizarProd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VALOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPagePESQUISA.SuspendLayout();
@@ -63,6 +67,8 @@ namespace menu.telas
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.LimparProduto);
+            this.tabPage1.Controls.Add(this.txtIDPRODUTOESCONDIDO);
             this.tabPage1.Controls.Add(this.ExcluirProduto);
             this.tabPage1.Controls.Add(this.SalvarProduto);
             this.tabPage1.Controls.Add(this.label3);
@@ -79,6 +85,25 @@ namespace menu.telas
             this.tabPage1.Text = "PRODUTO";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // LimparProduto
+            // 
+            this.LimparProduto.Location = new System.Drawing.Point(313, 180);
+            this.LimparProduto.Name = "LimparProduto";
+            this.LimparProduto.Size = new System.Drawing.Size(75, 23);
+            this.LimparProduto.TabIndex = 9;
+            this.LimparProduto.Text = "LIMPAR";
+            this.LimparProduto.UseVisualStyleBackColor = true;
+            this.LimparProduto.Click += new System.EventHandler(this.LimparProduto_Click);
+            // 
+            // txtIDPRODUTOESCONDIDO
+            // 
+            this.txtIDPRODUTOESCONDIDO.Location = new System.Drawing.Point(479, 6);
+            this.txtIDPRODUTOESCONDIDO.Multiline = true;
+            this.txtIDPRODUTOESCONDIDO.Name = "txtIDPRODUTOESCONDIDO";
+            this.txtIDPRODUTOESCONDIDO.Size = new System.Drawing.Size(59, 19);
+            this.txtIDPRODUTOESCONDIDO.TabIndex = 8;
+            this.txtIDPRODUTOESCONDIDO.Visible = false;
+            // 
             // ExcluirProduto
             // 
             this.ExcluirProduto.Location = new System.Drawing.Point(177, 180);
@@ -87,6 +112,7 @@ namespace menu.telas
             this.ExcluirProduto.TabIndex = 7;
             this.ExcluirProduto.Text = "EXCLUIR";
             this.ExcluirProduto.UseVisualStyleBackColor = true;
+            this.ExcluirProduto.Click += new System.EventHandler(this.ExcluirProduto_Click);
             // 
             // SalvarProduto
             // 
@@ -96,6 +122,7 @@ namespace menu.telas
             this.SalvarProduto.TabIndex = 6;
             this.SalvarProduto.Text = "SALVAR";
             this.SalvarProduto.UseVisualStyleBackColor = true;
+            this.SalvarProduto.Click += new System.EventHandler(this.SalvarProduto_Click_1);
             // 
             // label3
             // 
@@ -147,6 +174,7 @@ namespace menu.telas
             // 
             // tabPagePESQUISA
             // 
+            this.tabPagePESQUISA.Controls.Add(this.button_AtualizarProd);
             this.tabPagePESQUISA.Controls.Add(this.dataGridView1);
             this.tabPagePESQUISA.Location = new System.Drawing.Point(4, 22);
             this.tabPagePESQUISA.Name = "tabPagePESQUISA";
@@ -157,33 +185,54 @@ namespace menu.telas
             this.tabPagePESQUISA.UseVisualStyleBackColor = true;
             this.tabPagePESQUISA.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // button_AtualizarProd
+            // 
+            this.button_AtualizarProd.Location = new System.Drawing.Point(334, 24);
+            this.button_AtualizarProd.Name = "button_AtualizarProd";
+            this.button_AtualizarProd.Size = new System.Drawing.Size(40, 33);
+            this.button_AtualizarProd.TabIndex = 1;
+            this.button_AtualizarProd.Text = "<>";
+            this.button_AtualizarProd.UseVisualStyleBackColor = true;
+            this.button_AtualizarProd.Click += new System.EventHandler(this.button_AtualizarProd_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome,
-            this.Valor,
-            this.Descrição});
+            this.ID_PRODUTO,
+            this.NOME,
+            this.VALOR,
+            this.DESCRICAO});
             this.dataGridView1.Location = new System.Drawing.Point(49, 73);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(633, 180);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Nome
+            // ID_PRODUTO
             // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
+            this.ID_PRODUTO.DataPropertyName = "ID_PRODUTO";
+            this.ID_PRODUTO.HeaderText = "ID";
+            this.ID_PRODUTO.Name = "ID_PRODUTO";
             // 
-            // Valor
+            // NOME
             // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
+            this.NOME.DataPropertyName = "NOME";
+            this.NOME.HeaderText = "NOME";
+            this.NOME.Name = "NOME";
             // 
-            // Descrição
+            // VALOR
             // 
-            this.Descrição.HeaderText = "Drecrição";
-            this.Descrição.Name = "Descrição";
+            this.VALOR.DataPropertyName = "VALOR";
+            this.VALOR.HeaderText = "VALOR";
+            this.VALOR.Name = "VALOR";
+            // 
+            // DESCRICAO
+            // 
+            this.DESCRICAO.DataPropertyName = "DESCRICAO";
+            this.DESCRICAO.HeaderText = "DESCRICAO";
+            this.DESCRICAO.Name = "DESCRICAO";
             // 
             // cadastro_produto
             // 
@@ -217,9 +266,13 @@ namespace menu.telas
         private System.Windows.Forms.TextBox textBoxValor;
         private System.Windows.Forms.Button SalvarProduto;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
         private System.Windows.Forms.Button ExcluirProduto;
+        private System.Windows.Forms.Button button_AtualizarProd;
+        private System.Windows.Forms.TextBox txtIDPRODUTOESCONDIDO;
+        private System.Windows.Forms.Button LimparProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PRODUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VALOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
     }
 }

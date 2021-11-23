@@ -32,6 +32,7 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_cliente));
             this.pg_cadastro = new System.Windows.Forms.TabControl();
             this.CADASTRO = new System.Windows.Forms.TabPage();
+            this.buttonLimpar = new System.Windows.Forms.Button();
             this.textIDESCONDIDO = new System.Windows.Forms.TextBox();
             this.delet_cliente = new System.Windows.Forms.Button();
             this.textBoxUf = new System.Windows.Forms.TextBox();
@@ -64,7 +65,6 @@ namespace menu.telas
             this.CIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BAIRRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonLimpar = new System.Windows.Forms.Button();
             this.pg_cadastro.SuspendLayout();
             this.CADASTRO.SuspendLayout();
             this.PESQUISA.SuspendLayout();
@@ -110,6 +110,16 @@ namespace menu.telas
             this.CADASTRO.TabIndex = 0;
             this.CADASTRO.Text = "CADASTRO";
             this.CADASTRO.UseVisualStyleBackColor = true;
+            // 
+            // buttonLimpar
+            // 
+            this.buttonLimpar.Location = new System.Drawing.Point(584, 184);
+            this.buttonLimpar.Name = "buttonLimpar";
+            this.buttonLimpar.Size = new System.Drawing.Size(75, 23);
+            this.buttonLimpar.TabIndex = 20;
+            this.buttonLimpar.Text = "LIMPAR";
+            this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
             // 
             // textIDESCONDIDO
             // 
@@ -376,16 +386,6 @@ namespace menu.telas
             this.UF.DataPropertyName = "UF";
             this.UF.HeaderText = "UF";
             this.UF.Name = "UF";
-            // 
-            // buttonLimpar
-            // 
-            this.buttonLimpar.Location = new System.Drawing.Point(584, 184);
-            this.buttonLimpar.Name = "buttonLimpar";
-            this.buttonLimpar.Size = new System.Drawing.Size(75, 23);
-            this.buttonLimpar.TabIndex = 20;
-            this.buttonLimpar.Text = "LIMPAR";
-            this.buttonLimpar.UseVisualStyleBackColor = true;
-            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
             // 
             // cadastro_cliente
             // 
