@@ -110,6 +110,7 @@ namespace menu.telas
             this.CADASTRO.TabIndex = 0;
             this.CADASTRO.Text = "CADASTRO";
             this.CADASTRO.UseVisualStyleBackColor = true;
+            this.CADASTRO.Click += new System.EventHandler(this.CADASTRO_Click);
             // 
             // buttonLimpar
             // 

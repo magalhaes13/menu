@@ -32,19 +32,23 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(compra_produto));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.compras = new System.Windows.Forms.TabPage();
-            this.pesquisa_compras = new System.Windows.Forms.TabPage();
-            this.textBoxNomeCompras = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxComprasValor = new System.Windows.Forms.TextBox();
+            this.LimparCompra = new System.Windows.Forms.Button();
+            this.textBoxIdEscondidoCompra = new System.Windows.Forms.TextBox();
+            this.ExcluirCompra = new System.Windows.Forms.Button();
+            this.SalvarCompra = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxComprasDescricao = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxComprasValor = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxNomeCompras = new System.Windows.Forms.TextBox();
+            this.pesquisa_compras = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ATUALIZAR_COMPRA = new System.Windows.Forms.Button();
+            this.ID_COMPRA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SalvarCompra = new System.Windows.Forms.Button();
-            this.ExcluirCompra = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.compras.SuspendLayout();
             this.pesquisa_compras.SuspendLayout();
@@ -60,9 +64,12 @@ namespace menu.telas
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1111, 512);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Click += new System.EventHandler(this.tabControl1);
             // 
             // compras
             // 
+            this.compras.Controls.Add(this.LimparCompra);
+            this.compras.Controls.Add(this.textBoxIdEscondidoCompra);
             this.compras.Controls.Add(this.ExcluirCompra);
             this.compras.Controls.Add(this.SalvarCompra);
             this.compras.Controls.Add(this.label3);
@@ -79,48 +86,45 @@ namespace menu.telas
             this.compras.Text = "COMPRAS";
             this.compras.UseVisualStyleBackColor = true;
             // 
-            // pesquisa_compras
+            // LimparCompra
             // 
-            this.pesquisa_compras.Controls.Add(this.dataGridView1);
-            this.pesquisa_compras.Location = new System.Drawing.Point(4, 22);
-            this.pesquisa_compras.Name = "pesquisa_compras";
-            this.pesquisa_compras.Padding = new System.Windows.Forms.Padding(3);
-            this.pesquisa_compras.Size = new System.Drawing.Size(1103, 486);
-            this.pesquisa_compras.TabIndex = 1;
-            this.pesquisa_compras.Text = "PESQUISAR";
-            this.pesquisa_compras.UseVisualStyleBackColor = true;
+            this.LimparCompra.Location = new System.Drawing.Point(462, 155);
+            this.LimparCompra.Name = "LimparCompra";
+            this.LimparCompra.Size = new System.Drawing.Size(75, 23);
+            this.LimparCompra.TabIndex = 9;
+            this.LimparCompra.Text = "LIMPAR";
+            this.LimparCompra.UseVisualStyleBackColor = true;
+            this.LimparCompra.Click += new System.EventHandler(this.LimparCompra_Click);
             // 
-            // textBoxNomeCompras
+            // textBoxIdEscondidoCompra
             // 
-            this.textBoxNomeCompras.Location = new System.Drawing.Point(92, 50);
-            this.textBoxNomeCompras.Name = "textBoxNomeCompras";
-            this.textBoxNomeCompras.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNomeCompras.TabIndex = 0;
+            this.textBoxIdEscondidoCompra.Location = new System.Drawing.Point(409, 7);
+            this.textBoxIdEscondidoCompra.Multiline = true;
+            this.textBoxIdEscondidoCompra.Name = "textBoxIdEscondidoCompra";
+            this.textBoxIdEscondidoCompra.Size = new System.Drawing.Size(36, 31);
+            this.textBoxIdEscondidoCompra.TabIndex = 8;
+            this.textBoxIdEscondidoCompra.Visible = false;
+            this.textBoxIdEscondidoCompra.TextChanged += new System.EventHandler(this.textBoxIdEscondidoCompra_TextChanged);
             // 
-            // label1
+            // ExcluirCompra
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "NOME";
+            this.ExcluirCompra.Location = new System.Drawing.Point(296, 156);
+            this.ExcluirCompra.Name = "ExcluirCompra";
+            this.ExcluirCompra.Size = new System.Drawing.Size(75, 23);
+            this.ExcluirCompra.TabIndex = 7;
+            this.ExcluirCompra.Text = "EXCLUIR";
+            this.ExcluirCompra.UseVisualStyleBackColor = true;
+            this.ExcluirCompra.Click += new System.EventHandler(this.ExcluirCompra_Click);
             // 
-            // label2
+            // SalvarCompra
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(247, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "VALOR";
-            // 
-            // textBoxComprasValor
-            // 
-            this.textBoxComprasValor.Location = new System.Drawing.Point(296, 50);
-            this.textBoxComprasValor.Name = "textBoxComprasValor";
-            this.textBoxComprasValor.Size = new System.Drawing.Size(100, 20);
-            this.textBoxComprasValor.TabIndex = 2;
+            this.SalvarCompra.Location = new System.Drawing.Point(145, 156);
+            this.SalvarCompra.Name = "SalvarCompra";
+            this.SalvarCompra.Size = new System.Drawing.Size(75, 23);
+            this.SalvarCompra.TabIndex = 6;
+            this.SalvarCompra.Text = "SALVAR";
+            this.SalvarCompra.UseVisualStyleBackColor = true;
+            this.SalvarCompra.Click += new System.EventHandler(this.SalvarCompra_Click);
             // 
             // label3
             // 
@@ -138,10 +142,55 @@ namespace menu.telas
             this.textBoxComprasDescricao.Size = new System.Drawing.Size(100, 20);
             this.textBoxComprasDescricao.TabIndex = 4;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(247, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "VALOR";
+            // 
+            // textBoxComprasValor
+            // 
+            this.textBoxComprasValor.Location = new System.Drawing.Point(296, 50);
+            this.textBoxComprasValor.Name = "textBoxComprasValor";
+            this.textBoxComprasValor.Size = new System.Drawing.Size(100, 20);
+            this.textBoxComprasValor.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(51, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "NOME";
+            // 
+            // textBoxNomeCompras
+            // 
+            this.textBoxNomeCompras.Location = new System.Drawing.Point(92, 50);
+            this.textBoxNomeCompras.Name = "textBoxNomeCompras";
+            this.textBoxNomeCompras.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNomeCompras.TabIndex = 0;
+            // 
+            // pesquisa_compras
+            // 
+            this.pesquisa_compras.Controls.Add(this.ATUALIZAR_COMPRA);
+            this.pesquisa_compras.Controls.Add(this.dataGridView1);
+            this.pesquisa_compras.Location = new System.Drawing.Point(4, 22);
+            this.pesquisa_compras.Name = "pesquisa_compras";
+            this.pesquisa_compras.Padding = new System.Windows.Forms.Padding(3);
+            this.pesquisa_compras.Size = new System.Drawing.Size(1103, 486);
+            this.pesquisa_compras.TabIndex = 1;
+            this.pesquisa_compras.Text = "PESQUISAR";
+            this.pesquisa_compras.UseVisualStyleBackColor = true;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_COMPRA,
             this.Nome,
             this.Valor,
             this.Descrição});
@@ -149,39 +198,42 @@ namespace menu.telas
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(774, 293);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // ATUALIZAR_COMPRA
+            // 
+            this.ATUALIZAR_COMPRA.Location = new System.Drawing.Point(460, 61);
+            this.ATUALIZAR_COMPRA.Name = "ATUALIZAR_COMPRA";
+            this.ATUALIZAR_COMPRA.Size = new System.Drawing.Size(42, 36);
+            this.ATUALIZAR_COMPRA.TabIndex = 1;
+            this.ATUALIZAR_COMPRA.Text = "<>";
+            this.ATUALIZAR_COMPRA.UseVisualStyleBackColor = true;
+            this.ATUALIZAR_COMPRA.Click += new System.EventHandler(this.ATUALIZAR_COMPRA_Click);
+            // 
+            // ID_COMPRA
+            // 
+            this.ID_COMPRA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ID_COMPRA.DataPropertyName = "ID_COMPRA";
+            this.ID_COMPRA.HeaderText = "ID";
+            this.ID_COMPRA.Name = "ID_COMPRA";
             // 
             // Nome
             // 
+            this.Nome.DataPropertyName = "NOME";
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             // 
             // Valor
             // 
+            this.Valor.DataPropertyName = "VALOR";
             this.Valor.HeaderText = "Valor";
             this.Valor.Name = "Valor";
             // 
             // Descrição
             // 
+            this.Descrição.DataPropertyName = "DESCRICAO";
             this.Descrição.HeaderText = "Descrição";
             this.Descrição.Name = "Descrição";
-            // 
-            // SalvarCompra
-            // 
-            this.SalvarCompra.Location = new System.Drawing.Point(145, 156);
-            this.SalvarCompra.Name = "SalvarCompra";
-            this.SalvarCompra.Size = new System.Drawing.Size(75, 23);
-            this.SalvarCompra.TabIndex = 6;
-            this.SalvarCompra.Text = "SALVAR";
-            this.SalvarCompra.UseVisualStyleBackColor = true;
-            // 
-            // ExcluirCompra
-            // 
-            this.ExcluirCompra.Location = new System.Drawing.Point(296, 156);
-            this.ExcluirCompra.Name = "ExcluirCompra";
-            this.ExcluirCompra.Size = new System.Drawing.Size(75, 23);
-            this.ExcluirCompra.TabIndex = 7;
-            this.ExcluirCompra.Text = "EXCLUIR";
-            this.ExcluirCompra.UseVisualStyleBackColor = true;
             // 
             // compra_produto
             // 
@@ -214,10 +266,14 @@ namespace menu.telas
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxComprasDescricao;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button ExcluirCompra;
+        private System.Windows.Forms.Button SalvarCompra;
+        private System.Windows.Forms.TextBox textBoxIdEscondidoCompra;
+        private System.Windows.Forms.Button LimparCompra;
+        private System.Windows.Forms.Button ATUALIZAR_COMPRA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_COMPRA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
-        private System.Windows.Forms.Button ExcluirCompra;
-        private System.Windows.Forms.Button SalvarCompra;
     }
 }

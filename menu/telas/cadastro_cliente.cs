@@ -204,5 +204,10 @@ namespace menu.telas
         {
             limpar_cliente();
         }
+
+        private void CADASTRO_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
