@@ -82,11 +82,49 @@ namespace menu.telas
 
         }
 
+        private void atualizar_cliente()
+        {
+            try
+            {
+                connection.Open();
+                strSQL = "UPDATE CLIENTE SET NOME = @NOME, CIDADE = @CIDADE, BAIRRO = @BAIRRO, CPF = @CPF, ENDERECO = @ENDERECO, UF = @UF, TELEFONE = @TELEFONE, EMAIL = @EMAIL  WHERE ID_CLIENTE = @ID_CLIENTE";
+                command = new MySqlCommand(strSQL, connection);
+
+                command.Parameters.AddWithValue("@ID_CLIENTE", Convert.ToInt32(textIDESCONDIDO.Text));
+                command.Parameters.AddWithValue("@NOME", TextBoxNome.Text);
+                command.Parameters.AddWithValue("@CIDADE", textBoxCidade.Text);
+                command.Parameters.AddWithValue("@BAIRRO", textBoxBairro.Text);
+                command.Parameters.AddWithValue("@CPF", textBoxCpf.Text);
+                command.Parameters.AddWithValue("@ENDERECO", textBoxEndereco.Text);
+                command.Parameters.AddWithValue("@UF", textBoxUf.Text);
+                command.Parameters.AddWithValue("@TELEFONE", textBoxTelefone.Text);
+                command.Parameters.AddWithValue("@EMAIL", textBoxEmail.Text);
+
+                command.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("REGISTRO ALTERADO");
+                limpar_cliente();
+                ATUALIZAR();
+
+            }
+            catch (Exception erro)
+            {
+                connection.Close();
+                MessageBox.Show($"ERRO AO EDITAR {erro}");
+            }
+        }
+
         private void salvar_cliente_Click(object sender, EventArgs e)
         {
+            if(textIDESCONDIDO.Text != "")
+            {
+                atualizar_cliente();
+                return;
+            }
+
             save_cliente();
             limpar_cliente();
-
+            ATUALIZAR();
         }
 
         private void readCliente()
@@ -128,31 +166,12 @@ namespace menu.telas
         private void delet_cliente_Click(object sender, EventArgs e)
         {
             deletar_cliente();
+            ATUALIZAR();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indexID_CLIENTE = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ID_CLIENTE"].Value);
-            string indexNOME = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["NOME"].Value);
-            string indexCIDADE = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["CIDADE"].Value);
-            string indexBAIRRO = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["BAIRRO"].Value);
-            string indexCPF = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["CPF"].Value);
-            string indexENDERECO = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["ENDERECO"].Value);
-            string indexUF = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["UF"].Value);
-            string indexTELEFONE = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["TELEFONE"].Value);
-            string indexEMAIL = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["EMAIL"].Value);
-
-            textIDESCONDIDO.Text = indexID_CLIENTE.ToString();
-            TextBoxNome.Text = indexNOME.ToString();
-            textBoxCidade.Text = indexCIDADE.ToString();
-            textBoxBairro.Text = indexBAIRRO.ToString();
-            textBoxCpf.Text = indexCPF.ToString();
-            textBoxEndereco.Text = indexENDERECO.ToString();
-            textBoxUf.Text = indexUF.ToString();
-            textBoxTelefone.Text = indexTELEFONE.ToString();
-            textBoxEmail.Text = indexEMAIL.ToString();
-
-            pg_cadastro.SelectedIndex = 0;
+            
 
         }
 
@@ -161,9 +180,8 @@ namespace menu.telas
             
         }
 
-        private void button_Atualizar_Click(object sender, EventArgs e)
+        private void ATUALIZAR()
         {
-            //datagrid clientes
             try
             {
                 string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
@@ -195,6 +213,12 @@ namespace menu.telas
             }
         }
 
+        private void button_Atualizar_Click(object sender, EventArgs e)
+        {
+            //datagrid clientes
+            ATUALIZAR();
+        }
+
         private void textIDESCONDIDO_TextChanged(object sender, EventArgs e)
         {
 
@@ -208,6 +232,31 @@ namespace menu.telas
         private void CADASTRO_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexID_CLIENTE = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ID_CLIENTE"].Value);
+            string indexNOME = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["NOME"].Value);
+            string indexCIDADE = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["CIDADE"].Value);
+            string indexBAIRRO = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["BAIRRO"].Value);
+            string indexCPF = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["CPF"].Value);
+            string indexENDERECO = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["ENDERECO"].Value);
+            string indexUF = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["UF"].Value);
+            string indexTELEFONE = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["TELEFONE"].Value);
+            string indexEMAIL = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["EMAIL"].Value);
+
+            textIDESCONDIDO.Text = indexID_CLIENTE.ToString();
+            TextBoxNome.Text = indexNOME.ToString();
+            textBoxCidade.Text = indexCIDADE.ToString();
+            textBoxBairro.Text = indexBAIRRO.ToString();
+            textBoxCpf.Text = indexCPF.ToString();
+            textBoxEndereco.Text = indexENDERECO.ToString();
+            textBoxUf.Text = indexUF.ToString();
+            textBoxTelefone.Text = indexTELEFONE.ToString();
+            textBoxEmail.Text = indexEMAIL.ToString();
+
+            pg_cadastro.SelectedIndex = 0;
         }
     }
 }

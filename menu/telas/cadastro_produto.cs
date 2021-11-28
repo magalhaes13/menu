@@ -166,6 +166,11 @@ namespace menu.telas
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+           
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             int indexID_PRODUTO = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ID_PRODUTO"].Value);
             string indexNOME = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["NOME"].Value);
             string indexVALOR = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["VALOR"].Value);

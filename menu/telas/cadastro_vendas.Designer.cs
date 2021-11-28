@@ -32,19 +32,20 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_vendas));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ExcluirVenda = new System.Windows.Forms.Button();
+            this.SalvarVenda = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxComprasDescricao = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxComprasValor = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNomeCompras = new System.Windows.Forms.TextBox();
-            this.SalvarVenda = new System.Windows.Forms.Button();
-            this.ExcluirVenda = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -55,14 +56,16 @@ namespace menu.telas
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 48);
+            this.tabControl1.Location = new System.Drawing.Point(12, 40);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1138, 533);
+            this.tabControl1.Size = new System.Drawing.Size(1138, 541);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
+            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage1.Controls.Add(this.ExcluirVenda);
             this.tabPage1.Controls.Add(this.SalvarVenda);
             this.tabPage1.Controls.Add(this.label3);
@@ -74,26 +77,38 @@ namespace menu.telas
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1130, 507);
+            this.tabPage1.Size = new System.Drawing.Size(1130, 515);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "VENDAS";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // ExcluirVenda
             // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1130, 507);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "PESQUISA";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.ExcluirVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExcluirVenda.ForeColor = System.Drawing.SystemColors.Window;
+            this.ExcluirVenda.Location = new System.Drawing.Point(278, 237);
+            this.ExcluirVenda.Name = "ExcluirVenda";
+            this.ExcluirVenda.Size = new System.Drawing.Size(75, 23);
+            this.ExcluirVenda.TabIndex = 13;
+            this.ExcluirVenda.Text = "EXCLUIR";
+            this.ExcluirVenda.UseVisualStyleBackColor = true;
+            // 
+            // SalvarVenda
+            // 
+            this.SalvarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalvarVenda.ForeColor = System.Drawing.SystemColors.Window;
+            this.SalvarVenda.Location = new System.Drawing.Point(99, 237);
+            this.SalvarVenda.Name = "SalvarVenda";
+            this.SalvarVenda.Size = new System.Drawing.Size(75, 23);
+            this.SalvarVenda.TabIndex = 12;
+            this.SalvarVenda.Text = "SALVAR";
+            this.SalvarVenda.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(438, 63);
+            this.label3.ForeColor = System.Drawing.SystemColors.Window;
+            this.label3.Location = new System.Drawing.Point(441, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 11;
@@ -101,7 +116,7 @@ namespace menu.telas
             // 
             // textBoxComprasDescricao
             // 
-            this.textBoxComprasDescricao.Location = new System.Drawing.Point(513, 60);
+            this.textBoxComprasDescricao.Location = new System.Drawing.Point(516, 111);
             this.textBoxComprasDescricao.Name = "textBoxComprasDescricao";
             this.textBoxComprasDescricao.Size = new System.Drawing.Size(100, 20);
             this.textBoxComprasDescricao.TabIndex = 10;
@@ -109,7 +124,8 @@ namespace menu.telas
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(226, 63);
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
+            this.label2.Location = new System.Drawing.Point(229, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 9;
@@ -117,7 +133,7 @@ namespace menu.telas
             // 
             // textBoxComprasValor
             // 
-            this.textBoxComprasValor.Location = new System.Drawing.Point(275, 60);
+            this.textBoxComprasValor.Location = new System.Drawing.Point(278, 111);
             this.textBoxComprasValor.Name = "textBoxComprasValor";
             this.textBoxComprasValor.Size = new System.Drawing.Size(100, 20);
             this.textBoxComprasValor.TabIndex = 8;
@@ -125,7 +141,8 @@ namespace menu.telas
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 63);
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(33, 114);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 7;
@@ -133,28 +150,24 @@ namespace menu.telas
             // 
             // textBoxNomeCompras
             // 
-            this.textBoxNomeCompras.Location = new System.Drawing.Point(71, 60);
+            this.textBoxNomeCompras.Location = new System.Drawing.Point(74, 111);
             this.textBoxNomeCompras.Name = "textBoxNomeCompras";
             this.textBoxNomeCompras.Size = new System.Drawing.Size(100, 20);
             this.textBoxNomeCompras.TabIndex = 6;
             // 
-            // SalvarVenda
+            // tabPage2
             // 
-            this.SalvarVenda.Location = new System.Drawing.Point(96, 186);
-            this.SalvarVenda.Name = "SalvarVenda";
-            this.SalvarVenda.Size = new System.Drawing.Size(75, 23);
-            this.SalvarVenda.TabIndex = 12;
-            this.SalvarVenda.Text = "SALVAR";
-            this.SalvarVenda.UseVisualStyleBackColor = true;
-            // 
-            // ExcluirVenda
-            // 
-            this.ExcluirVenda.Location = new System.Drawing.Point(275, 186);
-            this.ExcluirVenda.Name = "ExcluirVenda";
-            this.ExcluirVenda.Size = new System.Drawing.Size(75, 23);
-            this.ExcluirVenda.TabIndex = 13;
-            this.ExcluirVenda.Text = "EXCLUIR";
-            this.ExcluirVenda.UseVisualStyleBackColor = true;
+            this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
+            this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1130, 515);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "PESQUISA";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -182,6 +195,19 @@ namespace menu.telas
             // 
             this.Descrição.HeaderText = "Descrição";
             this.Descrição.Name = "Descrição";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(465, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(48, 43);
+            this.button1.TabIndex = 2;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // cadastro_vendas
             // 
@@ -219,5 +245,6 @@ namespace menu.telas
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
+        private System.Windows.Forms.Button button1;
     }
 }

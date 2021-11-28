@@ -76,6 +76,7 @@ namespace menu.telas
         {
             salvar_compra();
             limpar_compra();
+            ATUALIZAR();
         }
 
         private void read_cliente()
@@ -113,24 +114,15 @@ namespace menu.telas
         private void ExcluirCompra_Click(object sender, EventArgs e)
         {
             Deletar_Compra();
+            ATUALIZAR();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indexID_COMPRA = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ID_COMPRA"].Value);
-            string indexNOME = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["NOME"].Value);
-            string indexVALOR = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["VALOR"].Value);
-            string indexDESCRICAO = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["DESCRICAO"].Value);
-
-            textBoxIdEscondidoCompra.Text = indexID_COMPRA.ToString();
-            textBoxNomeCompras.Text = indexNOME.ToString();
-            textBoxComprasValor.Text = indexVALOR.ToString();
-            textBoxComprasDescricao.Text = indexDESCRICAO.ToString();
-
-            tabControl1.SelectedIndex = 0;
+           
         }
 
-        private void ATUALIZAR_COMPRA_Click(object sender, EventArgs e)
+        private void ATUALIZAR()
         {
             try
             {
@@ -161,6 +153,11 @@ namespace menu.telas
                 MessageBox.Show(ex.Message, ex.Number.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+        } 
+
+        private void ATUALIZAR_COMPRA_Click(object sender, EventArgs e)
+        {
+            ATUALIZAR();
         }
 
             private void textBoxIdEscondidoCompra_TextChanged(object sender, EventArgs e)
@@ -173,9 +170,19 @@ namespace menu.telas
             limpar_compra();
         }
 
-        private void tabControl1(object sender, EventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            int indexID_COMPRA = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ID_COMPRA"].Value);
+            string indexNOME = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["NOME"].Value);
+            string indexVALOR = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["VALOR"].Value);
+            string indexDESCRICAO = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["DESCRICAO"].Value);
 
+            textBoxIdEscondidoCompra.Text = indexID_COMPRA.ToString();
+            textBoxNomeCompras.Text = indexNOME.ToString();
+            textBoxComprasValor.Text = indexVALOR.ToString();
+            textBoxComprasDescricao.Text = indexDESCRICAO.ToString();
+
+            tabControl1.SelectedIndex = 0;
         }
     }
 }

@@ -67,6 +67,8 @@ namespace menu.telas
             // 
             // tabPage1
             // 
+            this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
+            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage1.Controls.Add(this.LimparProduto);
             this.tabPage1.Controls.Add(this.txtIDPRODUTOESCONDIDO);
             this.tabPage1.Controls.Add(this.ExcluirProduto);
@@ -87,6 +89,8 @@ namespace menu.telas
             // 
             // LimparProduto
             // 
+            this.LimparProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LimparProduto.ForeColor = System.Drawing.SystemColors.Window;
             this.LimparProduto.Location = new System.Drawing.Point(313, 180);
             this.LimparProduto.Name = "LimparProduto";
             this.LimparProduto.Size = new System.Drawing.Size(75, 23);
@@ -106,6 +110,8 @@ namespace menu.telas
             // 
             // ExcluirProduto
             // 
+            this.ExcluirProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExcluirProduto.ForeColor = System.Drawing.SystemColors.Window;
             this.ExcluirProduto.Location = new System.Drawing.Point(177, 180);
             this.ExcluirProduto.Name = "ExcluirProduto";
             this.ExcluirProduto.Size = new System.Drawing.Size(75, 23);
@@ -116,6 +122,8 @@ namespace menu.telas
             // 
             // SalvarProduto
             // 
+            this.SalvarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalvarProduto.ForeColor = System.Drawing.SystemColors.Window;
             this.SalvarProduto.Location = new System.Drawing.Point(45, 180);
             this.SalvarProduto.Name = "SalvarProduto";
             this.SalvarProduto.Size = new System.Drawing.Size(75, 23);
@@ -127,6 +135,7 @@ namespace menu.telas
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.Window;
             this.label3.Location = new System.Drawing.Point(575, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
@@ -143,6 +152,7 @@ namespace menu.telas
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
             this.label2.Location = new System.Drawing.Point(310, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
@@ -159,6 +169,7 @@ namespace menu.telas
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
             this.label1.Location = new System.Drawing.Point(42, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
@@ -174,6 +185,9 @@ namespace menu.telas
             // 
             // tabPagePESQUISA
             // 
+            this.tabPagePESQUISA.BackColor = System.Drawing.Color.Transparent;
+            this.tabPagePESQUISA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPagePESQUISA.BackgroundImage")));
+            this.tabPagePESQUISA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPagePESQUISA.Controls.Add(this.button_AtualizarProd);
             this.tabPagePESQUISA.Controls.Add(this.dataGridView1);
             this.tabPagePESQUISA.Location = new System.Drawing.Point(4, 22);
@@ -182,17 +196,20 @@ namespace menu.telas
             this.tabPagePESQUISA.Size = new System.Drawing.Size(1107, 505);
             this.tabPagePESQUISA.TabIndex = 1;
             this.tabPagePESQUISA.Text = "PESQUISA";
-            this.tabPagePESQUISA.UseVisualStyleBackColor = true;
             this.tabPagePESQUISA.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // button_AtualizarProd
             // 
-            this.button_AtualizarProd.Location = new System.Drawing.Point(334, 24);
+            this.button_AtualizarProd.BackColor = System.Drawing.Color.Transparent;
+            this.button_AtualizarProd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_AtualizarProd.BackgroundImage")));
+            this.button_AtualizarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_AtualizarProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_AtualizarProd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_AtualizarProd.Location = new System.Drawing.Point(369, 27);
             this.button_AtualizarProd.Name = "button_AtualizarProd";
-            this.button_AtualizarProd.Size = new System.Drawing.Size(40, 33);
+            this.button_AtualizarProd.Size = new System.Drawing.Size(40, 40);
             this.button_AtualizarProd.TabIndex = 1;
-            this.button_AtualizarProd.Text = "<>";
-            this.button_AtualizarProd.UseVisualStyleBackColor = true;
+            this.button_AtualizarProd.UseVisualStyleBackColor = false;
             this.button_AtualizarProd.Click += new System.EventHandler(this.button_AtualizarProd_Click);
             // 
             // dataGridView1
@@ -209,6 +226,7 @@ namespace menu.telas
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // ID_PRODUTO
             // 
@@ -238,6 +256,7 @@ namespace menu.telas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1179, 629);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

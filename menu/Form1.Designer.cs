@@ -47,6 +47,7 @@ namespace menu
             // 
             this.panelCabecalho.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panelCabecalho.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCabecalho.BackgroundImage")));
+            this.panelCabecalho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panelCabecalho.Controls.Add(this.panel2);
             this.panelCabecalho.Controls.Add(this.label1);
             this.panelCabecalho.Location = new System.Drawing.Point(-5, -1);
@@ -84,19 +85,23 @@ namespace menu
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Controls.Add(this.produto);
             this.panel3.Controls.Add(this.CONTAS);
             this.panel3.Controls.Add(this.COMPRAS);
             this.panel3.Controls.Add(this.VENDAS);
             this.panel3.Controls.Add(this.CLIENTES);
-            this.panel3.Location = new System.Drawing.Point(1, 51);
+            this.panel3.Location = new System.Drawing.Point(-1, 55);
             this.panel3.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(170, 599);
+            this.panel3.Size = new System.Drawing.Size(173, 599);
             this.panel3.TabIndex = 1;
             // 
             // produto
             // 
+            this.produto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.produto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.produto.ForeColor = System.Drawing.SystemColors.Window;
             this.produto.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.produto.Location = new System.Drawing.Point(2, 105);
             this.produto.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
@@ -109,6 +114,9 @@ namespace menu
             // 
             // CONTAS
             // 
+            this.CONTAS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CONTAS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CONTAS.ForeColor = System.Drawing.SystemColors.Window;
             this.CONTAS.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.CONTAS.Location = new System.Drawing.Point(2, 337);
             this.CONTAS.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
@@ -121,6 +129,9 @@ namespace menu
             // 
             // COMPRAS
             // 
+            this.COMPRAS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.COMPRAS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.COMPRAS.ForeColor = System.Drawing.SystemColors.Window;
             this.COMPRAS.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.COMPRAS.Location = new System.Drawing.Point(2, 178);
             this.COMPRAS.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
@@ -133,6 +144,9 @@ namespace menu
             // 
             // VENDAS
             // 
+            this.VENDAS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.VENDAS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.VENDAS.ForeColor = System.Drawing.SystemColors.Window;
             this.VENDAS.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.VENDAS.Location = new System.Drawing.Point(2, 255);
             this.VENDAS.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
@@ -145,9 +159,12 @@ namespace menu
             // 
             // CLIENTES
             // 
+            this.CLIENTES.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CLIENTES.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CLIENTES.ForeColor = System.Drawing.SystemColors.Window;
             this.CLIENTES.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.CLIENTES.Location = new System.Drawing.Point(2, 30);
-            this.CLIENTES.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.CLIENTES.Margin = new System.Windows.Forms.Padding(1000);
             this.CLIENTES.Name = "CLIENTES";
             this.CLIENTES.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.CLIENTES.Size = new System.Drawing.Size(168, 45);
