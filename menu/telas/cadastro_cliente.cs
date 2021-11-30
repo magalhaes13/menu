@@ -86,6 +86,13 @@ namespace menu.telas
         {
             try
             {
+
+                if (TextBoxNome.Text == "" || textBoxCpf.Text == "")
+                {
+                    MessageBox.Show("PREENCHA O NOME E CPF");
+                    return;
+                }
+
                 connection.Open();
                 strSQL = "UPDATE CLIENTE SET NOME = @NOME, CIDADE = @CIDADE, BAIRRO = @BAIRRO, CPF = @CPF, ENDERECO = @ENDERECO, UF = @UF, TELEFONE = @TELEFONE, EMAIL = @EMAIL  WHERE ID_CLIENTE = @ID_CLIENTE";
                 command = new MySqlCommand(strSQL, connection);

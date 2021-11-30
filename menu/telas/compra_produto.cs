@@ -39,6 +39,7 @@ namespace menu.telas
             textBoxNomeCompras.Text = "";
             textBoxComprasValor.Text = "";
             textBoxComprasDescricao.Text = "";
+            textBoxQuantidade.Text = "";
         }
 
         private void salvar_compra()
@@ -48,11 +49,12 @@ namespace menu.telas
                 if (textBoxNomeCompras.Text != "" && textBoxComprasValor.Text != "")
                 {
                     connection.Open();
-                    strSQL = "INSERT INTO COMPRA(NOME, VALOR, DESCRICAO) VALUES (@NOME, @VALOR, @DESCRICAO)";
+                    strSQL = "INSERT INTO COMPRA(NOME, VALOR, DESCRICAO, QUANTIDADE) VALUES (@NOME, @VALOR, @DESCRICAO, @QUANTIDADE)";
                     command = new MySqlCommand(strSQL, connection);
                     command.Parameters.AddWithValue("@NOME", textBoxNomeCompras.Text);
                     command.Parameters.AddWithValue("@VALOR", textBoxComprasValor.Text);
                     command.Parameters.AddWithValue("@DESCRICAO", textBoxComprasDescricao.Text);
+                    command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
 
                     command.ExecuteNonQuery();
                     connection.Close();
@@ -71,9 +73,84 @@ namespace menu.telas
             }
         }
 
+        private void atualizar()
+        {
+            try
+            {
+                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+                MySqlConnection conexao = new MySqlConnection(conect);
+
+                conexao.Open();
+
+                if (conexao.State == ConnectionState.Open)
+                {
+                    string comando = "SELECT * FROM COMPRA";
+
+                    MySqlCommand cmd = new MySqlCommand(comando, conexao);
+
+                    DataTable dt = new DataTable();
+
+                    MySqlDataAdapter dados = new MySqlDataAdapter();
+                    dados.SelectCommand = cmd;
+
+                    dados.Fill(dt);
+
+                    this.dataGridView1.DataSource = dt;
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, ex.Number.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+        }
+
+        private void editar_compra()
+        {
+            try
+            {
+                if (textBoxNomeCompras.Text == "" || textBoxComprasValor.Text == "")
+                {
+                    MessageBox.Show("PREENCHA O NOME E VALOR");
+                    return;
+                }
+
+                connection.Open();
+                strSQL = "UPDATE COMPRA SET NOME = @NOME, VALOR = @VALOR, DESCRICAO = @DESCRICAO, QUANTIDADE = @QUANTIDADE WHERE ID_COMPRA = @ID_COMPRA";
+                command = new MySqlCommand(strSQL, connection);
+
+                command.Parameters.AddWithValue("@ID_COMPRA", Convert.ToInt32(textBoxIdEscondidoCompra.Text));
+                command.Parameters.AddWithValue("@NOME", textBoxNomeCompras.Text);
+                command.Parameters.AddWithValue("@VALOR", textBoxComprasValor.Text);
+                command.Parameters.AddWithValue("@DESCRICAO", textBoxComprasDescricao.Text);
+                command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
+
+
+                command.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("REGISTRO ALTERADO");
+
+                atualizar();
+                limpar_compra();
+
+            }
+            catch (Exception erro)
+            {
+                connection.Close();
+                MessageBox.Show($"ERRO AO EDITAR {erro}");
+            }
+        }
 
         private void SalvarCompra_Click(object sender, EventArgs e)
         {
+            if (textBoxIdEscondidoCompra.Text != "")
+            {
+                editar_compra();
+                return;
+            }
+
             salvar_compra();
             limpar_compra();
             ATUALIZAR();
@@ -114,6 +191,7 @@ namespace menu.telas
         private void ExcluirCompra_Click(object sender, EventArgs e)
         {
             Deletar_Compra();
+            limpar_compra();
             ATUALIZAR();
         }
 
@@ -176,13 +254,21 @@ namespace menu.telas
             string indexNOME = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["NOME"].Value);
             string indexVALOR = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["VALOR"].Value);
             string indexDESCRICAO = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["DESCRICAO"].Value);
+            string indexQUANTIDADE = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["QUANTIDADE"].Value);
 
             textBoxIdEscondidoCompra.Text = indexID_COMPRA.ToString();
             textBoxNomeCompras.Text = indexNOME.ToString();
             textBoxComprasValor.Text = indexVALOR.ToString();
             textBoxComprasDescricao.Text = indexDESCRICAO.ToString();
+            textBoxComprasDescricao.Text = indexQUANTIDADE.ToString();
+
 
             tabControl1.SelectedIndex = 0;
+        }
+
+        private void pesquisa_compras_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

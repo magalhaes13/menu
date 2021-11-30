@@ -32,20 +32,26 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_vendas));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBoxQuantidade = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.ExcluirVenda = new System.Windows.Forms.Button();
             this.SalvarVenda = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxComprasDescricao = new System.Windows.Forms.TextBox();
+            this.textBoxVendasDescricao = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxComprasValor = new System.Windows.Forms.TextBox();
+            this.textBoxVendasValor = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxNomeCompras = new System.Windows.Forms.TextBox();
+            this.textBoxNomeVendas = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBoxIdEscondido = new System.Windows.Forms.TextBox();
+            this.LimparVenda = new System.Windows.Forms.Button();
+            this.ID_VENDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -66,14 +72,18 @@ namespace menu.telas
             // 
             this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.LimparVenda);
+            this.tabPage1.Controls.Add(this.textBoxIdEscondido);
+            this.tabPage1.Controls.Add(this.textBoxQuantidade);
+            this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.ExcluirVenda);
             this.tabPage1.Controls.Add(this.SalvarVenda);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.textBoxComprasDescricao);
+            this.tabPage1.Controls.Add(this.textBoxVendasDescricao);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBoxComprasValor);
+            this.tabPage1.Controls.Add(this.textBoxVendasValor);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.textBoxNomeCompras);
+            this.tabPage1.Controls.Add(this.textBoxNomeVendas);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -81,6 +91,23 @@ namespace menu.telas
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "VENDAS";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // textBoxQuantidade
+            // 
+            this.textBoxQuantidade.Location = new System.Drawing.Point(750, 111);
+            this.textBoxQuantidade.Name = "textBoxQuantidade";
+            this.textBoxQuantidade.Size = new System.Drawing.Size(47, 20);
+            this.textBoxQuantidade.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(666, 114);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "QUANTIDADE";
             // 
             // ExcluirVenda
             // 
@@ -92,6 +119,7 @@ namespace menu.telas
             this.ExcluirVenda.TabIndex = 13;
             this.ExcluirVenda.Text = "EXCLUIR";
             this.ExcluirVenda.UseVisualStyleBackColor = true;
+            this.ExcluirVenda.Click += new System.EventHandler(this.ExcluirVenda_Click);
             // 
             // SalvarVenda
             // 
@@ -103,6 +131,7 @@ namespace menu.telas
             this.SalvarVenda.TabIndex = 12;
             this.SalvarVenda.Text = "SALVAR";
             this.SalvarVenda.UseVisualStyleBackColor = true;
+            this.SalvarVenda.Click += new System.EventHandler(this.SalvarVenda_Click);
             // 
             // label3
             // 
@@ -114,12 +143,12 @@ namespace menu.telas
             this.label3.TabIndex = 11;
             this.label3.Text = "DESCRICAO";
             // 
-            // textBoxComprasDescricao
+            // textBoxVendasDescricao
             // 
-            this.textBoxComprasDescricao.Location = new System.Drawing.Point(516, 111);
-            this.textBoxComprasDescricao.Name = "textBoxComprasDescricao";
-            this.textBoxComprasDescricao.Size = new System.Drawing.Size(100, 20);
-            this.textBoxComprasDescricao.TabIndex = 10;
+            this.textBoxVendasDescricao.Location = new System.Drawing.Point(516, 111);
+            this.textBoxVendasDescricao.Name = "textBoxVendasDescricao";
+            this.textBoxVendasDescricao.Size = new System.Drawing.Size(100, 20);
+            this.textBoxVendasDescricao.TabIndex = 10;
             // 
             // label2
             // 
@@ -131,12 +160,12 @@ namespace menu.telas
             this.label2.TabIndex = 9;
             this.label2.Text = "VALOR";
             // 
-            // textBoxComprasValor
+            // textBoxVendasValor
             // 
-            this.textBoxComprasValor.Location = new System.Drawing.Point(278, 111);
-            this.textBoxComprasValor.Name = "textBoxComprasValor";
-            this.textBoxComprasValor.Size = new System.Drawing.Size(100, 20);
-            this.textBoxComprasValor.TabIndex = 8;
+            this.textBoxVendasValor.Location = new System.Drawing.Point(278, 111);
+            this.textBoxVendasValor.Name = "textBoxVendasValor";
+            this.textBoxVendasValor.Size = new System.Drawing.Size(100, 20);
+            this.textBoxVendasValor.TabIndex = 8;
             // 
             // label1
             // 
@@ -148,12 +177,12 @@ namespace menu.telas
             this.label1.TabIndex = 7;
             this.label1.Text = "NOME";
             // 
-            // textBoxNomeCompras
+            // textBoxNomeVendas
             // 
-            this.textBoxNomeCompras.Location = new System.Drawing.Point(74, 111);
-            this.textBoxNomeCompras.Name = "textBoxNomeCompras";
-            this.textBoxNomeCompras.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNomeCompras.TabIndex = 6;
+            this.textBoxNomeVendas.Location = new System.Drawing.Point(74, 111);
+            this.textBoxNomeVendas.Name = "textBoxNomeVendas";
+            this.textBoxNomeVendas.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNomeVendas.TabIndex = 6;
             // 
             // tabPage2
             // 
@@ -169,33 +198,6 @@ namespace menu.telas
             this.tabPage2.Text = "PESQUISA";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome,
-            this.Valor,
-            this.Descrição});
-            this.dataGridView1.Location = new System.Drawing.Point(30, 67);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1016, 370);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            // 
-            // Valor
-            // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            // 
-            // Descrição
-            // 
-            this.Descrição.HeaderText = "Descrição";
-            this.Descrição.Name = "Descrição";
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -208,6 +210,74 @@ namespace menu.telas
             this.button1.Size = new System.Drawing.Size(48, 43);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_VENDA,
+            this.Nome,
+            this.Valor,
+            this.DESCRICAO,
+            this.QUANTIDADE});
+            this.dataGridView1.Location = new System.Drawing.Point(30, 67);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1016, 370);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // textBoxIdEscondido
+            // 
+            this.textBoxIdEscondido.Location = new System.Drawing.Point(444, 31);
+            this.textBoxIdEscondido.Multiline = true;
+            this.textBoxIdEscondido.Name = "textBoxIdEscondido";
+            this.textBoxIdEscondido.Size = new System.Drawing.Size(48, 40);
+            this.textBoxIdEscondido.TabIndex = 16;
+            this.textBoxIdEscondido.Visible = false;
+            // 
+            // LimparVenda
+            // 
+            this.LimparVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LimparVenda.ForeColor = System.Drawing.SystemColors.Window;
+            this.LimparVenda.Location = new System.Drawing.Point(444, 237);
+            this.LimparVenda.Name = "LimparVenda";
+            this.LimparVenda.Size = new System.Drawing.Size(75, 23);
+            this.LimparVenda.TabIndex = 17;
+            this.LimparVenda.Text = "LIMPAR";
+            this.LimparVenda.UseVisualStyleBackColor = true;
+            this.LimparVenda.Click += new System.EventHandler(this.LimparVenda_Click);
+            // 
+            // ID_VENDA
+            // 
+            this.ID_VENDA.DataPropertyName = "ID_VENDA";
+            this.ID_VENDA.HeaderText = "ID";
+            this.ID_VENDA.Name = "ID_VENDA";
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "NOME";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // Valor
+            // 
+            this.Valor.DataPropertyName = "VALOR";
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
+            // 
+            // DESCRICAO
+            // 
+            this.DESCRICAO.DataPropertyName = "DESCRICAO";
+            this.DESCRICAO.HeaderText = "Descrição";
+            this.DESCRICAO.Name = "DESCRICAO";
+            // 
+            // QUANTIDADE
+            // 
+            this.QUANTIDADE.DataPropertyName = "QUANTIDADE";
+            this.QUANTIDADE.HeaderText = "Quantidade";
+            this.QUANTIDADE.Name = "QUANTIDADE";
             // 
             // cadastro_vendas
             // 
@@ -233,18 +303,24 @@ namespace menu.telas
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxComprasDescricao;
+        private System.Windows.Forms.TextBox textBoxVendasDescricao;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxComprasValor;
+        private System.Windows.Forms.TextBox textBoxVendasValor;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxNomeCompras;
+        private System.Windows.Forms.TextBox textBoxNomeVendas;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button ExcluirVenda;
         private System.Windows.Forms.Button SalvarVenda;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxQuantidade;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxIdEscondido;
+        private System.Windows.Forms.Button LimparVenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_VENDA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
     }
 }
