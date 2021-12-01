@@ -32,6 +32,8 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(compra_produto));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.compras = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxQuantidade = new System.Windows.Forms.TextBox();
             this.LimparCompra = new System.Windows.Forms.Button();
             this.textBoxIdEscondidoCompra = new System.Windows.Forms.TextBox();
             this.ExcluirCompra = new System.Windows.Forms.Button();
@@ -41,17 +43,15 @@ namespace menu.telas
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxComprasValor = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxNomeCompras = new System.Windows.Forms.TextBox();
             this.pesquisa_compras = new System.Windows.Forms.TabPage();
             this.ATUALIZAR_COMPRA = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxQuantidade = new System.Windows.Forms.TextBox();
             this.ID_COMPRA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBoxNomeCompras = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.compras.SuspendLayout();
             this.pesquisa_compras.SuspendLayout();
@@ -72,6 +72,7 @@ namespace menu.telas
             // 
             this.compras.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("compras.BackgroundImage")));
             this.compras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.compras.Controls.Add(this.textBoxNomeCompras);
             this.compras.Controls.Add(this.label4);
             this.compras.Controls.Add(this.textBoxQuantidade);
             this.compras.Controls.Add(this.LimparCompra);
@@ -83,7 +84,6 @@ namespace menu.telas
             this.compras.Controls.Add(this.label2);
             this.compras.Controls.Add(this.textBoxComprasValor);
             this.compras.Controls.Add(this.label1);
-            this.compras.Controls.Add(this.textBoxNomeCompras);
             this.compras.Location = new System.Drawing.Point(4, 22);
             this.compras.Name = "compras";
             this.compras.Padding = new System.Windows.Forms.Padding(3);
@@ -91,6 +91,23 @@ namespace menu.telas
             this.compras.TabIndex = 0;
             this.compras.Text = "COMPRAS";
             this.compras.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(685, 84);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "QUANTIDADE";
+            // 
+            // textBoxQuantidade
+            // 
+            this.textBoxQuantidade.Location = new System.Drawing.Point(769, 81);
+            this.textBoxQuantidade.Name = "textBoxQuantidade";
+            this.textBoxQuantidade.Size = new System.Drawing.Size(44, 20);
+            this.textBoxQuantidade.TabIndex = 10;
             // 
             // LimparCompra
             // 
@@ -182,13 +199,6 @@ namespace menu.telas
             this.label1.TabIndex = 1;
             this.label1.Text = "NOME";
             // 
-            // textBoxNomeCompras
-            // 
-            this.textBoxNomeCompras.Location = new System.Drawing.Point(93, 81);
-            this.textBoxNomeCompras.Name = "textBoxNomeCompras";
-            this.textBoxNomeCompras.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNomeCompras.TabIndex = 0;
-            // 
             // pesquisa_compras
             // 
             this.pesquisa_compras.BackColor = System.Drawing.Color.Transparent;
@@ -234,23 +244,6 @@ namespace menu.telas
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(685, 84);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "QUANTIDADE";
-            // 
-            // textBoxQuantidade
-            // 
-            this.textBoxQuantidade.Location = new System.Drawing.Point(769, 81);
-            this.textBoxQuantidade.Name = "textBoxQuantidade";
-            this.textBoxQuantidade.Size = new System.Drawing.Size(44, 20);
-            this.textBoxQuantidade.TabIndex = 10;
-            // 
             // ID_COMPRA
             // 
             this.ID_COMPRA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -282,6 +275,15 @@ namespace menu.telas
             this.QUANTIDADE.HeaderText = "Quantidade";
             this.QUANTIDADE.Name = "QUANTIDADE";
             // 
+            // textBoxNomeCompras
+            // 
+            this.textBoxNomeCompras.FormattingEnabled = true;
+            this.textBoxNomeCompras.Location = new System.Drawing.Point(97, 81);
+            this.textBoxNomeCompras.Name = "textBoxNomeCompras";
+            this.textBoxNomeCompras.Size = new System.Drawing.Size(121, 21);
+            this.textBoxNomeCompras.TabIndex = 12;
+            this.textBoxNomeCompras.SelectedIndexChanged += new System.EventHandler(this.textBoxNomeCompras_SelectedIndexChanged);
+            // 
             // compra_produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,7 +311,6 @@ namespace menu.telas
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxComprasValor;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxNomeCompras;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxComprasDescricao;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -325,5 +326,6 @@ namespace menu.telas
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
+        private System.Windows.Forms.ComboBox textBoxNomeCompras;
     }
 }

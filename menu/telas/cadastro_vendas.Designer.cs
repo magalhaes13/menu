@@ -32,6 +32,8 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_vendas));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.LimparVenda = new System.Windows.Forms.Button();
+            this.textBoxIdEscondido = new System.Windows.Forms.TextBox();
             this.textBoxQuantidade = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ExcluirVenda = new System.Windows.Forms.Button();
@@ -41,17 +43,15 @@ namespace menu.telas
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxVendasValor = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxNomeVendas = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBoxIdEscondido = new System.Windows.Forms.TextBox();
-            this.LimparVenda = new System.Windows.Forms.Button();
             this.ID_VENDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBoxNomeVendas = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -72,6 +72,7 @@ namespace menu.telas
             // 
             this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.textBoxNomeVendas);
             this.tabPage1.Controls.Add(this.LimparVenda);
             this.tabPage1.Controls.Add(this.textBoxIdEscondido);
             this.tabPage1.Controls.Add(this.textBoxQuantidade);
@@ -83,7 +84,6 @@ namespace menu.telas
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.textBoxVendasValor);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.textBoxNomeVendas);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -91,6 +91,27 @@ namespace menu.telas
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "VENDAS";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // LimparVenda
+            // 
+            this.LimparVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LimparVenda.ForeColor = System.Drawing.SystemColors.Window;
+            this.LimparVenda.Location = new System.Drawing.Point(444, 237);
+            this.LimparVenda.Name = "LimparVenda";
+            this.LimparVenda.Size = new System.Drawing.Size(75, 23);
+            this.LimparVenda.TabIndex = 17;
+            this.LimparVenda.Text = "LIMPAR";
+            this.LimparVenda.UseVisualStyleBackColor = true;
+            this.LimparVenda.Click += new System.EventHandler(this.LimparVenda_Click);
+            // 
+            // textBoxIdEscondido
+            // 
+            this.textBoxIdEscondido.Location = new System.Drawing.Point(444, 31);
+            this.textBoxIdEscondido.Multiline = true;
+            this.textBoxIdEscondido.Name = "textBoxIdEscondido";
+            this.textBoxIdEscondido.Size = new System.Drawing.Size(48, 40);
+            this.textBoxIdEscondido.TabIndex = 16;
+            this.textBoxIdEscondido.Visible = false;
             // 
             // textBoxQuantidade
             // 
@@ -177,13 +198,6 @@ namespace menu.telas
             this.label1.TabIndex = 7;
             this.label1.Text = "NOME";
             // 
-            // textBoxNomeVendas
-            // 
-            this.textBoxNomeVendas.Location = new System.Drawing.Point(74, 111);
-            this.textBoxNomeVendas.Name = "textBoxNomeVendas";
-            this.textBoxNomeVendas.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNomeVendas.TabIndex = 6;
-            // 
             // tabPage2
             // 
             this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
@@ -228,27 +242,6 @@ namespace menu.telas
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // textBoxIdEscondido
-            // 
-            this.textBoxIdEscondido.Location = new System.Drawing.Point(444, 31);
-            this.textBoxIdEscondido.Multiline = true;
-            this.textBoxIdEscondido.Name = "textBoxIdEscondido";
-            this.textBoxIdEscondido.Size = new System.Drawing.Size(48, 40);
-            this.textBoxIdEscondido.TabIndex = 16;
-            this.textBoxIdEscondido.Visible = false;
-            // 
-            // LimparVenda
-            // 
-            this.LimparVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LimparVenda.ForeColor = System.Drawing.SystemColors.Window;
-            this.LimparVenda.Location = new System.Drawing.Point(444, 237);
-            this.LimparVenda.Name = "LimparVenda";
-            this.LimparVenda.Size = new System.Drawing.Size(75, 23);
-            this.LimparVenda.TabIndex = 17;
-            this.LimparVenda.Text = "LIMPAR";
-            this.LimparVenda.UseVisualStyleBackColor = true;
-            this.LimparVenda.Click += new System.EventHandler(this.LimparVenda_Click);
-            // 
             // ID_VENDA
             // 
             this.ID_VENDA.DataPropertyName = "ID_VENDA";
@@ -279,6 +272,14 @@ namespace menu.telas
             this.QUANTIDADE.HeaderText = "Quantidade";
             this.QUANTIDADE.Name = "QUANTIDADE";
             // 
+            // textBoxNomeVendas
+            // 
+            this.textBoxNomeVendas.FormattingEnabled = true;
+            this.textBoxNomeVendas.Location = new System.Drawing.Point(78, 111);
+            this.textBoxNomeVendas.Name = "textBoxNomeVendas";
+            this.textBoxNomeVendas.Size = new System.Drawing.Size(121, 21);
+            this.textBoxNomeVendas.TabIndex = 18;
+            // 
             // cadastro_vendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,7 +308,6 @@ namespace menu.telas
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxVendasValor;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxNomeVendas;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button ExcluirVenda;
         private System.Windows.Forms.Button SalvarVenda;
@@ -322,5 +322,6 @@ namespace menu.telas
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
+        private System.Windows.Forms.ComboBox textBoxNomeVendas;
     }
 }

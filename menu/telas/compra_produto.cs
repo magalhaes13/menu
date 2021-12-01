@@ -27,6 +27,30 @@ namespace menu.telas
         private void compra_produto_Load(object sender, EventArgs e)
         {
             connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=");
+            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+            MySqlConnection conexao = new MySqlConnection(conect);
+
+            conexao.Open();
+
+            if (conexao.State == ConnectionState.Open)
+            {
+                string comando = "SELECT NOME FROM PRODUTO";
+
+                MySqlCommand cmd = new MySqlCommand(comando, conexao);
+
+                DataTable dt = new DataTable();
+
+                MySqlDataAdapter dados = new MySqlDataAdapter();
+                dados.SelectCommand = cmd;
+
+                dados.Fill(dt);
+
+                textBoxNomeCompras.Items.Clear();
+                textBoxNomeCompras.DataSource = dt;
+                textBoxNomeCompras.DisplayMember = "NOME";
+
+
+            }
         }
 
         private void del_compra()
@@ -267,6 +291,16 @@ namespace menu.telas
         }
 
         private void pesquisa_compras_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNomeCompras_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNomeCompras_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
