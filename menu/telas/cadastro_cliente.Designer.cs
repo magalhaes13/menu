@@ -64,6 +64,7 @@ namespace menu.telas
             this.TELEFONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BAIRRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ENDERECO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pg_cadastro.SuspendLayout();
             this.CADASTRO.SuspendLayout();
@@ -353,6 +354,7 @@ namespace menu.telas
             this.TELEFONE,
             this.CIDADE,
             this.BAIRRO,
+            this.ENDERECO,
             this.UF});
             this.dataGridView1.Location = new System.Drawing.Point(42, 115);
             this.dataGridView1.Name = "dataGridView1";
@@ -402,6 +404,12 @@ namespace menu.telas
             this.BAIRRO.DataPropertyName = "BAIRRO";
             this.BAIRRO.HeaderText = "Bairro";
             this.BAIRRO.Name = "BAIRRO";
+            // 
+            // ENDERECO
+            // 
+            this.ENDERECO.DataPropertyName = "ENDERECO";
+            this.ENDERECO.HeaderText = "Endereço";
+            this.ENDERECO.Name = "ENDERECO";
             // 
             // UF
             // 
@@ -458,6 +466,8 @@ namespace menu.telas
         private System.Windows.Forms.Button button_Pesquisar;
         private System.Windows.Forms.TextBox textBoxPesquisa;
         private System.Windows.Forms.Button button_Atualizar;
+        private System.Windows.Forms.TextBox textIDESCONDIDO;
+        private System.Windows.Forms.Button buttonLimpar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_CLIENTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOME;
         private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
@@ -465,8 +475,7 @@ namespace menu.telas
         private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CIDADE;
         private System.Windows.Forms.DataGridViewTextBoxColumn BAIRRO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ENDERECO;
         private System.Windows.Forms.DataGridViewTextBoxColumn UF;
-        private System.Windows.Forms.TextBox textIDESCONDIDO;
-        private System.Windows.Forms.Button buttonLimpar;
     }
 }

@@ -32,6 +32,7 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_vendas));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBoxNomeVendas = new System.Windows.Forms.ComboBox();
             this.LimparVenda = new System.Windows.Forms.Button();
             this.textBoxIdEscondido = new System.Windows.Forms.TextBox();
             this.textBoxQuantidade = new System.Windows.Forms.TextBox();
@@ -51,7 +52,6 @@ namespace menu.telas
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBoxNomeVendas = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -91,6 +91,15 @@ namespace menu.telas
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "VENDAS";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // textBoxNomeVendas
+            // 
+            this.textBoxNomeVendas.FormattingEnabled = true;
+            this.textBoxNomeVendas.Location = new System.Drawing.Point(78, 111);
+            this.textBoxNomeVendas.Name = "textBoxNomeVendas";
+            this.textBoxNomeVendas.Size = new System.Drawing.Size(121, 21);
+            this.textBoxNomeVendas.TabIndex = 18;
             // 
             // LimparVenda
             // 
@@ -240,7 +249,7 @@ namespace menu.telas
             this.dataGridView1.Size = new System.Drawing.Size(1016, 370);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // ID_VENDA
             // 
@@ -271,14 +280,6 @@ namespace menu.telas
             this.QUANTIDADE.DataPropertyName = "QUANTIDADE";
             this.QUANTIDADE.HeaderText = "Quantidade";
             this.QUANTIDADE.Name = "QUANTIDADE";
-            // 
-            // textBoxNomeVendas
-            // 
-            this.textBoxNomeVendas.FormattingEnabled = true;
-            this.textBoxNomeVendas.Location = new System.Drawing.Point(78, 111);
-            this.textBoxNomeVendas.Name = "textBoxNomeVendas";
-            this.textBoxNomeVendas.Size = new System.Drawing.Size(121, 21);
-            this.textBoxNomeVendas.TabIndex = 18;
             // 
             // cadastro_vendas
             // 

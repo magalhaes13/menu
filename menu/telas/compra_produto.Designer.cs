@@ -32,6 +32,7 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(compra_produto));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.compras = new System.Windows.Forms.TabPage();
+            this.textBoxNomeCompras = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxQuantidade = new System.Windows.Forms.TextBox();
             this.LimparCompra = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@ namespace menu.telas
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBoxNomeCompras = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.compras.SuspendLayout();
             this.pesquisa_compras.SuspendLayout();
@@ -91,6 +91,16 @@ namespace menu.telas
             this.compras.TabIndex = 0;
             this.compras.Text = "COMPRAS";
             this.compras.UseVisualStyleBackColor = true;
+            this.compras.Click += new System.EventHandler(this.compras_Click);
+            // 
+            // textBoxNomeCompras
+            // 
+            this.textBoxNomeCompras.FormattingEnabled = true;
+            this.textBoxNomeCompras.Location = new System.Drawing.Point(97, 81);
+            this.textBoxNomeCompras.Name = "textBoxNomeCompras";
+            this.textBoxNomeCompras.Size = new System.Drawing.Size(121, 21);
+            this.textBoxNomeCompras.TabIndex = 12;
+            this.textBoxNomeCompras.SelectedIndexChanged += new System.EventHandler(this.textBoxNomeCompras_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -274,15 +284,6 @@ namespace menu.telas
             this.QUANTIDADE.DataPropertyName = "QUANTIDADE";
             this.QUANTIDADE.HeaderText = "Quantidade";
             this.QUANTIDADE.Name = "QUANTIDADE";
-            // 
-            // textBoxNomeCompras
-            // 
-            this.textBoxNomeCompras.FormattingEnabled = true;
-            this.textBoxNomeCompras.Location = new System.Drawing.Point(97, 81);
-            this.textBoxNomeCompras.Name = "textBoxNomeCompras";
-            this.textBoxNomeCompras.Size = new System.Drawing.Size(121, 21);
-            this.textBoxNomeCompras.TabIndex = 12;
-            this.textBoxNomeCompras.SelectedIndexChanged += new System.EventHandler(this.textBoxNomeCompras_SelectedIndexChanged);
             // 
             // compra_produto
             // 

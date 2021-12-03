@@ -32,21 +32,21 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(contas));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBoxContasFuncionarios = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxDespesasGerais = new System.Windows.Forms.TextBox();
-            this.SalvarContas = new System.Windows.Forms.Button();
             this.ExcluirContas = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxLucro = new System.Windows.Forms.TextBox();
+            this.SalvarContas = new System.Windows.Forms.Button();
+            this.textBoxDespesasGerais = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxContasFuncionarios = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.CalculoTotal = new System.Windows.Forms.Button();
             this.textBoxPrejuizo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.CalculoTotal = new System.Windows.Forms.Button();
+            this.textBoxLucro = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -64,6 +64,8 @@ namespace menu.telas
             // 
             // tabPage1
             // 
+            this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
+            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.tabPage1.Controls.Add(this.ExcluirContas);
             this.tabPage1.Controls.Add(this.SalvarContas);
             this.tabPage1.Controls.Add(this.textBoxDespesasGerais);
@@ -78,8 +80,59 @@ namespace menu.telas
             this.tabPage1.Text = "CONTAS";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // ExcluirContas
+            // 
+            this.ExcluirContas.Location = new System.Drawing.Point(300, 159);
+            this.ExcluirContas.Name = "ExcluirContas";
+            this.ExcluirContas.Size = new System.Drawing.Size(75, 23);
+            this.ExcluirContas.TabIndex = 5;
+            this.ExcluirContas.Text = "EXCLUIR";
+            this.ExcluirContas.UseVisualStyleBackColor = true;
+            // 
+            // SalvarContas
+            // 
+            this.SalvarContas.Location = new System.Drawing.Point(173, 159);
+            this.SalvarContas.Name = "SalvarContas";
+            this.SalvarContas.Size = new System.Drawing.Size(75, 23);
+            this.SalvarContas.TabIndex = 4;
+            this.SalvarContas.Text = "SALVAR";
+            this.SalvarContas.UseVisualStyleBackColor = true;
+            // 
+            // textBoxDespesasGerais
+            // 
+            this.textBoxDespesasGerais.Location = new System.Drawing.Point(410, 74);
+            this.textBoxDespesasGerais.Name = "textBoxDespesasGerais";
+            this.textBoxDespesasGerais.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDespesasGerais.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(297, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "DESPESAS GERAIS";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(52, 77);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "FUNCIONÁRIOS";
+            // 
+            // textBoxContasFuncionarios
+            // 
+            this.textBoxContasFuncionarios.Location = new System.Drawing.Point(146, 74);
+            this.textBoxContasFuncionarios.Name = "textBoxContasFuncionarios";
+            this.textBoxContasFuncionarios.Size = new System.Drawing.Size(100, 20);
+            this.textBoxContasFuncionarios.TabIndex = 0;
+            // 
             // tabPage2
             // 
+            this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
             this.tabPage2.Controls.Add(this.CalculoTotal);
             this.tabPage2.Controls.Add(this.textBoxPrejuizo);
             this.tabPage2.Controls.Add(this.label5);
@@ -96,92 +149,14 @@ namespace menu.telas
             this.tabPage2.Text = "DATA";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBoxContasFuncionarios
+            // CalculoTotal
             // 
-            this.textBoxContasFuncionarios.Location = new System.Drawing.Point(146, 74);
-            this.textBoxContasFuncionarios.Name = "textBoxContasFuncionarios";
-            this.textBoxContasFuncionarios.Size = new System.Drawing.Size(100, 20);
-            this.textBoxContasFuncionarios.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "FUNCIONÁRIOS";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(297, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "DESPESAS GERAIS";
-            // 
-            // textBoxDespesasGerais
-            // 
-            this.textBoxDespesasGerais.Location = new System.Drawing.Point(410, 74);
-            this.textBoxDespesasGerais.Name = "textBoxDespesasGerais";
-            this.textBoxDespesasGerais.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDespesasGerais.TabIndex = 3;
-            // 
-            // SalvarContas
-            // 
-            this.SalvarContas.Location = new System.Drawing.Point(173, 159);
-            this.SalvarContas.Name = "SalvarContas";
-            this.SalvarContas.Size = new System.Drawing.Size(75, 23);
-            this.SalvarContas.TabIndex = 4;
-            this.SalvarContas.Text = "SALVAR";
-            this.SalvarContas.UseVisualStyleBackColor = true;
-            // 
-            // ExcluirContas
-            // 
-            this.ExcluirContas.Location = new System.Drawing.Point(300, 159);
-            this.ExcluirContas.Name = "ExcluirContas";
-            this.ExcluirContas.Size = new System.Drawing.Size(75, 23);
-            this.ExcluirContas.TabIndex = 5;
-            this.ExcluirContas.Text = "EXCLUIR";
-            this.ExcluirContas.UseVisualStyleBackColor = true;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(59, 78);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
-            // 
-            // monthCalendar2
-            // 
-            this.monthCalendar2.Location = new System.Drawing.Point(416, 78);
-            this.monthCalendar2.Name = "monthCalendar2";
-            this.monthCalendar2.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(332, 154);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "ATÉ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(166, 323);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "LUCRO";
-            // 
-            // textBoxLucro
-            // 
-            this.textBoxLucro.Location = new System.Drawing.Point(216, 316);
-            this.textBoxLucro.Name = "textBoxLucro";
-            this.textBoxLucro.Size = new System.Drawing.Size(100, 20);
-            this.textBoxLucro.TabIndex = 4;
+            this.CalculoTotal.Location = new System.Drawing.Point(314, 254);
+            this.CalculoTotal.Name = "CalculoTotal";
+            this.CalculoTotal.Size = new System.Drawing.Size(75, 23);
+            this.CalculoTotal.TabIndex = 7;
+            this.CalculoTotal.Text = "CALCULAR";
+            this.CalculoTotal.UseVisualStyleBackColor = true;
             // 
             // textBoxPrejuizo
             // 
@@ -199,14 +174,42 @@ namespace menu.telas
             this.label5.TabIndex = 5;
             this.label5.Text = "PREJUÍZO";
             // 
-            // CalculoTotal
+            // textBoxLucro
             // 
-            this.CalculoTotal.Location = new System.Drawing.Point(314, 254);
-            this.CalculoTotal.Name = "CalculoTotal";
-            this.CalculoTotal.Size = new System.Drawing.Size(75, 23);
-            this.CalculoTotal.TabIndex = 7;
-            this.CalculoTotal.Text = "CALCULAR";
-            this.CalculoTotal.UseVisualStyleBackColor = true;
+            this.textBoxLucro.Location = new System.Drawing.Point(216, 316);
+            this.textBoxLucro.Name = "textBoxLucro";
+            this.textBoxLucro.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLucro.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(166, 323);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "LUCRO";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(332, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "ATÉ";
+            // 
+            // monthCalendar2
+            // 
+            this.monthCalendar2.Location = new System.Drawing.Point(416, 78);
+            this.monthCalendar2.Name = "monthCalendar2";
+            this.monthCalendar2.TabIndex = 1;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(59, 78);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 0;
             // 
             // contas
             // 

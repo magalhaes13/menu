@@ -27,6 +27,29 @@ namespace menu.telas
         private void cadastro_vendas_Load(object sender, EventArgs e)
         {
             connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=");
+            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+            MySqlConnection conexao = new MySqlConnection(conect);
+
+            conexao.Open();
+
+            if (conexao.State == ConnectionState.Open)
+            {
+                string comando = "SELECT NOME, ID_PRODUTO FROM PRODUTO";
+
+                MySqlCommand cmd = new MySqlCommand(comando, conexao);
+
+                DataTable dt = new DataTable();
+
+                MySqlDataAdapter dados = new MySqlDataAdapter();
+                dados.SelectCommand = cmd;
+
+                dados.Fill(dt);
+
+                textBoxNomeVendas.Items.Clear();
+                textBoxNomeVendas.DataSource = dt;
+                textBoxNomeVendas.DisplayMember = "NOME";
+
+            }
         }
 
         private void del_venda()
@@ -195,7 +218,7 @@ namespace menu.telas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            atualizar();
+            ATUALIZAR();
         }
 
         private void LimparVenda_Click(object sender, EventArgs e)
@@ -203,7 +226,50 @@ namespace menu.telas
             limpar_vendas();
         }
 
+        private void ATUALIZAR()
+        {
+            try
+            {
+                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+                MySqlConnection conexao = new MySqlConnection(conect);
+
+                conexao.Open();
+
+                if (conexao.State == ConnectionState.Open)
+                {
+                    string comando = "SELECT * FROM VENDA";
+
+                    MySqlCommand cmd = new MySqlCommand(comando, conexao);
+
+                    DataTable dt = new DataTable();
+
+                    MySqlDataAdapter dados = new MySqlDataAdapter();
+                    dados.SelectCommand = cmd;
+
+                    dados.Fill(dt);
+
+                    this.dataGridView1.DataSource = dt;
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, ex.Number.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int indexID_VENDA = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ID_VENDA"].Value);
             string indexNOME = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["NOME"].Value);

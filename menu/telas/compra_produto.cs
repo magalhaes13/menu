@@ -34,7 +34,7 @@ namespace menu.telas
 
             if (conexao.State == ConnectionState.Open)
             {
-                string comando = "SELECT NOME FROM PRODUTO";
+                string comando = "SELECT NOME, ID_PRODUTO FROM PRODUTO";
 
                 MySqlCommand cmd = new MySqlCommand(comando, conexao);
 
@@ -48,7 +48,6 @@ namespace menu.telas
                 textBoxNomeCompras.Items.Clear();
                 textBoxNomeCompras.DataSource = dt;
                 textBoxNomeCompras.DisplayMember = "NOME";
-
 
             }
         }
@@ -301,6 +300,11 @@ namespace menu.telas
         }
 
         private void textBoxNomeCompras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void compras_Click(object sender, EventArgs e)
         {
 
         }
