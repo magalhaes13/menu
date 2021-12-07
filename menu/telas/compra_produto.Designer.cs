@@ -198,6 +198,7 @@ namespace menu.telas
             this.textBoxComprasValor.Name = "textBoxComprasValor";
             this.textBoxComprasValor.Size = new System.Drawing.Size(100, 20);
             this.textBoxComprasValor.TabIndex = 2;
+            this.textBoxComprasValor.TextChanged += new System.EventHandler(this.textBoxComprasValor_TextChanged);
             // 
             // label1
             // 

@@ -50,6 +50,8 @@ namespace menu.telas
                 textBoxNomeCompras.DisplayMember = "NOME";
 
             }
+
+            
         }
 
         private void del_compra()
@@ -305,6 +307,11 @@ namespace menu.telas
         }
 
         private void compras_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxComprasValor_TextChanged(object sender, EventArgs e)
         {
 
         }
