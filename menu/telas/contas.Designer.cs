@@ -131,7 +131,7 @@ namespace menu.telas
             // 
             // tabPage2
             // 
-            this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
+            this.tabPage2.BackColor = System.Drawing.Color.Teal;
             this.tabPage2.Controls.Add(this.CalculoTotal);
             this.tabPage2.Controls.Add(this.textBoxPrejuizo);
             this.tabPage2.Controls.Add(this.label5);
@@ -146,7 +146,6 @@ namespace menu.telas
             this.tabPage2.Size = new System.Drawing.Size(1105, 488);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "DATA";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // CalculoTotal
             // 

@@ -206,8 +206,7 @@ namespace menu.telas
             // 
             // tabPagePESQUISA
             // 
-            this.tabPagePESQUISA.BackColor = System.Drawing.Color.Transparent;
-            this.tabPagePESQUISA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPagePESQUISA.BackgroundImage")));
+            this.tabPagePESQUISA.BackColor = System.Drawing.Color.Teal;
             this.tabPagePESQUISA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPagePESQUISA.Controls.Add(this.button_AtualizarProd);
             this.tabPagePESQUISA.Controls.Add(this.dataGridView1);

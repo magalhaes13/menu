@@ -208,7 +208,7 @@ namespace menu.telas
             // 
             // tabPage2
             // 
-            this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
+            this.tabPage2.BackColor = System.Drawing.Color.Teal;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.dataGridView1);
@@ -218,7 +218,6 @@ namespace menu.telas
             this.tabPage2.Size = new System.Drawing.Size(1130, 515);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "PESQUISA";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 

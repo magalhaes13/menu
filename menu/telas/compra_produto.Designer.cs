@@ -211,8 +211,7 @@ namespace menu.telas
             // 
             // pesquisa_compras
             // 
-            this.pesquisa_compras.BackColor = System.Drawing.Color.Transparent;
-            this.pesquisa_compras.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pesquisa_compras.BackgroundImage")));
+            this.pesquisa_compras.BackColor = System.Drawing.Color.Teal;
             this.pesquisa_compras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pesquisa_compras.Controls.Add(this.ATUALIZAR_COMPRA);
             this.pesquisa_compras.Controls.Add(this.dataGridView1);

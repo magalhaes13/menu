@@ -294,8 +294,7 @@ namespace menu.telas
             // 
             // PESQUISA
             // 
-            this.PESQUISA.BackColor = System.Drawing.Color.Transparent;
-            this.PESQUISA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PESQUISA.BackgroundImage")));
+            this.PESQUISA.BackColor = System.Drawing.Color.Teal;
             this.PESQUISA.Controls.Add(this.button_Atualizar);
             this.PESQUISA.Controls.Add(this.button_Pesquisar);
             this.PESQUISA.Controls.Add(this.textBoxPesquisa);
