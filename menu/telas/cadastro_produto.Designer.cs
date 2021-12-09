@@ -32,6 +32,8 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_produto));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxQuantidade = new System.Windows.Forms.TextBox();
             this.LimparProduto = new System.Windows.Forms.Button();
             this.txtIDPRODUTOESCONDIDO = new System.Windows.Forms.TextBox();
             this.ExcluirProduto = new System.Windows.Forms.Button();
@@ -45,8 +47,6 @@ namespace menu.telas
             this.tabPagePESQUISA = new System.Windows.Forms.TabPage();
             this.button_AtualizarProd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxQuantidade = new System.Windows.Forms.TextBox();
             this.ID_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VALOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,7 +70,7 @@ namespace menu.telas
             // 
             // tabPage1
             // 
-            this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
+            this.tabPage1.BackColor = System.Drawing.Color.Teal;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.textBoxQuantidade);
@@ -90,7 +90,23 @@ namespace menu.telas
             this.tabPage1.Size = new System.Drawing.Size(1107, 505);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "PRODUTO";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(843, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "QUANTIDADE";
+            // 
+            // textBoxQuantidade
+            // 
+            this.textBoxQuantidade.Location = new System.Drawing.Point(927, 78);
+            this.textBoxQuantidade.Name = "textBoxQuantidade";
+            this.textBoxQuantidade.Size = new System.Drawing.Size(57, 20);
+            this.textBoxQuantidade.TabIndex = 10;
             // 
             // LimparProduto
             // 
@@ -234,23 +250,6 @@ namespace menu.telas
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(843, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "QUANTIDADE";
-            // 
-            // textBoxQuantidade
-            // 
-            this.textBoxQuantidade.Location = new System.Drawing.Point(927, 78);
-            this.textBoxQuantidade.Name = "textBoxQuantidade";
-            this.textBoxQuantidade.Size = new System.Drawing.Size(57, 20);
-            this.textBoxQuantidade.TabIndex = 10;
-            // 
             // ID_PRODUTO
             // 
             this.ID_PRODUTO.DataPropertyName = "ID_PRODUTO";
@@ -285,7 +284,7 @@ namespace menu.telas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1179, 629);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

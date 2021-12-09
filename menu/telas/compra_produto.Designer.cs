@@ -70,7 +70,7 @@ namespace menu.telas
             // 
             // compras
             // 
-            this.compras.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("compras.BackgroundImage")));
+            this.compras.BackColor = System.Drawing.Color.Teal;
             this.compras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.compras.Controls.Add(this.textBoxNomeCompras);
             this.compras.Controls.Add(this.label4);
@@ -90,7 +90,6 @@ namespace menu.telas
             this.compras.Size = new System.Drawing.Size(1098, 499);
             this.compras.TabIndex = 0;
             this.compras.Text = "COMPRAS";
-            this.compras.UseVisualStyleBackColor = true;
             this.compras.Click += new System.EventHandler(this.compras_Click);
             // 
             // textBoxNomeCompras
@@ -290,6 +289,7 @@ namespace menu.telas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1179, 629);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

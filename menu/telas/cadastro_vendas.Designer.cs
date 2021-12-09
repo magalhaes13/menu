@@ -70,7 +70,7 @@ namespace menu.telas
             // 
             // tabPage1
             // 
-            this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
+            this.tabPage1.BackColor = System.Drawing.Color.Teal;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage1.Controls.Add(this.textBoxNomeVendas);
             this.tabPage1.Controls.Add(this.LimparVenda);
@@ -90,7 +90,6 @@ namespace menu.telas
             this.tabPage1.Size = new System.Drawing.Size(1130, 515);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "VENDAS";
-            this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // textBoxNomeVendas
@@ -285,6 +284,7 @@ namespace menu.telas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1179, 629);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

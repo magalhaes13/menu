@@ -84,7 +84,7 @@ namespace menu.telas
             // 
             // CADASTRO
             // 
-            this.CADASTRO.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CADASTRO.BackgroundImage")));
+            this.CADASTRO.BackColor = System.Drawing.Color.Teal;
             this.CADASTRO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CADASTRO.Controls.Add(this.buttonLimpar);
             this.CADASTRO.Controls.Add(this.textIDESCONDIDO);
@@ -113,7 +113,6 @@ namespace menu.telas
             this.CADASTRO.Size = new System.Drawing.Size(1147, 589);
             this.CADASTRO.TabIndex = 0;
             this.CADASTRO.Text = "CADASTRO";
-            this.CADASTRO.UseVisualStyleBackColor = true;
             this.CADASTRO.Click += new System.EventHandler(this.CADASTRO_Click);
             // 
             // buttonLimpar
@@ -421,6 +420,7 @@ namespace menu.telas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1179, 629);
             this.Controls.Add(this.pg_cadastro);

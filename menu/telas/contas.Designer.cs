@@ -64,7 +64,7 @@ namespace menu.telas
             // 
             // tabPage1
             // 
-            this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
+            this.tabPage1.BackColor = System.Drawing.Color.Teal;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.tabPage1.Controls.Add(this.ExcluirContas);
             this.tabPage1.Controls.Add(this.SalvarContas);
@@ -78,7 +78,6 @@ namespace menu.telas
             this.tabPage1.Size = new System.Drawing.Size(1105, 488);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "CONTAS";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // ExcluirContas
             // 
@@ -215,6 +214,7 @@ namespace menu.telas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1179, 629);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
