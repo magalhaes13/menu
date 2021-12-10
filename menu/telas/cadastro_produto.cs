@@ -268,5 +268,10 @@ namespace menu.telas
 
             tabControl1.SelectedIndex = 0;
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

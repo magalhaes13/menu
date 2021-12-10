@@ -56,28 +56,30 @@ namespace menu.telas
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(26, 43);
+            this.tabControl1.Location = new System.Drawing.Point(12, 30);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1113, 514);
+            this.tabControl1.Size = new System.Drawing.Size(1147, 589);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Teal;
-            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage1.Controls.Add(this.ExcluirContas);
             this.tabPage1.Controls.Add(this.SalvarContas);
             this.tabPage1.Controls.Add(this.textBoxDespesasGerais);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.textBoxContasFuncionarios);
+            this.tabPage1.ForeColor = System.Drawing.SystemColors.Window;
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1105, 488);
+            this.tabPage1.Size = new System.Drawing.Size(1139, 563);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "CONTAS";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // ExcluirContas
             // 
@@ -107,6 +109,7 @@ namespace menu.telas
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(297, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 13);
@@ -116,6 +119,7 @@ namespace menu.telas
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(52, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
@@ -149,6 +153,8 @@ namespace menu.telas
             // 
             // CalculoTotal
             // 
+            this.CalculoTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CalculoTotal.ForeColor = System.Drawing.Color.White;
             this.CalculoTotal.Location = new System.Drawing.Point(314, 254);
             this.CalculoTotal.Name = "CalculoTotal";
             this.CalculoTotal.Size = new System.Drawing.Size(75, 23);
@@ -166,6 +172,7 @@ namespace menu.telas
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(166, 372);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 13);
@@ -182,6 +189,7 @@ namespace menu.telas
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(166, 323);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
@@ -191,6 +199,7 @@ namespace menu.telas
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(332, 154);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 13);
@@ -214,9 +223,10 @@ namespace menu.telas
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1179, 629);
+            this.ClientSize = new System.Drawing.Size(1179, 681);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(12, 28);
             this.Name = "contas";
             this.Text = "CONTAS";
             this.Load += new System.EventHandler(this.contas_Load);

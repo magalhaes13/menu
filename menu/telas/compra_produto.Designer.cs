@@ -62,10 +62,10 @@ namespace menu.telas
             // 
             this.tabControl1.Controls.Add(this.compras);
             this.tabControl1.Controls.Add(this.pesquisa_compras);
-            this.tabControl1.Location = new System.Drawing.Point(27, 38);
+            this.tabControl1.Location = new System.Drawing.Point(12, 30);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1106, 525);
+            this.tabControl1.Size = new System.Drawing.Size(1147, 589);
             this.tabControl1.TabIndex = 0;
             // 
             // compras
@@ -87,7 +87,7 @@ namespace menu.telas
             this.compras.Location = new System.Drawing.Point(4, 22);
             this.compras.Name = "compras";
             this.compras.Padding = new System.Windows.Forms.Padding(3);
-            this.compras.Size = new System.Drawing.Size(1098, 499);
+            this.compras.Size = new System.Drawing.Size(1139, 563);
             this.compras.TabIndex = 0;
             this.compras.Text = "COMPRAS";
             this.compras.Click += new System.EventHandler(this.compras_Click);
@@ -289,9 +289,10 @@ namespace menu.telas
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1179, 629);
+            this.ClientSize = new System.Drawing.Size(1179, 681);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(12, 28);
             this.Name = "compra_produto";
             this.Text = "COMPRA PRODUTO";
             this.Load += new System.EventHandler(this.compra_produto_Load);

@@ -62,10 +62,10 @@ namespace menu.telas
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 40);
+            this.tabControl1.Location = new System.Drawing.Point(12, 30);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1138, 541);
+            this.tabControl1.Size = new System.Drawing.Size(1147, 589);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -87,7 +87,7 @@ namespace menu.telas
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1130, 515);
+            this.tabPage1.Size = new System.Drawing.Size(1139, 563);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "VENDAS";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -284,9 +284,10 @@ namespace menu.telas
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1179, 629);
+            this.ClientSize = new System.Drawing.Size(1179, 681);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(12, 28);
             this.Name = "cadastro_vendas";
             this.Text = "VENDAS";
             this.Load += new System.EventHandler(this.cadastro_vendas_Load);

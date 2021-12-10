@@ -76,7 +76,7 @@ namespace menu.telas
             // 
             this.pg_cadastro.Controls.Add(this.CADASTRO);
             this.pg_cadastro.Controls.Add(this.PESQUISA);
-            this.pg_cadastro.Location = new System.Drawing.Point(12, 12);
+            this.pg_cadastro.Location = new System.Drawing.Point(12, 30);
             this.pg_cadastro.Name = "pg_cadastro";
             this.pg_cadastro.SelectedIndex = 0;
             this.pg_cadastro.Size = new System.Drawing.Size(1155, 615);
@@ -421,9 +421,10 @@ namespace menu.telas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1179, 629);
+            this.ClientSize = new System.Drawing.Size(1179, 681);
             this.Controls.Add(this.pg_cadastro);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(12, 28);
             this.Name = "cadastro_cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
