@@ -304,7 +304,32 @@ namespace menu.telas
         private void textBoxNomeCompras_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+            MySqlConnection conexao = new MySqlConnection(conect);
+            conexao.Open();
+
+            if (conexao.State == ConnectionState.Open)
+            {
+                var id_prod = textBoxNomeCompras.SelectedValue;
+                string comando = "SELECT VALOR, QUANTIDADE, DESCRICAO FROM PRODUTO WHERE ID_PRODUTO = @ID_PRODUTO";
+
+                MySqlCommand cmd = new MySqlCommand(comando, conexao);
+
+                MySqlDataAdapter dados = new MySqlDataAdapter();
+                dados.SelectCommand = cmd;
+
+              //  dados.Fill(id_prod);
+
+               // textBoxNomeCompras.Items.Clear();
+                textBoxComprasValor.Text = id_prod;
+                textBoxComprasValor.Text = "@VALOR";
+
+            }
+
+
+
         }
+
 
         private void compras_Click(object sender, EventArgs e)
         {
