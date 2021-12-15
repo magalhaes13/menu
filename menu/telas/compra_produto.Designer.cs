@@ -100,6 +100,7 @@ namespace menu.telas
             this.textBoxNomeCompras.Size = new System.Drawing.Size(121, 21);
             this.textBoxNomeCompras.TabIndex = 12;
             this.textBoxNomeCompras.SelectedIndexChanged += new System.EventHandler(this.textBoxNomeCompras_SelectedIndexChanged);
+            this.textBoxNomeCompras.SelectedValueChanged += new System.EventHandler(this.textBoxNomeCompras_SelectedValueChanged);
             // 
             // label4
             // 
@@ -218,7 +219,7 @@ namespace menu.telas
             this.pesquisa_compras.Location = new System.Drawing.Point(4, 22);
             this.pesquisa_compras.Name = "pesquisa_compras";
             this.pesquisa_compras.Padding = new System.Windows.Forms.Padding(3);
-            this.pesquisa_compras.Size = new System.Drawing.Size(1098, 499);
+            this.pesquisa_compras.Size = new System.Drawing.Size(1139, 563);
             this.pesquisa_compras.TabIndex = 1;
             this.pesquisa_compras.Text = "PESQUISAR";
             this.pesquisa_compras.Click += new System.EventHandler(this.pesquisa_compras_Click);

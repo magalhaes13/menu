@@ -34,7 +34,8 @@ namespace menu.telas
 
             if (conexao.State == ConnectionState.Open)
             {
-                string comando = "SELECT NOME, ID_PRODUTO FROM PRODUTO";
+                string comando = "SELECT NOME, VALOR ID_PRODUTO FROM PRODUTO";
+
 
                 MySqlCommand cmd = new MySqlCommand(comando, conexao);
 
@@ -49,9 +50,11 @@ namespace menu.telas
                 textBoxNomeCompras.DataSource = dt;
                 textBoxNomeCompras.DisplayMember = "NOME";
 
+                //conexao.Close();
+                //textBoxComprasValor.Text = "VALOR";
             }
 
-            
+
         }
 
         private void del_compra()
@@ -222,7 +225,7 @@ namespace menu.telas
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void ATUALIZAR()
@@ -256,17 +259,17 @@ namespace menu.telas
                 MessageBox.Show(ex.Message, ex.Number.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-        } 
+        }
 
         private void ATUALIZAR_COMPRA_Click(object sender, EventArgs e)
         {
             ATUALIZAR();
         }
 
-            private void textBoxIdEscondidoCompra_TextChanged(object sender, EventArgs e)
-                {
+        private void textBoxIdEscondidoCompra_TextChanged(object sender, EventArgs e)
+        {
 
-                }
+        }
 
         private void LimparCompra_Click(object sender, EventArgs e)
         {
@@ -304,27 +307,27 @@ namespace menu.telas
         private void textBoxNomeCompras_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
-            MySqlConnection conexao = new MySqlConnection(conect);
-            conexao.Open();
+            // string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+            // MySqlConnection conexao = new MySqlConnection(conect);
+            //conexao.Open();
 
-            if (conexao.State == ConnectionState.Open)
-            {
-                var id_prod = textBoxNomeCompras.SelectedValue;
-                string comando = "SELECT VALOR, QUANTIDADE, DESCRICAO FROM PRODUTO WHERE ID_PRODUTO = @ID_PRODUTO";
+            //if (conexao.State == ConnectionState.Open)
+            // {
+            // var id_prod = textBoxNomeCompras.SelectedValue;
+            // string comando = "SELECT VALOR, QUANTIDADE, DESCRICAO FROM PRODUTO WHERE ID_PRODUTO = @ID_PRODUTO";
 
-                MySqlCommand cmd = new MySqlCommand(comando, conexao);
+            //MySqlCommand cmd = new MySqlCommand(comando, conexao);
 
-                MySqlDataAdapter dados = new MySqlDataAdapter();
-                dados.SelectCommand = cmd;
+            // MySqlDataAdapter dados = new MySqlDataAdapter();
+            // dados.SelectCommand = cmd;
 
-              //  dados.Fill(id_prod);
+            //  dados.Fill(id_prod);
 
-               // textBoxNomeCompras.Items.Clear();
-                textBoxComprasValor.Text = id_prod;
-                textBoxComprasValor.Text = "@VALOR";
+            // textBoxNomeCompras.Items.Clear();
+            //textBoxComprasValor.Text = id_prod;
+            //textBoxComprasValor.Text = "@VALOR";
 
-            }
+            // }
 
 
 
@@ -338,6 +341,68 @@ namespace menu.telas
 
         private void textBoxComprasValor_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void textBoxNomeCompras_SelectedValueChanged(object sender, EventArgs e)
+        {
+            connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=");
+            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+            MySqlConnection conexao = new MySqlConnection(conect);
+
+            conexao.Open();
+
+            if (conexao.State == ConnectionState.Open)
+            {
+                string comando = $"SELECT NOME, VALOR, DESCRICAO, ID_PRODUTO FROM PRODUTO WHERE NOME = {textBoxNomeCompras.Text}";
+
+                MySqlDataReader lerBanco;
+
+                MySqlCommand cmd = new MySqlCommand(comando, conexao);
+
+                //DataTable dt = new DataTable();
+
+                //MySqlDataAdapter dados = new MySqlDataAdapter();
+                //dados.SelectCommand = cmd;
+
+
+
+                //dados.Fill(dt);
+
+
+
+                //conexao.Close();
+
+                //textBoxComprasValor.Text = "VALOR";
+
+
+
+                try
+                {
+                    //conexao.Open();
+                    lerBanco = cmd.ExecuteReader();
+
+                    lerBanco.Read();
+
+                    string ID_ESCONDIDO = lerBanco.GetInt32("ID_PRODUTO").ToString();
+                    string VALOR = lerBanco.GetString("VALOR");
+                    string DESCRICAO = lerBanco.GetString("DESCRICAO");
+                    //int QUANTIDADE = lerBanco.GetInt32("QUANTIDADE");
+
+                    textBoxIdEscondidoCompra.Text = ID_ESCONDIDO;
+                    textBoxComprasValor.Text = VALOR;
+                    textBoxComprasDescricao.Text = DESCRICAO;
+                    //textBoxQuantidade.Text = QUANTIDADE.ToString();
+                    conexao.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                conexao.Close();
+
+            }
 
         }
     }
