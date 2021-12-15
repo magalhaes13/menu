@@ -26,15 +26,14 @@ namespace menu.telas
 
         private void compra_produto_Load(object sender, EventArgs e)
         {
-            connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=");
-            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
             MySqlConnection conexao = new MySqlConnection(conect);
 
             conexao.Open();
 
             if (conexao.State == ConnectionState.Open)
             {
-                string comando = "SELECT NOME, VALOR ID_PRODUTO FROM PRODUTO";
+                string comando = "SELECT NOME, VALOR, ID_PRODUTO FROM PRODUTO";
 
 
                 MySqlCommand cmd = new MySqlCommand(comando, conexao);
@@ -49,6 +48,7 @@ namespace menu.telas
                 textBoxNomeCompras.Items.Clear();
                 textBoxNomeCompras.DataSource = dt;
                 textBoxNomeCompras.DisplayMember = "NOME";
+                textBoxNomeCompras.ValueMember = "ID_PRODUTO";
 
                 //conexao.Close();
                 //textBoxComprasValor.Text = "VALOR";
@@ -105,7 +105,7 @@ namespace menu.telas
         {
             try
             {
-                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
                 MySqlConnection conexao = new MySqlConnection(conect);
 
                 conexao.Open();
@@ -232,7 +232,7 @@ namespace menu.telas
         {
             try
             {
-                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
                 MySqlConnection conexao = new MySqlConnection(conect);
 
                 conexao.Open();
@@ -346,36 +346,31 @@ namespace menu.telas
 
         private void textBoxNomeCompras_SelectedValueChanged(object sender, EventArgs e)
         {
-            connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=");
-            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+            connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456");
+            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
             MySqlConnection conexao = new MySqlConnection(conect);
 
             conexao.Open();
 
             if (conexao.State == ConnectionState.Open)
             {
-                string comando = $"SELECT NOME, VALOR, DESCRICAO, ID_PRODUTO FROM PRODUTO WHERE NOME = {textBoxNomeCompras.Text}";
+                int idProd = Convert.ToInt32(textBoxNomeCompras.SelectedValue);
+                if(idProd != -1)
+                {
+
+                string comando = $"SELECT NOME, VALOR, DESCRICAO, ID_PRODUTO FROM PRODUTO  WHRERE ID_PRODUTO = {textBoxNomeCompras.SelectedValue}";
 
                 MySqlDataReader lerBanco;
 
                 MySqlCommand cmd = new MySqlCommand(comando, conexao);
 
-                //DataTable dt = new DataTable();
+                DataTable dt = new DataTable();
 
-                //MySqlDataAdapter dados = new MySqlDataAdapter();
-                //dados.SelectCommand = cmd;
+                MySqlDataAdapter dados = new MySqlDataAdapter();
+                dados.SelectCommand = cmd;
 
-
-
-                //dados.Fill(dt);
-
-
-
+                dados.Fill(dt);
                 //conexao.Close();
-
-                //textBoxComprasValor.Text = "VALOR";
-
-
 
                 try
                 {
@@ -393,7 +388,7 @@ namespace menu.telas
                     textBoxComprasValor.Text = VALOR;
                     textBoxComprasDescricao.Text = DESCRICAO;
                     //textBoxQuantidade.Text = QUANTIDADE.ToString();
-                    conexao.Close();
+                    //conexao.Close();
 
                 }
                 catch (Exception ex)
@@ -401,7 +396,7 @@ namespace menu.telas
                     MessageBox.Show(ex.Message);
                 }
                 conexao.Close();
-
+                }
             }
 
         }

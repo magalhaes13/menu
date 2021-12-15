@@ -26,15 +26,15 @@ namespace menu.telas
 
         private void cadastro_vendas_Load(object sender, EventArgs e)
         {
-            connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=");
-            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+            connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456");
+            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
             MySqlConnection conexao = new MySqlConnection(conect);
 
             conexao.Open();
 
             if (conexao.State == ConnectionState.Open)
             {
-                string comando = "SELECT NOME, ID_PRODUTO FROM PRODUTO";
+                string comando = "SELECT NOME, VALOR, ID_PRODUTO FROM PRODUTO";
 
                 MySqlCommand cmd = new MySqlCommand(comando, conexao);
 
@@ -47,7 +47,9 @@ namespace menu.telas
 
                 textBoxNomeVendas.Items.Clear();
                 textBoxNomeVendas.DataSource = dt;
-                textBoxNomeVendas.DisplayMember = "NOME";
+                textBoxNomeVendas.DisplayMember = "VALOR";
+
+
 
             }
         }
@@ -100,7 +102,7 @@ namespace menu.telas
         {
             try
             {
-                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
                 MySqlConnection conexao = new MySqlConnection(conect);
 
                 conexao.Open();
@@ -230,7 +232,7 @@ namespace menu.telas
         {
             try
             {
-                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
                 MySqlConnection conexao = new MySqlConnection(conect);
 
                 conexao.Open();
@@ -285,6 +287,32 @@ namespace menu.telas
 
 
             tabControl1.SelectedIndex = 0;
+        }
+
+        private void ordem()
+        {
+
+            try
+            {
+                connection.Open();
+                strSQL = "SELECT NOME, ID_PRODUTO FROM PRODUTO ORDER BY NOME ASC";
+                command = new MySqlCommand(strSQL, connection);
+
+                command.Parameters.AddWithValue("@ID_PRODUTO, @NOME", Convert.ToString(textBoxNomeVendas.Text));
+
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception erro)
+            {
+                connection.Close();
+                MessageBox.Show("ERRO AO SELECIONAR" + erro);
+            }
+        }
+
+        private void textBoxNomeVendas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ordem();
         }
     }
 }

@@ -25,7 +25,7 @@ namespace menu.telas
 
         private void cadastro_produto_Load(object sender, EventArgs e)
         {
-            connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=");
+            connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456");
         }
 
         private void del_produto()
@@ -85,7 +85,7 @@ namespace menu.telas
         {
             try
             {
-                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
                 MySqlConnection conexao = new MySqlConnection(conect);
 
                 conexao.Open();
@@ -215,7 +215,7 @@ namespace menu.telas
         {
             try
             {
-                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd = ";
+                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
                 MySqlConnection conexao = new MySqlConnection(conect);
 
                 conexao.Open();
