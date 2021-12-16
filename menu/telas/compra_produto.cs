@@ -31,6 +31,34 @@ namespace menu.telas
 
             conexao.Open();
 
+            //        textBoxNomeCompras.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            //    Dim adapter_funcionario As New sampDataSetTableAdapters.FuncionarioTableAdapter
+            //    Dim tab_funcionario As New sampDataSet.FuncionarioDataTable
+            //    adapter_funcionario.Fill(tab_funcionario)
+
+            //    impexec = True
+
+            //    //vinculcao do combo que exibirá o nome do funcionário
+            //        textBoxNomeCompras.DataSource = tab_funcionario;
+            //        textBoxNomeCompras.DisplayMember = "nome";
+
+            //    //vinculação dos TextBox
+            //    textbox1.DataBindings.Add("Text", tab_funcionario, "categoria")
+
+            //    bmFuncionarios = Me.BindingContext(tab_funcionario)
+            //End Sub
+
+            //Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
+            //    //Impede a execução no Load do formulário
+            //    If Not impexec Then
+
+            //    //Sincroniza os dados na caixa de texto
+            //        bmFuncionarios.Position = ComboBox1.SelectedIndex
+            //    End If
+            //End Sub
+
+
             if (conexao.State == ConnectionState.Open)
             {
                 string comando = "SELECT NOME, VALOR, ID_PRODUTO FROM PRODUTO";
@@ -50,8 +78,8 @@ namespace menu.telas
                 textBoxNomeCompras.DisplayMember = "NOME";
                 textBoxNomeCompras.ValueMember = "ID_PRODUTO";
 
-                //conexao.Close();
-                //textBoxComprasValor.Text = "VALOR";
+                conexao.Close();
+                textBoxComprasValor.Text = "VALOR";
             }
 
 
@@ -329,8 +357,6 @@ namespace menu.telas
 
             // }
 
-
-
         }
 
 
@@ -354,8 +380,8 @@ namespace menu.telas
 
             if (conexao.State == ConnectionState.Open)
             {
-               
-                
+
+
 
                 string comando = $"SELECT NOME, VALOR, DESCRICAO, ID_PRODUTO FROM PRODUTO";
 
@@ -395,8 +421,8 @@ namespace menu.telas
                     MessageBox.Show(ex.Message);
                 }
                 conexao.Close();
-                }
-            
+            }
+
 
         }
     }

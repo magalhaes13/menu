@@ -214,7 +214,7 @@ namespace menu.telas
             this.tabPagePESQUISA.Location = new System.Drawing.Point(4, 22);
             this.tabPagePESQUISA.Name = "tabPagePESQUISA";
             this.tabPagePESQUISA.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePESQUISA.Size = new System.Drawing.Size(1107, 505);
+            this.tabPagePESQUISA.Size = new System.Drawing.Size(1139, 563);
             this.tabPagePESQUISA.TabIndex = 1;
             this.tabPagePESQUISA.Text = "PESQUISA";
             this.tabPagePESQUISA.Click += new System.EventHandler(this.tabPage2_Click);
