@@ -354,11 +354,10 @@ namespace menu.telas
 
             if (conexao.State == ConnectionState.Open)
             {
-                int idProd = Convert.ToInt32(textBoxNomeCompras.SelectedValue);
-                if(idProd != -1)
-                {
+               
+                
 
-                string comando = $"SELECT NOME, VALOR, DESCRICAO, ID_PRODUTO FROM PRODUTO  WHRERE ID_PRODUTO = {textBoxNomeCompras.SelectedValue}";
+                string comando = $"SELECT NOME, VALOR, DESCRICAO, ID_PRODUTO FROM PRODUTO";
 
                 MySqlDataReader lerBanco;
 
@@ -397,7 +396,7 @@ namespace menu.telas
                 }
                 conexao.Close();
                 }
-            }
+            
 
         }
     }
