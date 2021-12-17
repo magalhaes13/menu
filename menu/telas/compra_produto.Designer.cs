@@ -94,11 +94,13 @@ namespace menu.telas
             // 
             // textBoxNomeCompras
             // 
+            this.textBoxNomeCompras.DisplayMember = "ID_PRODUTO";
             this.textBoxNomeCompras.FormattingEnabled = true;
             this.textBoxNomeCompras.Location = new System.Drawing.Point(97, 81);
             this.textBoxNomeCompras.Name = "textBoxNomeCompras";
             this.textBoxNomeCompras.Size = new System.Drawing.Size(121, 21);
             this.textBoxNomeCompras.TabIndex = 12;
+            this.textBoxNomeCompras.ValueMember = "ID_PRODUTO";
             this.textBoxNomeCompras.SelectedIndexChanged += new System.EventHandler(this.textBoxNomeCompras_SelectedIndexChanged);
             this.textBoxNomeCompras.SelectedValueChanged += new System.EventHandler(this.textBoxNomeCompras_SelectedValueChanged);
             // 

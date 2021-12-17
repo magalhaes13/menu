@@ -133,7 +133,7 @@ namespace menu
         //contas
         private void CONTAS_Click(object sender, EventArgs e)
         {
-            //this.Form4 = new contas();
+            this.Form4 = new contas();
             this.Form4.TopLevel = false;
             this.Form4.Visible = true;
             this.Controls.Add(this.Form4);

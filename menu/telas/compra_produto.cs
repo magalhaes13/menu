@@ -27,44 +27,14 @@ namespace menu.telas
         private void compra_produto_Load(object sender, EventArgs e)
         {
             string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
-            MySqlConnection conexao = new MySqlConnection(conect);
+            connection = new MySqlConnection(conect);
 
-            conexao.Open();
+            connection.Open();
 
-            //        textBoxNomeCompras.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            //    Dim adapter_funcionario As New sampDataSetTableAdapters.FuncionarioTableAdapter
-            //    Dim tab_funcionario As New sampDataSet.FuncionarioDataTable
-            //    adapter_funcionario.Fill(tab_funcionario)
-
-            //    impexec = True
-
-            //    //vinculcao do combo que exibirá o nome do funcionário
-            //        textBoxNomeCompras.DataSource = tab_funcionario;
-            //        textBoxNomeCompras.DisplayMember = "nome";
-
-            //    //vinculação dos TextBox
-            //    textbox1.DataBindings.Add("Text", tab_funcionario, "categoria")
-
-            //    bmFuncionarios = Me.BindingContext(tab_funcionario)
-            //End Sub
-
-            //Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
-            //    //Impede a execução no Load do formulário
-            //    If Not impexec Then
-
-            //    //Sincroniza os dados na caixa de texto
-            //        bmFuncionarios.Position = ComboBox1.SelectedIndex
-            //    End If
-            //End Sub
-
-
-            if (conexao.State == ConnectionState.Open)
+            if (connection.State == ConnectionState.Open)
             {
-                string comando = "SELECT NOME, ID_PRODUTO, VALOR FROM PRODUTO";
-
-
-                MySqlCommand cmd = new MySqlCommand(comando, conexao);
+                string comando = "SELECT NOME, ID_PRODUTO FROM PRODUTO";
+                MySqlCommand cmd = new MySqlCommand(comando, connection);
 
                 DataTable dt = new DataTable();
 
@@ -81,8 +51,7 @@ namespace menu.telas
                 var lerbanco = textBoxNomeCompras.SelectedValue;
 
                 teste(lerbanco.ToString());
-                conexao.Close();
-                //textBoxComprasValor.Text = "VALOR";
+                connection.Close();
             }
 
 
@@ -377,58 +346,90 @@ namespace menu.telas
 
         private void textBoxNomeCompras_SelectedValueChanged(object sender, EventArgs e)
         {
-            //if (conexao.State == ConnectionState.Open)
-            //{
+            if((int)textBoxNomeCompras.SelectedValue !=-1)
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
 
-            //string comando = $"SELECT NOME, VALOR, DESCRICAO, ID_PRODUTO FROM PRODUTO";
+                    var lerbanco = textBoxNomeCompras.SelectedValue;
 
-            //MySqlDataReader lerBanco;
+                    string comando = $"SELECT * FROM PRODUTO WHERE ID_PRODUTO = {textBoxNomeCompras.SelectedValue}";
 
-            //MySqlCommand cmd = new MySqlCommand(comando, conexao);
-
-            //DataTable dt = new DataTable();
-
-            //MySqlDataAdapter dados = new MySqlDataAdapter();
-            //dados.SelectCommand = cmd;
-
-            //dados.Fill(dt);
-
-            //var lerbanco = textBoxNomeCompras.SelectedValue;
-
-            //strSQL = "SELECT VALOR from PRODUTO where ID_PRODUTO ";
-
-            //command = new MySqlCommand(strSQL, connection);
-
-            //command.ExecuteNonQuery();
+                    MySqlDataReader lerBanco;
 
 
-            //textBoxNomeCompras.Text = query;
 
-            //    try
-            //    {
-            //        //conexao.Open();
-            //        lerBanco = cmd.ExecuteReader();
+                    command = new MySqlCommand(comando, connection);
 
-            //        lerBanco.Read();
+                    try
+                    {
+                        //conexao.Open();
+                        lerBanco = command.ExecuteReader();
 
-            //        string ID_ESCONDIDO = lerBanco.GetInt32("ID_PRODUTO").ToString();
-            //        string VALOR = lerBanco.GetString("VALOR");
-            //        string DESCRICAO = lerBanco.GetString("DESCRICAO");
-            //        //int QUANTIDADE = lerBanco.GetInt32("QUANTIDADE");
+                        lerBanco.Read();
 
-            //        textBoxIdEscondidoCompra.Text = ID_ESCONDIDO;
-            //        textBoxComprasValor.Text = VALOR;
-            //        textBoxComprasDescricao.Text = DESCRICAO;
-            //        //textBoxQuantidade.Text = QUANTIDADE.ToString();
-            //        //conexao.Close();
+                        string ID_ESCONDIDO = lerBanco.GetInt32("ID_PRODUTO").ToString();
+                        string VALOR = lerBanco.GetString("VALOR");
+                        string DESCRICAO = lerBanco.GetString("DESCRICAO");
+                        string QUANTIDADE = lerBanco.GetString("QUANTIDADE");
 
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message);
-            //    }
-            //    conexao.Close();
-            //}
+                        textBoxIdEscondidoCompra.Text = ID_ESCONDIDO;
+                        textBoxComprasValor.Text = VALOR;
+                        textBoxComprasDescricao.Text = DESCRICAO;
+                        textBoxQuantidade.Text = QUANTIDADE;
+                        //conexao.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        connection.Close();
+                    }
+                    connection.Close();
+
+                }
+                else
+                {
+                    var lerbanco = textBoxNomeCompras.SelectedValue;
+
+                    string comando = $"SELECT * FROM PRODUTO WHERE ID_PRODUTO = {textBoxNomeCompras.SelectedValue}";
+
+                    MySqlDataReader lerBanco;
+
+
+
+                    command = new MySqlCommand(comando, connection);
+
+                    try
+                    {
+                        //conexao.Open();
+                        lerBanco = command.ExecuteReader();
+
+                        lerBanco.Read();
+
+                        string ID_ESCONDIDO = lerBanco.GetInt32("ID_PRODUTO").ToString();
+                        string VALOR = lerBanco.GetString("VALOR");
+                        string DESCRICAO = lerBanco.GetString("DESCRICAO");
+                        string QUANTIDADE = lerBanco.GetString("QUANTIDADE");
+
+                        textBoxIdEscondidoCompra.Text = ID_ESCONDIDO;
+                        textBoxComprasValor.Text = VALOR;
+                        textBoxComprasDescricao.Text = DESCRICAO;
+                        textBoxQuantidade.Text = QUANTIDADE;
+                        connection.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        connection.Close();
+                    }
+                }
+            }
+
+
+           
 
 
         }
