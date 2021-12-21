@@ -52,6 +52,7 @@ namespace menu.telas
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -72,6 +73,7 @@ namespace menu.telas
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Teal;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.textBoxNomeVendas);
             this.tabPage1.Controls.Add(this.LimparVenda);
             this.tabPage1.Controls.Add(this.textBoxIdEscondido);
@@ -283,6 +285,13 @@ namespace menu.telas
             this.QUANTIDADE.HeaderText = "Quantidade";
             this.QUANTIDADE.Name = "QUANTIDADE";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(614, 31);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(241, 20);
+            this.dateTimePicker1.TabIndex = 19;
+            // 
             // cadastro_vendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,5 +337,6 @@ namespace menu.telas
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
         private System.Windows.Forms.ComboBox textBoxNomeVendas;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

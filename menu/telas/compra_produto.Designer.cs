@@ -47,6 +47,7 @@ namespace menu.telas
             this.pesquisa_compras = new System.Windows.Forms.TabPage();
             this.ATUALIZAR_COMPRA = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.ID_COMPRA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +73,7 @@ namespace menu.telas
             // 
             this.compras.BackColor = System.Drawing.Color.Teal;
             this.compras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.compras.Controls.Add(this.dateTimePicker1);
             this.compras.Controls.Add(this.textBoxNomeCompras);
             this.compras.Controls.Add(this.label4);
             this.compras.Controls.Add(this.textBoxQuantidade);
@@ -256,6 +258,14 @@ namespace menu.telas
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(549, 18);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(233, 20);
+            this.dateTimePicker1.TabIndex = 13;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
             // ID_COMPRA
             // 
             this.ID_COMPRA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -326,11 +336,12 @@ namespace menu.telas
         private System.Windows.Forms.Button ATUALIZAR_COMPRA;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxQuantidade;
+        private System.Windows.Forms.ComboBox textBoxNomeCompras;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_COMPRA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
-        private System.Windows.Forms.ComboBox textBoxNomeCompras;
     }
 }

@@ -156,6 +156,7 @@ namespace menu.telas
                 command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
 
 
+
                 command.ExecuteNonQuery();
                 connection.Close();
                 MessageBox.Show("REGISTRO ALTERADO");
@@ -284,11 +285,13 @@ namespace menu.telas
             string indexDESCRICAO = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["DESCRICAO"].Value);
             string indexQUANTIDADE = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["QUANTIDADE"].Value);
 
+
             textBoxIdEscondidoCompra.Text = indexID_COMPRA.ToString();
             textBoxNomeCompras.Text = indexNOME.ToString();
             textBoxComprasValor.Text = indexVALOR.ToString();
             textBoxComprasDescricao.Text = indexDESCRICAO.ToString();
             textBoxComprasDescricao.Text = indexQUANTIDADE.ToString();
+
 
 
             tabControl1.SelectedIndex = 0;
@@ -374,6 +377,7 @@ namespace menu.telas
                         string DESCRICAO = lerBanco.GetString("DESCRICAO");
                         string QUANTIDADE = lerBanco.GetString("QUANTIDADE");
 
+
                         textBoxIdEscondidoCompra.Text = ID_ESCONDIDO;
                         textBoxComprasValor.Text = VALOR;
                         textBoxComprasDescricao.Text = DESCRICAO;
@@ -413,10 +417,13 @@ namespace menu.telas
                         string DESCRICAO = lerBanco.GetString("DESCRICAO");
                         string QUANTIDADE = lerBanco.GetString("QUANTIDADE");
 
+
                         textBoxIdEscondidoCompra.Text = ID_ESCONDIDO;
                         textBoxComprasValor.Text = VALOR;
                         textBoxComprasDescricao.Text = DESCRICAO;
                         textBoxQuantidade.Text = QUANTIDADE;
+
+
                         connection.Close();
 
                     }
@@ -452,6 +459,26 @@ namespace menu.telas
 
 
 
+        }
+
+      
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
+            MySqlConnection conexao = new MySqlConnection(conect);
+
+            conexao.Open();
+
+
+            strSQL = "SELECT DATA_COMPRA from COMPRA";
+            command = new MySqlCommand(strSQL, conexao);
+            MySqlDataReader leitura = command.ExecuteReader();
+
+            string resultado;
+
+            leitura.Read();
+            resultado = leitura.GetString(0);
+            textBoxComprasValor.Text = resultado;
         }
     }
 }

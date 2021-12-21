@@ -145,7 +145,7 @@ namespace menu
             this.VENDAS.FlatAppearance.BorderSize = 0;
             this.VENDAS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
             this.VENDAS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.VENDAS.ForeColor = System.Drawing.Color.White;
+            this.VENDAS.ForeColor = System.Drawing.SystemColors.Window;
             this.VENDAS.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.VENDAS.Location = new System.Drawing.Point(-11, 296);
             this.VENDAS.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
