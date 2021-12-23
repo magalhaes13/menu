@@ -12,6 +12,7 @@ using menu.telas;
 
 namespace menu
 {
+
     public partial class panelConteudo : Form
     {
         public const int WM_NCLBUTTONWOEN = 0XA1;
@@ -22,6 +23,7 @@ namespace menu
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
         public panelConteudo()
+
         {
             InitializeComponent();
         }

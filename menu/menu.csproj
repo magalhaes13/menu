@@ -89,6 +89,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="carregamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="carregamento.Designer.cs">
+      <DependentUpon>carregamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     <Compile Include="telas\contas.Designer.cs">
       <DependentUpon>contas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="carregamento.resx">
+      <DependentUpon>carregamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
