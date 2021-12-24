@@ -32,6 +32,7 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(compra_produto));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.compras = new System.Windows.Forms.TabPage();
+            this.IDCOMPRAESCONDIDO = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBoxNomeCompras = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@ namespace menu.telas
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCOMPRAESCONDIDO = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.compras.SuspendLayout();
             this.pesquisa_compras.SuspendLayout();
@@ -95,6 +95,15 @@ namespace menu.telas
             this.compras.TabIndex = 0;
             this.compras.Text = "COMPRAS";
             this.compras.Click += new System.EventHandler(this.compras_Click);
+            // 
+            // IDCOMPRAESCONDIDO
+            // 
+            this.IDCOMPRAESCONDIDO.Location = new System.Drawing.Point(229, 6);
+            this.IDCOMPRAESCONDIDO.Multiline = true;
+            this.IDCOMPRAESCONDIDO.Name = "IDCOMPRAESCONDIDO";
+            this.IDCOMPRAESCONDIDO.Size = new System.Drawing.Size(52, 40);
+            this.IDCOMPRAESCONDIDO.TabIndex = 14;
+            this.IDCOMPRAESCONDIDO.Visible = false;
             // 
             // dateTimePicker1
             // 
@@ -152,6 +161,7 @@ namespace menu.telas
             this.textBoxIdEscondidoCompra.Name = "textBoxIdEscondidoCompra";
             this.textBoxIdEscondidoCompra.Size = new System.Drawing.Size(52, 40);
             this.textBoxIdEscondidoCompra.TabIndex = 8;
+            this.textBoxIdEscondidoCompra.Visible = false;
             this.textBoxIdEscondidoCompra.TextChanged += new System.EventHandler(this.textBoxIdEscondidoCompra_TextChanged);
             // 
             // ExcluirCompra
@@ -296,14 +306,6 @@ namespace menu.telas
             this.QUANTIDADE.DataPropertyName = "QUANTIDADE";
             this.QUANTIDADE.HeaderText = "Quantidade";
             this.QUANTIDADE.Name = "QUANTIDADE";
-            // 
-            // IDCOMPRAESCONDIDO
-            // 
-            this.IDCOMPRAESCONDIDO.Location = new System.Drawing.Point(229, 6);
-            this.IDCOMPRAESCONDIDO.Multiline = true;
-            this.IDCOMPRAESCONDIDO.Name = "IDCOMPRAESCONDIDO";
-            this.IDCOMPRAESCONDIDO.Size = new System.Drawing.Size(52, 40);
-            this.IDCOMPRAESCONDIDO.TabIndex = 14;
             // 
             // compra_produto
             // 
