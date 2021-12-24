@@ -72,33 +72,43 @@ namespace menu.telas
 
         private void salvar_venda()
         {
-            try
+
+            if(IDVENDAESCONDIDO.Text == "")
             {
-                if (textBoxNomeVendas.Text != "" && textBoxVendasValor.Text != "")
+                try
                 {
-                    connection.Open();
-                    strSQL = "INSERT INTO VENDA(NOME, VALOR, DESCRICAO, QUANTIDADE) VALUES (@NOME, @VALOR, @DESCRICAO, @QUANTIDADE)";
-                    command = new MySqlCommand(strSQL, connection);
-                    command.Parameters.AddWithValue("@NOME", textBoxNomeVendas.Text);
-                    command.Parameters.AddWithValue("@VALOR", textBoxVendasValor.Text);
-                    command.Parameters.AddWithValue("@DESCRICAO", textBoxVendasDescricao.Text);
-                    command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
+                    if (textBoxNomeVendas.Text != "" && textBoxVendasValor.Text != "")
+                    {
+                        connection.Open();
+                        strSQL = "INSERT INTO VENDA(NOME, VALOR, DESCRICAO, QUANTIDADE) VALUES (@NOME, @VALOR, @DESCRICAO, @QUANTIDADE)";
+                        command = new MySqlCommand(strSQL, connection);
+                        command.Parameters.AddWithValue("@NOME", textBoxNomeVendas.Text);
+                        command.Parameters.AddWithValue("@VALOR", textBoxVendasValor.Text);
+                        command.Parameters.AddWithValue("@DESCRICAO", textBoxVendasDescricao.Text);
+                        command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
 
-                    command.ExecuteNonQuery();
-                    connection.Close();
+                        command.ExecuteNonQuery();
+                        connection.Close();
 
-                    MessageBox.Show("SALVO COM SUCESSO");
-                    return;
+                        MessageBox.Show("SALVO COM SUCESSO");
+                        return;
+                    }
+                    MessageBox.Show("NOME E VALOR OBIGATORIO");
+
+
                 }
-                MessageBox.Show("NOME E VALOR OBIGATORIO");
 
-
+                catch (Exception error)
+                {
+                    MessageBox.Show("ERROR:", error.Message);
+                }
             }
 
-            catch (Exception error)
+            else
             {
-                MessageBox.Show("ERROR:", error.Message);
+                MessageBox.Show("NÃO FOI POSSÍVEL SALVAR");
             }
+
         }
 
         private void atualizar()
@@ -147,7 +157,7 @@ namespace menu.telas
                 strSQL = "UPDATE VENDA SET NOME = @NOME, VALOR = @VALOR, DESCRICAO = @DESCRICAO, QUANTIDADE = @QUANTIDADE WHERE ID_VENDA = @ID_VENDA";
                 command = new MySqlCommand(strSQL, connection);
 
-                command.Parameters.AddWithValue("@ID_VENDA", Convert.ToInt32(textBoxIdEscondido.Text));
+                command.Parameters.AddWithValue("@ID_VENDA", Convert.ToInt32(IDVENDAESCONDIDO.Text));
                 command.Parameters.AddWithValue("@NOME", textBoxNomeVendas.Text);
                 command.Parameters.AddWithValue("@VALOR", textBoxVendasValor.Text);
                 command.Parameters.AddWithValue("@DESCRICAO", textBoxVendasDescricao.Text);
@@ -171,7 +181,7 @@ namespace menu.telas
 
         private void SalvarVenda_Click(object sender, EventArgs e)
         {
-            if (textBoxIdEscondido.Text != "")
+            if (IDVENDAESCONDIDO.Text != "")
             {
                 editar_compra();
                 return;
@@ -282,7 +292,7 @@ namespace menu.telas
             string indexDESCRICAO = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["DESCRICAO"].Value);
             string indexQUANTIDADE = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["QUANTIDADE"].Value);
 
-            textBoxIdEscondido.Text = indexID_VENDA.ToString();
+            IDVENDAESCONDIDO.Text = indexID_VENDA.ToString();
             textBoxNomeVendas.Text = indexNOME.ToString();
             textBoxVendasValor.Text = indexVALOR.ToString();
             textBoxVendasDescricao.Text = indexDESCRICAO.ToString();

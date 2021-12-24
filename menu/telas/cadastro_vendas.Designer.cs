@@ -32,6 +32,7 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_vendas));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBoxNomeVendas = new System.Windows.Forms.ComboBox();
             this.LimparVenda = new System.Windows.Forms.Button();
             this.textBoxIdEscondido = new System.Windows.Forms.TextBox();
@@ -52,7 +53,7 @@ namespace menu.telas
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.IDVENDAESCONDIDO = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -73,6 +74,7 @@ namespace menu.telas
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Teal;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.IDVENDAESCONDIDO);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.textBoxNomeVendas);
             this.tabPage1.Controls.Add(this.LimparVenda);
@@ -93,6 +95,13 @@ namespace menu.telas
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "VENDAS";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(614, 31);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(241, 20);
+            this.dateTimePicker1.TabIndex = 19;
             // 
             // textBoxNomeVendas
             // 
@@ -285,12 +294,14 @@ namespace menu.telas
             this.QUANTIDADE.HeaderText = "Quantidade";
             this.QUANTIDADE.Name = "QUANTIDADE";
             // 
-            // dateTimePicker1
+            // IDVENDAESCONDIDO
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(614, 31);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(241, 20);
-            this.dateTimePicker1.TabIndex = 19;
+            this.IDVENDAESCONDIDO.Location = new System.Drawing.Point(259, 34);
+            this.IDVENDAESCONDIDO.Multiline = true;
+            this.IDVENDAESCONDIDO.Name = "IDVENDAESCONDIDO";
+            this.IDVENDAESCONDIDO.Size = new System.Drawing.Size(48, 40);
+            this.IDVENDAESCONDIDO.TabIndex = 20;
+            this.IDVENDAESCONDIDO.Visible = false;
             // 
             // cadastro_vendas
             // 
@@ -338,5 +349,6 @@ namespace menu.telas
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
         private System.Windows.Forms.ComboBox textBoxNomeVendas;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox IDVENDAESCONDIDO;
     }
 }

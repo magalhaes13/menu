@@ -26,34 +26,34 @@ namespace menu.telas
 
         private void compra_produto_Load(object sender, EventArgs e)
         {
-            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
-            connection = new MySqlConnection(conect);
 
-            connection.Open();
+                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
+                connection = new MySqlConnection(conect);
 
-            if (connection.State == ConnectionState.Open)
-            {
-                string comando = "SELECT NOME, ID_PRODUTO FROM PRODUTO";
-                MySqlCommand cmd = new MySqlCommand(comando, connection);
+                connection.Open();
 
-                DataTable dt = new DataTable();
+                if (connection.State == ConnectionState.Open)
+                {
+                    string comando = "SELECT NOME, ID_PRODUTO FROM PRODUTO";
+                    MySqlCommand cmd = new MySqlCommand(comando, connection);
 
-                MySqlDataAdapter dados = new MySqlDataAdapter();
-                dados.SelectCommand = cmd;
+                    DataTable dt = new DataTable();
 
-                dados.Fill(dt);
+                    MySqlDataAdapter dados = new MySqlDataAdapter();
+                    dados.SelectCommand = cmd;
 
-                textBoxNomeCompras.Items.Clear();
-                textBoxNomeCompras.DataSource = dt;
-                textBoxNomeCompras.DisplayMember = "NOME";
-                textBoxNomeCompras.ValueMember = "ID_PRODUTO";
+                    dados.Fill(dt);
 
-                var lerbanco = textBoxNomeCompras.SelectedValue;
+                    textBoxNomeCompras.Items.Clear();
+                    textBoxNomeCompras.DataSource = dt;
+                    textBoxNomeCompras.DisplayMember = "NOME";
+                    textBoxNomeCompras.ValueMember = "ID_PRODUTO";
 
-                teste(lerbanco.ToString());
-                connection.Close();
-            }
+                    var lerbanco = textBoxNomeCompras.SelectedValue;
 
+                    teste(lerbanco.ToString());
+                    connection.Close();
+                }
 
         }
 
@@ -72,33 +72,44 @@ namespace menu.telas
 
         private void salvar_compra()
         {
-            try
-            {
-                if (textBoxNomeCompras.Text != "" && textBoxComprasValor.Text != "")
+
+            if(IDCOMPRAESCONDIDO.Text == "") {
+
+                try
                 {
-                    connection.Open();
-                    strSQL = "INSERT INTO COMPRA(NOME, VALOR, DESCRICAO, QUANTIDADE) VALUES (@NOME, @VALOR, @DESCRICAO, @QUANTIDADE)";
-                    command = new MySqlCommand(strSQL, connection);
-                    command.Parameters.AddWithValue("@NOME", textBoxNomeCompras.Text);
-                    command.Parameters.AddWithValue("@VALOR", textBoxComprasValor.Text);
-                    command.Parameters.AddWithValue("@DESCRICAO", textBoxComprasDescricao.Text);
-                    command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
+                    if (textBoxNomeCompras.Text != "" && textBoxComprasValor.Text != "")
+                    {
+                        connection.Open();
+                        strSQL = "INSERT INTO COMPRA(NOME, VALOR, DESCRICAO, QUANTIDADE) VALUES (@NOME, @VALOR, @DESCRICAO, @QUANTIDADE)";
+                        command = new MySqlCommand(strSQL, connection);
+                        command.Parameters.AddWithValue("@NOME", textBoxNomeCompras.Text);
+                        command.Parameters.AddWithValue("@VALOR", textBoxComprasValor.Text);
+                        command.Parameters.AddWithValue("@DESCRICAO", textBoxComprasDescricao.Text);
+                        command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
 
-                    command.ExecuteNonQuery();
-                    connection.Close();
+                        command.ExecuteNonQuery();
+                        connection.Close();
 
-                    MessageBox.Show("SALVO COM SUCESSO");
-                    return;
+                        MessageBox.Show("SALVO COM SUCESSO");
+                        return;
+                    }
+                    MessageBox.Show("NOME E VALOR OBIGATORIO");
+
+
                 }
-                MessageBox.Show("NOME E VALOR OBIGATORIO");
 
+                catch (Exception error)
+                {
+                    MessageBox.Show("ERROR:", error.Message);
+                }
 
             }
 
-            catch (Exception error)
+            else
             {
-                MessageBox.Show("ERROR:", error.Message);
+                MessageBox.Show("NÃO FOI POSSÍVEL SALVAR");
             }
+           
         }
 
         private void atualizar()
@@ -149,7 +160,7 @@ namespace menu.telas
                 strSQL = "UPDATE COMPRA SET NOME = @NOME, VALOR = @VALOR, DESCRICAO = @DESCRICAO, QUANTIDADE = @QUANTIDADE WHERE ID_COMPRA = @ID_COMPRA";
                 command = new MySqlCommand(strSQL, connection);
 
-                command.Parameters.AddWithValue("@ID_COMPRA", Convert.ToInt32(textBoxIdEscondidoCompra.Text));
+                command.Parameters.AddWithValue("@ID_COMPRA", Convert.ToInt32(IDCOMPRAESCONDIDO.Text));
                 command.Parameters.AddWithValue("@NOME", textBoxNomeCompras.Text);
                 command.Parameters.AddWithValue("@VALOR", textBoxComprasValor.Text);
                 command.Parameters.AddWithValue("@DESCRICAO", textBoxComprasDescricao.Text);
@@ -174,7 +185,7 @@ namespace menu.telas
 
         private void SalvarCompra_Click(object sender, EventArgs e)
         {
-            if (textBoxIdEscondidoCompra.Text != "")
+            if (IDCOMPRAESCONDIDO.Text != "")
             {
                 editar_compra();
                 return;
@@ -286,7 +297,7 @@ namespace menu.telas
             string indexQUANTIDADE = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["QUANTIDADE"].Value);
 
 
-            textBoxIdEscondidoCompra.Text = indexID_COMPRA.ToString();
+            IDCOMPRAESCONDIDO.Text = indexID_COMPRA.ToString();
             textBoxNomeCompras.Text = indexNOME.ToString();
             textBoxComprasValor.Text = indexVALOR.ToString();
             textBoxComprasDescricao.Text = indexDESCRICAO.ToString();

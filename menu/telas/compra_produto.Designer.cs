@@ -53,6 +53,7 @@ namespace menu.telas
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCOMPRAESCONDIDO = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.compras.SuspendLayout();
             this.pesquisa_compras.SuspendLayout();
@@ -73,6 +74,7 @@ namespace menu.telas
             // 
             this.compras.BackColor = System.Drawing.Color.Teal;
             this.compras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.compras.Controls.Add(this.IDCOMPRAESCONDIDO);
             this.compras.Controls.Add(this.dateTimePicker1);
             this.compras.Controls.Add(this.textBoxNomeCompras);
             this.compras.Controls.Add(this.label4);
@@ -150,7 +152,6 @@ namespace menu.telas
             this.textBoxIdEscondidoCompra.Name = "textBoxIdEscondidoCompra";
             this.textBoxIdEscondidoCompra.Size = new System.Drawing.Size(52, 40);
             this.textBoxIdEscondidoCompra.TabIndex = 8;
-            this.textBoxIdEscondidoCompra.Visible = false;
             this.textBoxIdEscondidoCompra.TextChanged += new System.EventHandler(this.textBoxIdEscondidoCompra_TextChanged);
             // 
             // ExcluirCompra
@@ -296,6 +297,14 @@ namespace menu.telas
             this.QUANTIDADE.HeaderText = "Quantidade";
             this.QUANTIDADE.Name = "QUANTIDADE";
             // 
+            // IDCOMPRAESCONDIDO
+            // 
+            this.IDCOMPRAESCONDIDO.Location = new System.Drawing.Point(229, 6);
+            this.IDCOMPRAESCONDIDO.Multiline = true;
+            this.IDCOMPRAESCONDIDO.Name = "IDCOMPRAESCONDIDO";
+            this.IDCOMPRAESCONDIDO.Size = new System.Drawing.Size(52, 40);
+            this.IDCOMPRAESCONDIDO.TabIndex = 14;
+            // 
             // compra_produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,5 +351,6 @@ namespace menu.telas
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
+        private System.Windows.Forms.TextBox IDCOMPRAESCONDIDO;
     }
 }
