@@ -164,6 +164,7 @@ namespace menu
             // 
             this.labelData.AutoSize = true;
             this.labelData.BackColor = System.Drawing.Color.Transparent;
+            this.labelData.Font = new System.Drawing.Font("Yu Gothic UI Semilight", 8.25F);
             this.labelData.ForeColor = System.Drawing.Color.White;
             this.labelData.Location = new System.Drawing.Point(189, 672);
             this.labelData.Name = "labelData";
@@ -184,10 +185,12 @@ namespace menu
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label1.Font = new System.Drawing.Font("Yu Gothic UI Semilight", 8.25F);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(426, 672);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Versão 1.0";
             // 
@@ -217,7 +220,6 @@ namespace menu
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button CONTAS;
         private System.Windows.Forms.Button COMPRAS;
         private System.Windows.Forms.Button VENDAS;
@@ -226,6 +228,7 @@ namespace menu
         private System.Windows.Forms.Label labelData;
         private System.Windows.Forms.Label labelDataa;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

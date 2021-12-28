@@ -18,7 +18,7 @@ namespace menu.telas
         MySqlDataAdapter adapter;
         MySqlDataReader reader;
         string strSQL;
-        DateTime data_teste;
+        DateTime data_Compra;
 
 
         public compra_produto()
@@ -154,7 +154,7 @@ namespace menu.telas
                 }
 
                 connection.Open();
-                strSQL = "UPDATE COMPRA SET NOME = @NOME, VALOR = @VALOR, DESCRICAO = @DESCRICAO, QUANTIDADE = @QUANTIDADE, DATA_COMPRA = @DATA_COMPRA WHERE ID_COMPRA = @ID_COMPRA";
+                strSQL = "UPDATE COMPRA SET NOME = @NOME, VALOR = @VALOR, DESCRICAO = @DESCRICAO, QUANTIDADE = @QUANTIDADE, DATA_COMPRA = @DATA_COMPRA, WHERE ID_COMPRA = @ID_COMPRA";
                 command = new MySqlCommand(strSQL, connection);
 
                 command.Parameters.AddWithValue("@ID_COMPRA", Convert.ToInt32(IDCOMPRAESCONDIDO.Text));

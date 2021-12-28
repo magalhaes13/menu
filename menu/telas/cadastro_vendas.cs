@@ -18,6 +18,8 @@ namespace menu.telas
         MySqlDataAdapter adapter;
         MySqlDataReader reader;
         string strSQL;
+        DateTime data_Venda;
+
 
         public cadastro_vendas()
         {
@@ -55,7 +57,7 @@ namespace menu.telas
                 connection.Close();
 
             }
-            string data = dateTimePicker1.Value.ToShortDateString();
+            
 
         }
 
@@ -82,12 +84,14 @@ namespace menu.telas
                     if (textBoxNomeVendas.Text != "" && textBoxVendasValor.Text != "")
                     {
                         connection.Open();
-                        strSQL = "INSERT INTO VENDA(NOME, VALOR, DESCRICAO, QUANTIDADE) VALUES (@NOME, @VALOR, @DESCRICAO, @QUANTIDADE)";
+                        strSQL = "INSERT INTO VENDA(NOME, VALOR, DESCRICAO, QUANTIDADE, DATA_VENDA) VALUES (@NOME, @VALOR, @DESCRICAO, @QUANTIDADE, @DATA_VENDA)";
                         command = new MySqlCommand(strSQL, connection);
                         command.Parameters.AddWithValue("@NOME", textBoxNomeVendas.Text);
                         command.Parameters.AddWithValue("@VALOR", textBoxVendasValor.Text);
                         command.Parameters.AddWithValue("@DESCRICAO", textBoxVendasDescricao.Text);
                         command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
+                        command.Parameters.AddWithValue("@DATA_VENDA", DateTime.Now);
+
 
                         command.ExecuteNonQuery();
                         connection.Close();
@@ -156,7 +160,7 @@ namespace menu.telas
                 }
 
                 connection.Open();
-                strSQL = "UPDATE VENDA SET NOME = @NOME, VALOR = @VALOR, DESCRICAO = @DESCRICAO, QUANTIDADE = @QUANTIDADE WHERE ID_VENDA = @ID_VENDA";
+                strSQL = "UPDATE VENDA SET NOME = @NOME, VALOR = @VALOR, DESCRICAO = @DESCRICAO, QUANTIDADE = @QUANTIDADE, DATA_VENDA = @DATA_VENDA, WHERE ID_VENDA = @ID_VENDA";
                 command = new MySqlCommand(strSQL, connection);
 
                 command.Parameters.AddWithValue("@ID_VENDA", Convert.ToInt32(IDVENDAESCONDIDO.Text));
@@ -164,6 +168,8 @@ namespace menu.telas
                 command.Parameters.AddWithValue("@VALOR", textBoxVendasValor.Text);
                 command.Parameters.AddWithValue("@DESCRICAO", textBoxVendasDescricao.Text);
                 command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
+                command.Parameters.AddWithValue("@DATA_VENDA", textBoxDataVenda.Text);
+
 
 
                 command.ExecuteNonQuery();
@@ -293,12 +299,19 @@ namespace menu.telas
             string indexVALOR = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["VALOR"].Value);
             string indexDESCRICAO = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["DESCRICAO"].Value);
             string indexQUANTIDADE = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["QUANTIDADE"].Value);
+            string indexDATA_VENDA = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["DATA_VENDA"].Value);
+
+            string[] V;
+            V = indexDATA_VENDA.Split(char.Parse(" "));
+            //indexDATA_VENDA = Convert.ToChar(indexDATA_VENDA.Split();
+
 
             IDVENDAESCONDIDO.Text = indexID_VENDA.ToString();
             textBoxNomeVendas.Text = indexNOME.ToString();
             textBoxVendasValor.Text = indexVALOR.ToString();
             textBoxVendasDescricao.Text = indexDESCRICAO.ToString();
             textBoxQuantidade.Text = indexQUANTIDADE.ToString();
+            textBoxDataVenda.Text = V[0];
 
 
             tabControl1.SelectedIndex = 0;
@@ -359,11 +372,15 @@ namespace menu.telas
                         string VALOR = lerBanco.GetString("VALOR");
                         string DESCRICAO = lerBanco.GetString("DESCRICAO");
                         string QUANTIDADE = lerBanco.GetString("QUANTIDADE");
+                        string DATA_VENDA = lerBanco.GetString("DATA_VENDA");
+
 
                         textBoxIdEscondido.Text = ID_ESCONDIDO;
                         textBoxVendasValor.Text = VALOR;
                         textBoxVendasDescricao.Text = DESCRICAO;
                         textBoxQuantidade.Text = QUANTIDADE;
+                        textBoxDataVenda.Text = DATA_VENDA;
+
                         //conexao.Close();
 
                     }
@@ -398,11 +415,15 @@ namespace menu.telas
                         string VALOR = lerBanco.GetString("VALOR");
                         string DESCRICAO = lerBanco.GetString("DESCRICAO");
                         string QUANTIDADE = lerBanco.GetString("QUANTIDADE");
+                        string DATA_VENDA = lerBanco.GetString("DATA_VENDA");
+
 
                         textBoxIdEscondido.Text = ID_ESCONDIDO;
                         textBoxVendasValor.Text = VALOR;
                         textBoxVendasDescricao.Text = DESCRICAO;
                         textBoxQuantidade.Text = QUANTIDADE;
+                        textBoxDataVenda.Text = DATA_VENDA;
+
                         connection.Close();
 
                     }
@@ -435,10 +456,7 @@ namespace menu.telas
 
                 }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+   
     }
-    }
+   }
 
