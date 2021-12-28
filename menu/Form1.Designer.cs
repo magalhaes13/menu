@@ -36,6 +36,9 @@ namespace menu
             this.CLIENTES = new System.Windows.Forms.Button();
             this.CONTAS = new System.Windows.Forms.Button();
             this.VENDAS = new System.Windows.Forms.Button();
+            this.labelData = new System.Windows.Forms.Label();
+            this.labelDataa = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -157,6 +160,37 @@ namespace menu
             this.VENDAS.UseVisualStyleBackColor = true;
             this.VENDAS.Click += new System.EventHandler(this.VENDAS_Click);
             // 
+            // labelData
+            // 
+            this.labelData.AutoSize = true;
+            this.labelData.BackColor = System.Drawing.Color.Transparent;
+            this.labelData.ForeColor = System.Drawing.Color.White;
+            this.labelData.Location = new System.Drawing.Point(189, 672);
+            this.labelData.Name = "labelData";
+            this.labelData.Size = new System.Drawing.Size(0, 13);
+            this.labelData.TabIndex = 2;
+            // 
+            // labelDataa
+            // 
+            this.labelDataa.AutoSize = true;
+            this.labelDataa.BackColor = System.Drawing.Color.Transparent;
+            this.labelDataa.ForeColor = System.Drawing.Color.White;
+            this.labelDataa.Location = new System.Drawing.Point(148, 661);
+            this.labelDataa.Name = "labelDataa";
+            this.labelDataa.Size = new System.Drawing.Size(0, 13);
+            this.labelDataa.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(426, 672);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Versão 1.0";
+            // 
             // panelConteudo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,6 +199,9 @@ namespace menu
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(913, 685);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelDataa);
+            this.Controls.Add(this.labelData);
             this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -175,6 +212,7 @@ namespace menu
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -185,6 +223,9 @@ namespace menu
         private System.Windows.Forms.Button VENDAS;
         private System.Windows.Forms.Button CLIENTES;
         private System.Windows.Forms.Button produto;
+        private System.Windows.Forms.Label labelData;
+        private System.Windows.Forms.Label labelDataa;
+        private System.Windows.Forms.Label label1;
     }
 }
 

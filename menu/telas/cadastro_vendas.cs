@@ -55,6 +55,8 @@ namespace menu.telas
                 connection.Close();
 
             }
+            string data = dateTimePicker1.Value.ToShortDateString();
+
         }
 
         private void del_venda()
@@ -432,6 +434,11 @@ namespace menu.telas
 
 
                 }
-            }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
     }
 

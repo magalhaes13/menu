@@ -32,8 +32,8 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(compra_produto));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.compras = new System.Windows.Forms.TabPage();
+            this.labelData = new System.Windows.Forms.Label();
             this.IDCOMPRAESCONDIDO = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBoxNomeCompras = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxQuantidade = new System.Windows.Forms.TextBox();
@@ -54,6 +54,9 @@ namespace menu.telas
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATA_COMPRA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBoxPegarData = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.compras.SuspendLayout();
             this.pesquisa_compras.SuspendLayout();
@@ -74,8 +77,10 @@ namespace menu.telas
             // 
             this.compras.BackColor = System.Drawing.Color.Teal;
             this.compras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.compras.Controls.Add(this.label5);
+            this.compras.Controls.Add(this.textBoxPegarData);
+            this.compras.Controls.Add(this.labelData);
             this.compras.Controls.Add(this.IDCOMPRAESCONDIDO);
-            this.compras.Controls.Add(this.dateTimePicker1);
             this.compras.Controls.Add(this.textBoxNomeCompras);
             this.compras.Controls.Add(this.label4);
             this.compras.Controls.Add(this.textBoxQuantidade);
@@ -96,22 +101,23 @@ namespace menu.telas
             this.compras.Text = "COMPRAS";
             this.compras.Click += new System.EventHandler(this.compras_Click);
             // 
+            // labelData
+            // 
+            this.labelData.AutoSize = true;
+            this.labelData.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelData.Location = new System.Drawing.Point(740, 196);
+            this.labelData.Name = "labelData";
+            this.labelData.Size = new System.Drawing.Size(0, 13);
+            this.labelData.TabIndex = 15;
+            // 
             // IDCOMPRAESCONDIDO
             // 
-            this.IDCOMPRAESCONDIDO.Location = new System.Drawing.Point(229, 6);
+            this.IDCOMPRAESCONDIDO.Location = new System.Drawing.Point(664, 186);
             this.IDCOMPRAESCONDIDO.Multiline = true;
             this.IDCOMPRAESCONDIDO.Name = "IDCOMPRAESCONDIDO";
             this.IDCOMPRAESCONDIDO.Size = new System.Drawing.Size(52, 40);
             this.IDCOMPRAESCONDIDO.TabIndex = 14;
             this.IDCOMPRAESCONDIDO.Visible = false;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(549, 18);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(233, 20);
-            this.dateTimePicker1.TabIndex = 13;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // textBoxNomeCompras
             // 
@@ -156,7 +162,7 @@ namespace menu.telas
             // 
             // textBoxIdEscondidoCompra
             // 
-            this.textBoxIdEscondidoCompra.Location = new System.Drawing.Point(404, 6);
+            this.textBoxIdEscondidoCompra.Location = new System.Drawing.Point(839, 186);
             this.textBoxIdEscondidoCompra.Multiline = true;
             this.textBoxIdEscondidoCompra.Name = "textBoxIdEscondidoCompra";
             this.textBoxIdEscondidoCompra.Size = new System.Drawing.Size(52, 40);
@@ -268,7 +274,8 @@ namespace menu.telas
             this.Nome,
             this.Valor,
             this.DESCRICAO,
-            this.QUANTIDADE});
+            this.QUANTIDADE,
+            this.DATA_COMPRA});
             this.dataGridView1.Location = new System.Drawing.Point(101, 118);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(774, 293);
@@ -306,6 +313,32 @@ namespace menu.telas
             this.QUANTIDADE.DataPropertyName = "QUANTIDADE";
             this.QUANTIDADE.HeaderText = "Quantidade";
             this.QUANTIDADE.Name = "QUANTIDADE";
+            // 
+            // DATA_COMPRA
+            // 
+            this.DATA_COMPRA.DataPropertyName = "DATA_COMPRA";
+            this.DATA_COMPRA.HeaderText = "Data";
+            this.DATA_COMPRA.Name = "DATA_COMPRA";
+            // 
+            // textBoxPegarData
+            // 
+            this.textBoxPegarData.Enabled = false;
+            this.textBoxPegarData.Location = new System.Drawing.Point(97, 20);
+            this.textBoxPegarData.Multiline = true;
+            this.textBoxPegarData.Name = "textBoxPegarData";
+            this.textBoxPegarData.Size = new System.Drawing.Size(124, 17);
+            this.textBoxPegarData.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Enabled = false;
+            this.label5.ForeColor = System.Drawing.SystemColors.Window;
+            this.label5.Location = new System.Drawing.Point(52, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "DATA";
             // 
             // compra_produto
             // 
@@ -347,12 +380,15 @@ namespace menu.telas
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxQuantidade;
         private System.Windows.Forms.ComboBox textBoxNomeCompras;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox IDCOMPRAESCONDIDO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_COMPRA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
-        private System.Windows.Forms.TextBox IDCOMPRAESCONDIDO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATA_COMPRA;
+        private System.Windows.Forms.Label labelData;
+        private System.Windows.Forms.TextBox textBoxPegarData;
+        private System.Windows.Forms.Label label5;
     }
 }

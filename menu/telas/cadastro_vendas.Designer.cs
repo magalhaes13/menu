@@ -32,6 +32,7 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_vendas));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.IDVENDAESCONDIDO = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBoxNomeVendas = new System.Windows.Forms.ComboBox();
             this.LimparVenda = new System.Windows.Forms.Button();
@@ -53,7 +54,7 @@ namespace menu.telas
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDVENDAESCONDIDO = new System.Windows.Forms.TextBox();
+            this.DATA_VENDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -96,12 +97,24 @@ namespace menu.telas
             this.tabPage1.Text = "VENDAS";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // IDVENDAESCONDIDO
+            // 
+            this.IDVENDAESCONDIDO.Location = new System.Drawing.Point(259, 34);
+            this.IDVENDAESCONDIDO.Multiline = true;
+            this.IDVENDAESCONDIDO.Name = "IDVENDAESCONDIDO";
+            this.IDVENDAESCONDIDO.Size = new System.Drawing.Size(48, 40);
+            this.IDVENDAESCONDIDO.TabIndex = 20;
+            this.IDVENDAESCONDIDO.Visible = false;
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(614, 31);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(241, 20);
             this.dateTimePicker1.TabIndex = 19;
+            this.dateTimePicker1.Value = new System.DateTime(2021, 12, 27, 0, 0, 0, 0);
+            this.dateTimePicker1.Visible = false;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // textBoxNomeVendas
             // 
@@ -256,7 +269,8 @@ namespace menu.telas
             this.Nome,
             this.Valor,
             this.DESCRICAO,
-            this.QUANTIDADE});
+            this.QUANTIDADE,
+            this.DATA_VENDA});
             this.dataGridView1.Location = new System.Drawing.Point(30, 67);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1016, 370);
@@ -294,14 +308,11 @@ namespace menu.telas
             this.QUANTIDADE.HeaderText = "Quantidade";
             this.QUANTIDADE.Name = "QUANTIDADE";
             // 
-            // IDVENDAESCONDIDO
+            // DATA_VENDA
             // 
-            this.IDVENDAESCONDIDO.Location = new System.Drawing.Point(259, 34);
-            this.IDVENDAESCONDIDO.Multiline = true;
-            this.IDVENDAESCONDIDO.Name = "IDVENDAESCONDIDO";
-            this.IDVENDAESCONDIDO.Size = new System.Drawing.Size(48, 40);
-            this.IDVENDAESCONDIDO.TabIndex = 20;
-            this.IDVENDAESCONDIDO.Visible = false;
+            this.DATA_VENDA.DataPropertyName = "DATA_VENDA";
+            this.DATA_VENDA.HeaderText = "Data";
+            this.DATA_VENDA.Name = "DATA_VENDA";
             // 
             // cadastro_vendas
             // 
@@ -342,13 +353,14 @@ namespace menu.telas
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxIdEscondido;
         private System.Windows.Forms.Button LimparVenda;
+        private System.Windows.Forms.ComboBox textBoxNomeVendas;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox IDVENDAESCONDIDO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_VENDA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
-        private System.Windows.Forms.ComboBox textBoxNomeVendas;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox IDVENDAESCONDIDO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATA_VENDA;
     }
 }

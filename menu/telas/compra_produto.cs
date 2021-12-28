@@ -18,6 +18,8 @@ namespace menu.telas
         MySqlDataAdapter adapter;
         MySqlDataReader reader;
         string strSQL;
+        DateTime data_teste;
+
 
         public compra_produto()
         {
@@ -26,7 +28,6 @@ namespace menu.telas
 
         private void compra_produto_Load(object sender, EventArgs e)
         {
-
                 string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
                 connection = new MySqlConnection(conect);
 
@@ -44,6 +45,7 @@ namespace menu.telas
 
                     dados.Fill(dt);
 
+
                     textBoxNomeCompras.Items.Clear();
                     textBoxNomeCompras.DataSource = dt;
                     textBoxNomeCompras.DisplayMember = "NOME";
@@ -54,7 +56,6 @@ namespace menu.telas
                     teste(lerbanco.ToString());
                     connection.Close();
                 }
-
         }
 
         private void del_compra()
@@ -72,20 +73,19 @@ namespace menu.telas
 
         private void salvar_compra()
         {
-
             if(IDCOMPRAESCONDIDO.Text == "") {
-
                 try
                 {
                     if (textBoxNomeCompras.Text != "" && textBoxComprasValor.Text != "")
                     {
                         connection.Open();
-                        strSQL = "INSERT INTO COMPRA(NOME, VALOR, DESCRICAO, QUANTIDADE) VALUES (@NOME, @VALOR, @DESCRICAO, @QUANTIDADE)";
+                        strSQL = "INSERT INTO COMPRA(NOME, VALOR, DESCRICAO, QUANTIDADE, DATA_COMPRA) VALUES (@NOME, @VALOR, @DESCRICAO, @QUANTIDADE, @DATA_COMPRA)";
                         command = new MySqlCommand(strSQL, connection);
                         command.Parameters.AddWithValue("@NOME", textBoxNomeCompras.Text);
                         command.Parameters.AddWithValue("@VALOR", textBoxComprasValor.Text);
                         command.Parameters.AddWithValue("@DESCRICAO", textBoxComprasDescricao.Text);
                         command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
+                        command.Parameters.AddWithValue("@DATA_COMPRA", DateTime.Now);
 
                         command.ExecuteNonQuery();
                         connection.Close();
@@ -93,16 +93,14 @@ namespace menu.telas
                         MessageBox.Show("SALVO COM SUCESSO");
                         return;
                     }
+
                     MessageBox.Show("NOME E VALOR OBIGATORIO");
-
-
                 }
 
                 catch (Exception error)
                 {
                     MessageBox.Show("ERROR:", error.Message);
                 }
-
             }
 
             else
@@ -135,15 +133,14 @@ namespace menu.telas
                     dados.Fill(dt);
 
                     this.dataGridView1.DataSource = dt;
-
                 }
             }
+
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message, ex.Number.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-
         }
 
         private void editar_compra()
@@ -157,7 +154,7 @@ namespace menu.telas
                 }
 
                 connection.Open();
-                strSQL = "UPDATE COMPRA SET NOME = @NOME, VALOR = @VALOR, DESCRICAO = @DESCRICAO, QUANTIDADE = @QUANTIDADE WHERE ID_COMPRA = @ID_COMPRA";
+                strSQL = "UPDATE COMPRA SET NOME = @NOME, VALOR = @VALOR, DESCRICAO = @DESCRICAO, QUANTIDADE = @QUANTIDADE, DATA_COMPRA = @DATA_COMPRA WHERE ID_COMPRA = @ID_COMPRA";
                 command = new MySqlCommand(strSQL, connection);
 
                 command.Parameters.AddWithValue("@ID_COMPRA", Convert.ToInt32(IDCOMPRAESCONDIDO.Text));
@@ -165,7 +162,7 @@ namespace menu.telas
                 command.Parameters.AddWithValue("@VALOR", textBoxComprasValor.Text);
                 command.Parameters.AddWithValue("@DESCRICAO", textBoxComprasDescricao.Text);
                 command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
-
+                command.Parameters.AddWithValue("@DATA_COMPRA", textBoxPegarData.Text);
 
 
                 command.ExecuteNonQuery();
@@ -174,8 +171,8 @@ namespace menu.telas
 
                 atualizar();
                 limpar_compra();
-
             }
+
             catch (Exception erro)
             {
                 connection.Close();
@@ -219,8 +216,8 @@ namespace menu.telas
                 connection.Close();
                 MessageBox.Show("REGISTRO DELETADO");
                 limpar_compra();
-
             }
+
             catch (Exception erro)
             {
                 connection.Close();
@@ -263,13 +260,12 @@ namespace menu.telas
                     dados.Fill(dt);
 
                     this.dataGridView1.DataSource = dt;
-
                 }
             }
+
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message, ex.Number.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
         }
 
@@ -295,13 +291,18 @@ namespace menu.telas
             string indexVALOR = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["VALOR"].Value);
             string indexDESCRICAO = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["DESCRICAO"].Value);
             string indexQUANTIDADE = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["QUANTIDADE"].Value);
+            string indexDATA_COMPRA = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["DATA_COMPRA"].Value);
 
+            string[] V;
+            V = indexDATA_COMPRA.Split(char.Parse(" "));
+            //indexDATA_COMPRA = Convert.ToChar(indexDATA_COMPRA.Split();
 
             IDCOMPRAESCONDIDO.Text = indexID_COMPRA.ToString();
             textBoxNomeCompras.Text = indexNOME.ToString();
             textBoxComprasValor.Text = indexVALOR.ToString();
             textBoxComprasDescricao.Text = indexDESCRICAO.ToString();
             textBoxComprasDescricao.Text = indexQUANTIDADE.ToString();
+            textBoxPegarData.Text = V[0];
 
 
 
@@ -342,9 +343,6 @@ namespace menu.telas
             //textBoxComprasValor.Text = "@VALOR";
 
             // }
-
-
-
         }
 
 
@@ -373,7 +371,6 @@ namespace menu.telas
                     MySqlDataReader lerBanco;
 
 
-
                     command = new MySqlCommand(comando, connection);
 
                     try
@@ -387,32 +384,31 @@ namespace menu.telas
                         string VALOR = lerBanco.GetString("VALOR");
                         string DESCRICAO = lerBanco.GetString("DESCRICAO");
                         string QUANTIDADE = lerBanco.GetString("QUANTIDADE");
+                        string DATA_COMPRA = lerBanco.GetString("DATA_COMPRA");
 
 
                         textBoxIdEscondidoCompra.Text = ID_ESCONDIDO;
                         textBoxComprasValor.Text = VALOR;
                         textBoxComprasDescricao.Text = DESCRICAO;
                         textBoxQuantidade.Text = QUANTIDADE;
-                        //conexao.Close();
+                        textBoxPegarData.Text = DATA_COMPRA;
 
+                        //conexao.Close();
                     }
+
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                         connection.Close();
                     }
                     connection.Close();
-
                 }
+
                 else
                 {
                     var lerbanco = textBoxNomeCompras.SelectedValue;
-
                     string comando = $"SELECT * FROM PRODUTO WHERE ID_PRODUTO = {textBoxNomeCompras.SelectedValue}";
-
                     MySqlDataReader lerBanco;
-
-
 
                     command = new MySqlCommand(comando, connection);
 
@@ -427,17 +423,18 @@ namespace menu.telas
                         string VALOR = lerBanco.GetString("VALOR");
                         string DESCRICAO = lerBanco.GetString("DESCRICAO");
                         string QUANTIDADE = lerBanco.GetString("QUANTIDADE");
+                        string DATA_COMPRA = lerBanco.GetString("DATA_COMPRA");
 
 
                         textBoxIdEscondidoCompra.Text = ID_ESCONDIDO;
                         textBoxComprasValor.Text = VALOR;
                         textBoxComprasDescricao.Text = DESCRICAO;
                         textBoxQuantidade.Text = QUANTIDADE;
-
+                        textBoxPegarData.Text = DATA_COMPRA;
 
                         connection.Close();
-
                     }
+
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
@@ -445,9 +442,6 @@ namespace menu.telas
                     }
                 }
             }
-
-
-           
 
 
         }
@@ -467,29 +461,25 @@ namespace menu.telas
             leitura.Read();
             resultado = leitura.GetString(0);
             textBoxComprasValor.Text = resultado;
-
-
-
         }
 
-      
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
-            MySqlConnection conexao = new MySqlConnection(conect);
+            //string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
+            //MySqlConnection conexao = new MySqlConnection(conect);
 
-            conexao.Open();
+            //conexao.Open();
 
 
-            strSQL = "SELECT DATA_COMPRA from COMPRA";
-            command = new MySqlCommand(strSQL, conexao);
-            MySqlDataReader leitura = command.ExecuteReader();
+            //strSQL = "SELECT DATA_COMPRA from COMPRA";
+            //command = new MySqlCommand(strSQL, conexao);
+            //MySqlDataReader leitura = command.ExecuteReader();
 
-            string resultado;
+            //string resultado;
 
-            leitura.Read();
-            resultado = leitura.GetString(0);
-            textBoxComprasValor.Text = resultado;
+            //leitura.Read();
+            //resultado = leitura.GetString(0);
+            //textBoxComprasValor.Text = resultado;
         }
     }
 }

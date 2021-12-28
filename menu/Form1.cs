@@ -15,6 +15,7 @@ namespace menu
 
     public partial class panelConteudo : Form
     {
+        DateTime data_teste;
         public const int WM_NCLBUTTONWOEN = 0XA1;
         public const int HT_CAPTION = 0X2;
 
@@ -40,7 +41,8 @@ namespace menu
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            data_teste = DateTime.Now;
+            labelData.Text = data_teste.ToLongDateString();
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
