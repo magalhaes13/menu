@@ -84,7 +84,7 @@ namespace menu.telas
                     if (textBoxNomeVendas.Text != "" && textBoxVendasValor.Text != "")
                     {
                         connection.Open();
-                        strSQL = "INSERT INTO VENDA(NOME, VALOR, DESCRICAO, QUANTIDADE, DATA_VENDA) VALUES (@NOME, @VALOR, @DESCRICAO, @QUANTIDADE, @DATA_VENDA)";
+                        strSQL = "INSERT INTO VENDA (NOME, VALOR, DESCRICAO, QUANTIDADE, DATA_VENDA) VALUES (@NOME, @VALOR, @DESCRICAO, @QUANTIDADE, @DATA_VENDA)";
                         command = new MySqlCommand(strSQL, connection);
                         command.Parameters.AddWithValue("@NOME", textBoxNomeVendas.Text);
                         command.Parameters.AddWithValue("@VALOR", textBoxVendasValor.Text);
@@ -92,16 +92,14 @@ namespace menu.telas
                         command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
                         command.Parameters.AddWithValue("@DATA_VENDA", DateTime.Now);
 
-
                         command.ExecuteNonQuery();
                         connection.Close();
 
                         MessageBox.Show("SALVO COM SUCESSO");
                         return;
                     }
+
                     MessageBox.Show("NOME E VALOR OBIGATORIO");
-
-
                 }
 
                 catch (Exception error)
