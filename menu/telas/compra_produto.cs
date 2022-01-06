@@ -35,7 +35,7 @@ namespace menu.telas
 
                 if (connection.State == ConnectionState.Open)
                 {
-                    string comando = "SELECT NOME, ID_COMPRA, DATA_COMPRA FROM COMPRA";
+                    string comando = "SELECT NOME, VALOR, ID_PRODUTO FROM PRODUTO";
                     MySqlCommand cmd = new MySqlCommand(comando, connection);
 
                     DataTable dt = new DataTable();
@@ -49,7 +49,7 @@ namespace menu.telas
                     textBoxNomeCompras.Items.Clear();
                     textBoxNomeCompras.DataSource = dt;
                     textBoxNomeCompras.DisplayMember = "NOME";
-                    textBoxNomeCompras.ValueMember = "ID_COMPRA";
+                    textBoxNomeCompras.ValueMember = "ID_PRODUTO";
 
                     var lerbanco = textBoxNomeCompras.SelectedValue;
 
@@ -191,7 +191,7 @@ namespace menu.telas
 
             salvar_compra();
             limpar_compra();
-            ATUALIZAR();
+            atualizar();
         }
 
         private void read_cliente()

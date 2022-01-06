@@ -32,6 +32,8 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(compra_produto));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.compras = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxPegarData = new System.Windows.Forms.TextBox();
             this.labelData = new System.Windows.Forms.Label();
             this.IDCOMPRAESCONDIDO = new System.Windows.Forms.TextBox();
             this.textBoxNomeCompras = new System.Windows.Forms.ComboBox();
@@ -55,8 +57,6 @@ namespace menu.telas
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATA_COMPRA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBoxPegarData = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.compras.SuspendLayout();
             this.pesquisa_compras.SuspendLayout();
@@ -100,6 +100,26 @@ namespace menu.telas
             this.compras.TabIndex = 0;
             this.compras.Text = "COMPRAS";
             this.compras.Click += new System.EventHandler(this.compras_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Enabled = false;
+            this.label5.ForeColor = System.Drawing.SystemColors.Window;
+            this.label5.Location = new System.Drawing.Point(52, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "DATA";
+            // 
+            // textBoxPegarData
+            // 
+            this.textBoxPegarData.Enabled = false;
+            this.textBoxPegarData.Location = new System.Drawing.Point(97, 20);
+            this.textBoxPegarData.Multiline = true;
+            this.textBoxPegarData.Name = "textBoxPegarData";
+            this.textBoxPegarData.Size = new System.Drawing.Size(124, 17);
+            this.textBoxPegarData.TabIndex = 16;
             // 
             // labelData
             // 
@@ -319,26 +339,6 @@ namespace menu.telas
             this.DATA_COMPRA.DataPropertyName = "DATA_COMPRA";
             this.DATA_COMPRA.HeaderText = "Data";
             this.DATA_COMPRA.Name = "DATA_COMPRA";
-            // 
-            // textBoxPegarData
-            // 
-            this.textBoxPegarData.Enabled = false;
-            this.textBoxPegarData.Location = new System.Drawing.Point(97, 20);
-            this.textBoxPegarData.Multiline = true;
-            this.textBoxPegarData.Name = "textBoxPegarData";
-            this.textBoxPegarData.Size = new System.Drawing.Size(124, 17);
-            this.textBoxPegarData.TabIndex = 16;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Enabled = false;
-            this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(52, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "DATA";
             // 
             // compra_produto
             // 

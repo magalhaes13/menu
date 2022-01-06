@@ -162,11 +162,11 @@ namespace menu.telas
                 command = new MySqlCommand(strSQL, connection);
 
                 command.Parameters.AddWithValue("@ID_VENDA", Convert.ToInt32(IDVENDAESCONDIDO.Text));
-                command.Parameters.AddWithValue("@NOME", textBoxNomeVendas.Text);
+                command.Parameters.AddWithValue("@NOME", textBoxNomeVendas.SelectedValue); 
                 command.Parameters.AddWithValue("@VALOR", textBoxVendasValor.Text);
                 command.Parameters.AddWithValue("@DESCRICAO", textBoxVendasDescricao.Text);
                 command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
-                command.Parameters.AddWithValue("@DATA_VENDA", textBoxDataVenda.Text);
+                command.Parameters.AddWithValue("@DATA_VENDA", "2021-12-12 00:00:00");
 
 
 
