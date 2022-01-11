@@ -32,6 +32,8 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_vendas));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxDataVenda = new System.Windows.Forms.TextBox();
             this.IDVENDAESCONDIDO = new System.Windows.Forms.TextBox();
             this.textBoxNomeVendas = new System.Windows.Forms.ComboBox();
             this.LimparVenda = new System.Windows.Forms.Button();
@@ -53,9 +55,7 @@ namespace menu.telas
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATA_VENDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBoxDataVenda = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.ID_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -99,9 +99,27 @@ namespace menu.telas
             this.tabPage1.Text = "VENDAS";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.Window;
+            this.label5.Location = new System.Drawing.Point(33, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "DATA";
+            // 
+            // textBoxDataVenda
+            // 
+            this.textBoxDataVenda.Enabled = false;
+            this.textBoxDataVenda.Location = new System.Drawing.Point(78, 48);
+            this.textBoxDataVenda.Name = "textBoxDataVenda";
+            this.textBoxDataVenda.Size = new System.Drawing.Size(132, 20);
+            this.textBoxDataVenda.TabIndex = 21;
+            // 
             // IDVENDAESCONDIDO
             // 
-            this.IDVENDAESCONDIDO.Location = new System.Drawing.Point(564, 31);
+            this.IDVENDAESCONDIDO.Location = new System.Drawing.Point(639, 223);
             this.IDVENDAESCONDIDO.Multiline = true;
             this.IDVENDAESCONDIDO.Name = "IDVENDAESCONDIDO";
             this.IDVENDAESCONDIDO.Size = new System.Drawing.Size(48, 40);
@@ -134,7 +152,7 @@ namespace menu.telas
             // 
             // textBoxIdEscondido
             // 
-            this.textBoxIdEscondido.Location = new System.Drawing.Point(749, 28);
+            this.textBoxIdEscondido.Location = new System.Drawing.Point(824, 220);
             this.textBoxIdEscondido.Multiline = true;
             this.textBoxIdEscondido.Name = "textBoxIdEscondido";
             this.textBoxIdEscondido.Size = new System.Drawing.Size(48, 40);
@@ -262,7 +280,7 @@ namespace menu.telas
             this.Valor,
             this.DESCRICAO,
             this.QUANTIDADE,
-            this.DATA_VENDA});
+            this.ID_PRODUTO});
             this.dataGridView1.Location = new System.Drawing.Point(30, 67);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1016, 370);
@@ -300,29 +318,11 @@ namespace menu.telas
             this.QUANTIDADE.HeaderText = "Quantidade";
             this.QUANTIDADE.Name = "QUANTIDADE";
             // 
-            // DATA_VENDA
+            // ID_PRODUTO
             // 
-            this.DATA_VENDA.DataPropertyName = "DATA_VENDA";
-            this.DATA_VENDA.HeaderText = "Data";
-            this.DATA_VENDA.Name = "DATA_VENDA";
-            // 
-            // textBoxDataVenda
-            // 
-            this.textBoxDataVenda.Enabled = false;
-            this.textBoxDataVenda.Location = new System.Drawing.Point(78, 48);
-            this.textBoxDataVenda.Name = "textBoxDataVenda";
-            this.textBoxDataVenda.Size = new System.Drawing.Size(132, 20);
-            this.textBoxDataVenda.TabIndex = 21;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(33, 51);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "DATA";
+            this.ID_PRODUTO.DataPropertyName = "ID_PRODUTO";
+            this.ID_PRODUTO.HeaderText = "ID_PROD";
+            this.ID_PRODUTO.Name = "ID_PRODUTO";
             // 
             // cadastro_vendas
             // 
@@ -365,13 +365,13 @@ namespace menu.telas
         private System.Windows.Forms.Button LimparVenda;
         private System.Windows.Forms.ComboBox textBoxNomeVendas;
         private System.Windows.Forms.TextBox IDVENDAESCONDIDO;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxDataVenda;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_VENDA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DATA_VENDA;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxDataVenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PRODUTO;
     }
 }

@@ -28,36 +28,53 @@ namespace menu.telas
 
         private void compra_produto_Load(object sender, EventArgs e)
         {
-                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
-                connection = new MySqlConnection(conect);
-
-                connection.Open();
-
-                if (connection.State == ConnectionState.Open)
-                {
-                    string comando = "SELECT NOME, VALOR, ID_PRODUTO FROM PRODUTO";
-                    MySqlCommand cmd = new MySqlCommand(comando, connection);
-
-                    DataTable dt = new DataTable();
-
-                    MySqlDataAdapter dados = new MySqlDataAdapter();
-                    dados.SelectCommand = cmd;
-
-                    dados.Fill(dt);
-
-
-                    textBoxNomeCompras.Items.Clear();
-                    textBoxNomeCompras.DataSource = dt;
-                    textBoxNomeCompras.DisplayMember = "NOME";
-                    textBoxNomeCompras.ValueMember = "ID_PRODUTO";
-
-                    var lerbanco = textBoxNomeCompras.SelectedValue;
-
-                    teste(lerbanco.ToString());
-                    connection.Close();
-                }
+            string connect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
+            connection = new MySqlConnection(connect);
+            connection.Open();
+            string comando = "SELECT NOME, VALOR, ID_PRODUTO FROM PRODUTO";
+            MySqlCommand cmd = new MySqlCommand(comando, connection);
+            MySqlDataReader dr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            textBoxNomeCompras.DisplayMember = "NOME";
+            textBoxNomeCompras.ValueMember = "ID_PRODUTO";
+            textBoxNomeCompras.DataSource = dt;
+            var lerbanco = textBoxNomeCompras.SelectedValue;
+            teste(lerbanco.ToString());
+            connection.Close();
         }
 
+        private void carregar()
+        {
+            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
+            connection = new MySqlConnection(conect);
+
+            connection.Open();
+
+            if (connection.State == ConnectionState.Open)
+            {
+                string comando = "SELECT NOME, VALOR, ID_PRODUTO FROM PRODUTO";
+                MySqlCommand cmd = new MySqlCommand(comando, connection);
+
+                DataTable dt = new DataTable();
+
+                MySqlDataAdapter dados = new MySqlDataAdapter();
+                dados.SelectCommand = cmd;
+
+                dados.Fill(dt);
+
+                textBoxNomeCompras.Items.Clear();
+                textBoxNomeCompras.DisplayMember = "NOME";
+                textBoxNomeCompras.ValueMember = "ID_PRODUTO";
+                textBoxNomeCompras.DataSource = dt;
+
+
+                var lerbanco = textBoxNomeCompras.SelectedValue;
+
+                teste(lerbanco.ToString());
+                connection.Close();
+            }
+        }
 
         private void del_compra()
         {
@@ -361,9 +378,10 @@ namespace menu.telas
         {
             if(textBoxNomeCompras.Items.Count != -1)
             {
-                if (connection.State != ConnectionState.Open)
+                if (true)
                 {
-                    connection.Open();
+                    string connect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
+                    connection = new MySqlConnection(connect);
 
                     var lerbanco = textBoxNomeCompras.SelectedValue;
 
@@ -376,11 +394,9 @@ namespace menu.telas
 
                     try
                     {
-                        //conexao.Open();
+                        //connection.Open();
                         lerBanco = command.ExecuteReader();
-
-                        lerBanco.Read();
-
+                        var teste = lerBanco.Read();
                         string ID_ESCONDIDO = lerBanco.GetInt32("ID_COMPRA").ToString();
                         string VALOR = lerBanco.GetString("VALOR");
                         string DESCRICAO = lerBanco.GetString("DESCRICAO");
@@ -394,7 +410,7 @@ namespace menu.telas
                         textBoxQuantidade.Text = QUANTIDADE;
                         textBoxPegarData.Text = DATA_COMPRA;
 
-                        //conexao.Close();
+                        //connection.Close();
                     }
 
                     catch (Exception ex)
@@ -408,12 +424,6 @@ namespace menu.telas
                 else
                 {
                     var lerbanco = textBoxNomeCompras.SelectedValue;
-
-                    //foreach (DataRowView rowView in )
-                    //{
-                    //    DataRow row = rowView.Row;
-                    //    // Do something //
-                    //}
 
                     string comando = $"SELECT * FROM PRODUTO WHERE ID_PRODUTO = {textBoxNomeCompras.SelectedValue}";
                     MySqlDataReader lerBanco;

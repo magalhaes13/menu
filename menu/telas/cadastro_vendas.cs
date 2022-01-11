@@ -47,18 +47,16 @@ namespace menu.telas
                 dados.Fill(dt);
 
                 textBoxNomeVendas.Items.Clear();
-                textBoxNomeVendas.DataSource = dt;
                 textBoxNomeVendas.DisplayMember = "NOME";
                 textBoxNomeVendas.ValueMember = "ID_PRODUTO";
+                textBoxNomeVendas.DataSource = dt;
+
 
                 var lerbanco = textBoxNomeVendas.SelectedValue;
 
                 teste(lerbanco.ToString());
                 connection.Close();
-
             }
-            
-
         }
 
         private void del_venda()
@@ -76,8 +74,7 @@ namespace menu.telas
 
         private void salvar_venda()
         {
-
-            if(IDVENDAESCONDIDO.Text == "")
+            if (IDVENDAESCONDIDO.Text == "")
             {
                 try
                 {
@@ -162,12 +159,11 @@ namespace menu.telas
                 command = new MySqlCommand(strSQL, connection);
 
                 command.Parameters.AddWithValue("@ID_VENDA", Convert.ToInt32(IDVENDAESCONDIDO.Text));
-                command.Parameters.AddWithValue("@NOME", textBoxNomeVendas.SelectedValue); 
+                command.Parameters.AddWithValue("@NOME", textBoxNomeVendas.SelectedValue);
                 command.Parameters.AddWithValue("@VALOR", textBoxVendasValor.Text);
                 command.Parameters.AddWithValue("@DESCRICAO", textBoxVendasDescricao.Text);
                 command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
-                command.Parameters.AddWithValue("@DATA_VENDA", "2021-12-12 00:00:00");
-
+                command.Parameters.AddWithValue("@DATA_VENDA", textBoxDataVenda.Text);
 
 
                 command.ExecuteNonQuery();
@@ -234,7 +230,7 @@ namespace menu.telas
         {
             deletar_venda();
             limpar_vendas();
-            atualizar();
+            ATUALIZAR();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -270,9 +266,9 @@ namespace menu.telas
                     dados.Fill(dt);
 
                     this.dataGridView1.DataSource = dt;
-
                 }
             }
+
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message, ex.Number.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -303,7 +299,6 @@ namespace menu.telas
             V = indexDATA_VENDA.Split(char.Parse(" "));
             //indexDATA_VENDA = Convert.ToChar(indexDATA_VENDA.Split();
 
-
             IDVENDAESCONDIDO.Text = indexID_VENDA.ToString();
             textBoxNomeVendas.Text = indexNOME.ToString();
             textBoxVendasValor.Text = indexVALOR.ToString();
@@ -315,30 +310,9 @@ namespace menu.telas
             tabControl1.SelectedIndex = 0;
         }
 
-        private void ordem()
-        {
-
-            try
-            {
-                connection.Open();
-                strSQL = "SELECT NOME, ID_PRODUTO FROM PRODUTO ORDER BY NOME ASC";
-                command = new MySqlCommand(strSQL, connection);
-
-                command.Parameters.AddWithValue("@ID_PRODUTO, @NOME", Convert.ToString(textBoxNomeVendas.Text));
-
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-            catch (Exception erro)
-            {
-                connection.Close();
-                MessageBox.Show("ERRO AO SELECIONAR" + erro);
-            }
-        }
-
         private void textBoxNomeVendas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ordem();
+
         }
 
         private void textBoxNomeVendas_SelectedValueChanged(object sender, EventArgs e)
@@ -351,7 +325,7 @@ namespace menu.telas
 
                     var lerbanco = textBoxNomeVendas.SelectedValue;
 
-                    string comando = $"SELECT * FROM PRODUTO WHERE ID_PRODUTO = {textBoxNomeVendas.SelectedValue}";
+                    string comando = $"SELECT * FROM VENDA WHERE ID_VENDA = {textBoxNomeVendas.SelectedValue}";
 
                     MySqlDataReader lerBanco;
 
@@ -395,10 +369,7 @@ namespace menu.telas
                     var lerbanco = textBoxNomeVendas.SelectedValue;
 
                     string comando = $"SELECT * FROM PRODUTO WHERE ID_PRODUTO = {textBoxNomeVendas.SelectedValue}";
-
                     MySqlDataReader lerBanco;
-
-
 
                     command = new MySqlCommand(comando, connection);
 
@@ -433,28 +404,28 @@ namespace menu.telas
                 }
             }
         }
-                public void teste(string ID_PRODUTO)
-                {
-                    string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
-                    MySqlConnection conexao = new MySqlConnection(conect);
+        public void teste(string ID_PRODUTO)
+        {
+            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
+            MySqlConnection conexao = new MySqlConnection(conect);
 
-                    conexao.Open();
+            conexao.Open();
 
-                    strSQL = $"SELECT VALOR from PRODUTO where ID_PRODUTO = {ID_PRODUTO}";
-                    command = new MySqlCommand(strSQL, conexao);
-                    MySqlDataReader leitura = command.ExecuteReader();
+            strSQL = $"SELECT VALOR from PRODUTO where ID_PRODUTO = {ID_PRODUTO}";
+            command = new MySqlCommand(strSQL, conexao);
+            MySqlDataReader leitura = command.ExecuteReader();
 
-                    string resultado;
+            string resultado;
 
-                    leitura.Read();
-                    resultado = leitura.GetString(0);
-                    textBoxVendasValor.Text = resultado;
+            leitura.Read();
+            resultado = leitura.GetString(0);
+            textBoxVendasValor.Text = resultado;
 
 
 
-                }
+        }
 
-   
+
     }
-   }
+}
 
