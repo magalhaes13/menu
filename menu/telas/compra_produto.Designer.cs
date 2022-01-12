@@ -350,6 +350,7 @@ namespace menu.telas
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(12, 28);
             this.Name = "compra_produto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "COMPRA PRODUTO";
             this.Load += new System.EventHandler(this.compra_produto_Load);
             this.tabControl1.ResumeLayout(false);
