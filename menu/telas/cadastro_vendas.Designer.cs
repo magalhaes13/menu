@@ -55,7 +55,6 @@ namespace menu.telas
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -279,8 +278,7 @@ namespace menu.telas
             this.Nome,
             this.Valor,
             this.DESCRICAO,
-            this.QUANTIDADE,
-            this.ID_PRODUTO});
+            this.QUANTIDADE});
             this.dataGridView1.Location = new System.Drawing.Point(30, 67);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1016, 370);
@@ -317,12 +315,6 @@ namespace menu.telas
             this.QUANTIDADE.DataPropertyName = "QUANTIDADE";
             this.QUANTIDADE.HeaderText = "Quantidade";
             this.QUANTIDADE.Name = "QUANTIDADE";
-            // 
-            // ID_PRODUTO
-            // 
-            this.ID_PRODUTO.DataPropertyName = "ID_PRODUTO";
-            this.ID_PRODUTO.HeaderText = "ID_PROD";
-            this.ID_PRODUTO.Name = "ID_PRODUTO";
             // 
             // cadastro_vendas
             // 
@@ -372,6 +364,5 @@ namespace menu.telas
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PRODUTO;
     }
 }

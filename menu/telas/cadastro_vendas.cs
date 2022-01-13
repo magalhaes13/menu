@@ -26,16 +26,38 @@ namespace menu.telas
             InitializeComponent();
         }
 
+        private void open(MySqlConnection mySql)
+        {
+            if(mySql.State == ConnectionState.Closed)
+            {
+                mySql.Open();
+            }
+        }
+
+        private void close(MySqlConnection mySql)
+        {
+            if(mySql.State == ConnectionState.Open)
+            {
+                mySql.Close();
+            }
+        }
+
+        private void connectionX()
+        {
+            if(connection == null)
+            {
+                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
+                connection = new MySqlConnection(conect);
+            }
+        }
+
+
         private void cadastro_vendas_Load(object sender, EventArgs e)
         {
-            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
-            connection = new MySqlConnection(conect);
+            connectionX();
+            open(connection);
 
-
-            connection.Open();
-
-            if (connection.State == ConnectionState.Open)
-            {
+    
                 string comando = "SELECT NOME, VALOR, ID_PRODUTO FROM PRODUTO";
                 MySqlCommand cmd = new MySqlCommand(comando, connection);
 
@@ -55,8 +77,8 @@ namespace menu.telas
                 var lerbanco = textBoxNomeVendas.SelectedValue;
 
                 teste(lerbanco.ToString());
-                connection.Close();
-            }
+                close(connection);
+            
         }
 
         private void del_venda()
@@ -80,7 +102,7 @@ namespace menu.telas
                 {
                     if (textBoxNomeVendas.Text != "" && textBoxVendasValor.Text != "")
                     {
-                        connection.Open();
+                        open(connection);
                         strSQL = "INSERT INTO VENDA (NOME, VALOR, DESCRICAO, QUANTIDADE, DATA_VENDA) VALUES (@NOME, @VALOR, @DESCRICAO, @QUANTIDADE, @DATA_VENDA)";
                         command = new MySqlCommand(strSQL, connection);
                         command.Parameters.AddWithValue("@NOME", textBoxNomeVendas.Text);
@@ -90,7 +112,7 @@ namespace menu.telas
                         command.Parameters.AddWithValue("@DATA_VENDA", DateTime.Now);
 
                         command.ExecuteNonQuery();
-                        connection.Close();
+                        close(connection);
 
                         MessageBox.Show("SALVO COM SUCESSO");
                         return;
@@ -116,16 +138,12 @@ namespace menu.telas
         {
             try
             {
-                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
-                MySqlConnection conexao = new MySqlConnection(conect);
+                connectionX();
+                open(connection);
 
-                conexao.Open();
-
-                if (conexao.State == ConnectionState.Open)
-                {
                     string comando = "SELECT * FROM VENDA";
 
-                    MySqlCommand cmd = new MySqlCommand(comando, conexao);
+                    MySqlCommand cmd = new MySqlCommand(comando, connection);
 
                     DataTable dt = new DataTable();
 
@@ -136,7 +154,7 @@ namespace menu.telas
 
                     this.dataGridView1.DataSource = dt;
 
-                }
+                
             }
             catch (MySqlException ex)
             {
@@ -154,7 +172,7 @@ namespace menu.telas
                     return;
                 }
 
-                connection.Open();
+                open(connection);
                 strSQL = "UPDATE VENDA SET NOME = @NOME, VALOR = @VALOR, DESCRICAO = @DESCRICAO, QUANTIDADE = @QUANTIDADE, DATA_VENDA = @DATA_VENDA, WHERE ID_VENDA = @ID_VENDA";
                 command = new MySqlCommand(strSQL, connection);
 
@@ -167,7 +185,7 @@ namespace menu.telas
 
 
                 command.ExecuteNonQuery();
-                connection.Close();
+                close(connection);
                 MessageBox.Show("REGISTRO ALTERADO");
 
                 atualizar();
@@ -176,7 +194,7 @@ namespace menu.telas
             }
             catch (Exception erro)
             {
-                connection.Close();
+                close(connection);
                 MessageBox.Show($"ERRO AO EDITAR {erro}");
             }
         }
@@ -196,32 +214,32 @@ namespace menu.telas
 
         private void read_cliente()
         {
-            connection.Open();
+            open(connection);
             strSQL = "SELECT * FROM VENDA";
             command = new MySqlCommand(strSQL, connection);
             command.ExecuteNonQuery();
-            connection.Close();
+            close(connection);
         }
 
         private void deletar_venda()
         {
             try
             {
-                connection.Open();
+                open(connection);
                 strSQL = "DELETE FROM VENDA WHERE ID_VENDA = @ID_VENDA";
                 command = new MySqlCommand(strSQL, connection);
 
                 command.Parameters.AddWithValue("@ID_VENDA", Convert.ToInt32(textBoxIdEscondido.Text));
 
                 command.ExecuteNonQuery();
-                connection.Close();
+                close(connection);
                 MessageBox.Show("REGISTRO DELETADO");
                 limpar_vendas();
 
             }
             catch (Exception erro)
             {
-                connection.Close();
+                close(connection);
                 MessageBox.Show("ERRO AO EXCLUIR" + erro);
             }
         }
@@ -247,16 +265,12 @@ namespace menu.telas
         {
             try
             {
-                string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
-                MySqlConnection conexao = new MySqlConnection(conect);
-
-                conexao.Open();
-
-                if (conexao.State == ConnectionState.Open)
-                {
+                connectionX();
+                open(connection);
+         
                     string comando = "SELECT * FROM VENDA";
 
-                    MySqlCommand cmd = new MySqlCommand(comando, conexao);
+                    MySqlCommand cmd = new MySqlCommand(comando, connection);
 
                     DataTable dt = new DataTable();
 
@@ -266,7 +280,7 @@ namespace menu.telas
                     dados.Fill(dt);
 
                     this.dataGridView1.DataSource = dt;
-                }
+                
             }
 
             catch (MySqlException ex)
@@ -321,15 +335,13 @@ namespace menu.telas
             {
                 if (connection.State != ConnectionState.Open)
                 {
-                    connection.Open();
+                    open(connection);
 
                     var lerbanco = textBoxNomeVendas.SelectedValue;
 
                     string comando = $"SELECT * FROM VENDA WHERE ID_VENDA = {textBoxNomeVendas.SelectedValue}";
 
                     MySqlDataReader lerBanco;
-
-
 
                     command = new MySqlCommand(comando, connection);
 
@@ -359,9 +371,9 @@ namespace menu.telas
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
-                        connection.Close();
+                        close(connection);
                     }
-                    connection.Close();
+                    close(connection);
 
                 }
                 else
@@ -393,26 +405,24 @@ namespace menu.telas
                         textBoxQuantidade.Text = QUANTIDADE;
                         textBoxDataVenda.Text = DATA_VENDA;
 
-                        connection.Close();
+                        close(connection);
 
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
-                        connection.Close();
+                        close(connection);
                     }
                 }
             }
         }
         public void teste(string ID_PRODUTO)
         {
-            string conect = "Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456";
-            MySqlConnection conexao = new MySqlConnection(conect);
-
-            conexao.Open();
+            connectionX();
+            open(connection);
 
             strSQL = $"SELECT VALOR from PRODUTO where ID_PRODUTO = {ID_PRODUTO}";
-            command = new MySqlCommand(strSQL, conexao);
+            command = new MySqlCommand(strSQL, connection);
             MySqlDataReader leitura = command.ExecuteReader();
 
             string resultado;
@@ -421,11 +431,7 @@ namespace menu.telas
             resultado = leitura.GetString(0);
             textBoxVendasValor.Text = resultado;
 
-
-
         }
-
-
     }
 }
 
