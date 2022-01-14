@@ -50,7 +50,7 @@ namespace menu
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 50;
+            this.timer1.Interval = 5;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label1
@@ -78,6 +78,7 @@ namespace menu
             this.Name = "carregamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "carregamento";
+            this.Load += new System.EventHandler(this.carregamento_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

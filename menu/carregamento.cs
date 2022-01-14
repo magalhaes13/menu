@@ -29,5 +29,10 @@ namespace menu
                 this.Hide();
             }
         }
+
+        private void carregamento_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

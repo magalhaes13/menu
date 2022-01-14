@@ -58,15 +58,26 @@ namespace menu.telas
         {
             connectionX();
             open(connection);
-            string comando = "SELECT NOME, VALOR, ID_PRODUTO FROM PRODUTO";
+
+
+            string comando = "SELECT * FROM PRODUTO";
             MySqlCommand cmd = new MySqlCommand(comando, connection);
-            MySqlDataReader dr = cmd.ExecuteReader();
+
             DataTable dt = new DataTable();
-            dt.Load(dr);
+
+            MySqlDataAdapter dados = new MySqlDataAdapter();
+            dados.SelectCommand = cmd;
+
+            dados.Fill(dt);
+
+            textBoxNomeCompras.Items.Clear();
             textBoxNomeCompras.DisplayMember = "NOME";
-            textBoxNomeCompras.ValueMember = "ID_PRODUTO";
+            textBoxNomeCompras.ValueMember = "NOME";
             textBoxNomeCompras.DataSource = dt;
+
+
             var lerbanco = textBoxNomeCompras.SelectedValue;
+
             teste(lerbanco.ToString());
             close(connection);
         }
@@ -293,7 +304,8 @@ namespace menu.telas
                     dados.Fill(dt);
 
                     this.dataGridView1.DataSource = dt;
-                
+
+                close(connection);
             }
 
             catch (MySqlException ex)

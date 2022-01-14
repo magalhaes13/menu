@@ -49,14 +49,13 @@ namespace menu.telas
             this.textBoxComprasValor = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pesquisa_compras = new System.Windows.Forms.TabPage();
-            this.ATUALIZAR_COMPRA = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID_COMPRA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ATUALIZAR_COMPRA = new System.Windows.Forms.Button();
+            this.ID_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VALOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATA_COMPRA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.compras.SuspendLayout();
             this.pesquisa_compras.SuspendLayout();
@@ -141,13 +140,13 @@ namespace menu.telas
             // 
             // textBoxNomeCompras
             // 
-            this.textBoxNomeCompras.DisplayMember = "ID_PRODUTO";
+            this.textBoxNomeCompras.DisplayMember = "NOME";
             this.textBoxNomeCompras.FormattingEnabled = true;
             this.textBoxNomeCompras.Location = new System.Drawing.Point(97, 81);
             this.textBoxNomeCompras.Name = "textBoxNomeCompras";
             this.textBoxNomeCompras.Size = new System.Drawing.Size(121, 21);
             this.textBoxNomeCompras.TabIndex = 12;
-            this.textBoxNomeCompras.ValueMember = "ID_PRODUTO";
+            this.textBoxNomeCompras.ValueMember = "NOME";
             this.textBoxNomeCompras.SelectedIndexChanged += new System.EventHandler(this.textBoxNomeCompras_SelectedIndexChanged);
             this.textBoxNomeCompras.SelectedValueChanged += new System.EventHandler(this.textBoxNomeCompras_SelectedValueChanged);
             // 
@@ -263,8 +262,8 @@ namespace menu.telas
             // 
             this.pesquisa_compras.BackColor = System.Drawing.Color.Teal;
             this.pesquisa_compras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pesquisa_compras.Controls.Add(this.ATUALIZAR_COMPRA);
             this.pesquisa_compras.Controls.Add(this.dataGridView1);
+            this.pesquisa_compras.Controls.Add(this.ATUALIZAR_COMPRA);
             this.pesquisa_compras.Location = new System.Drawing.Point(4, 22);
             this.pesquisa_compras.Name = "pesquisa_compras";
             this.pesquisa_compras.Padding = new System.Windows.Forms.Padding(3);
@@ -272,6 +271,20 @@ namespace menu.telas
             this.pesquisa_compras.TabIndex = 1;
             this.pesquisa_compras.Text = "PESQUISAR";
             this.pesquisa_compras.Click += new System.EventHandler(this.pesquisa_compras_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_PRODUTO,
+            this.NOME,
+            this.VALOR,
+            this.QUANTIDADE,
+            this.DESCRICAO});
+            this.dataGridView1.Location = new System.Drawing.Point(125, 132);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(814, 266);
+            this.dataGridView1.TabIndex = 2;
             // 
             // ATUALIZAR_COMPRA
             // 
@@ -286,59 +299,35 @@ namespace menu.telas
             this.ATUALIZAR_COMPRA.UseVisualStyleBackColor = true;
             this.ATUALIZAR_COMPRA.Click += new System.EventHandler(this.ATUALIZAR_COMPRA_Click);
             // 
-            // dataGridView1
+            // ID_PRODUTO
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_COMPRA,
-            this.Nome,
-            this.Valor,
-            this.DESCRICAO,
-            this.QUANTIDADE,
-            this.DATA_COMPRA});
-            this.dataGridView1.Location = new System.Drawing.Point(101, 118);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(774, 293);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.ID_PRODUTO.DataPropertyName = "ID_PRODUTO";
+            this.ID_PRODUTO.HeaderText = "ID_PRODUTO";
+            this.ID_PRODUTO.Name = "ID_PRODUTO";
             // 
-            // ID_COMPRA
+            // NOME
             // 
-            this.ID_COMPRA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ID_COMPRA.DataPropertyName = "ID_COMPRA";
-            this.ID_COMPRA.HeaderText = "ID";
-            this.ID_COMPRA.Name = "ID_COMPRA";
+            this.NOME.DataPropertyName = "NOME";
+            this.NOME.HeaderText = "NOME";
+            this.NOME.Name = "NOME";
             // 
-            // Nome
+            // VALOR
             // 
-            this.Nome.DataPropertyName = "NOME";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            // 
-            // Valor
-            // 
-            this.Valor.DataPropertyName = "VALOR";
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            // 
-            // DESCRICAO
-            // 
-            this.DESCRICAO.DataPropertyName = "DESCRICAO";
-            this.DESCRICAO.HeaderText = "Descrição";
-            this.DESCRICAO.Name = "DESCRICAO";
+            this.VALOR.DataPropertyName = "VALOR";
+            this.VALOR.HeaderText = "VALOR";
+            this.VALOR.Name = "VALOR";
             // 
             // QUANTIDADE
             // 
             this.QUANTIDADE.DataPropertyName = "QUANTIDADE";
-            this.QUANTIDADE.HeaderText = "Quantidade";
+            this.QUANTIDADE.HeaderText = "QUANTIDADE";
             this.QUANTIDADE.Name = "QUANTIDADE";
             // 
-            // DATA_COMPRA
+            // DESCRICAO
             // 
-            this.DATA_COMPRA.DataPropertyName = "DATA_COMPRA";
-            this.DATA_COMPRA.HeaderText = "Data";
-            this.DATA_COMPRA.Name = "DATA_COMPRA";
+            this.DESCRICAO.DataPropertyName = "DESCRICAO";
+            this.DESCRICAO.HeaderText = "DESCRICAO";
+            this.DESCRICAO.Name = "DESCRICAO";
             // 
             // compra_produto
             // 
@@ -372,7 +361,6 @@ namespace menu.telas
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxComprasDescricao;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button ExcluirCompra;
         private System.Windows.Forms.Button SalvarCompra;
         private System.Windows.Forms.TextBox textBoxIdEscondidoCompra;
@@ -382,14 +370,14 @@ namespace menu.telas
         private System.Windows.Forms.TextBox textBoxQuantidade;
         private System.Windows.Forms.ComboBox textBoxNomeCompras;
         private System.Windows.Forms.TextBox IDCOMPRAESCONDIDO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_COMPRA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DATA_COMPRA;
         private System.Windows.Forms.Label labelData;
         private System.Windows.Forms.TextBox textBoxPegarData;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PRODUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VALOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
     }
 }
