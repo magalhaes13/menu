@@ -149,5 +149,10 @@ namespace menu
                 this.ClientSize.Width - this.Form4.Width,
             this.ClientSize.Height - this.Form4.Height + 16);
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

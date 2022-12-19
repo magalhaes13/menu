@@ -44,7 +44,7 @@ namespace menu
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkBlue;
+            this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.Controls.Add(this.COMPRAS);
             this.panel3.Controls.Add(this.produto);
             this.panel3.Controls.Add(this.CLIENTES);
@@ -56,14 +56,16 @@ namespace menu
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(173, 685);
             this.panel3.TabIndex = 1;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // COMPRAS
             // 
+            this.COMPRAS.BackColor = System.Drawing.Color.Black;
             this.COMPRAS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("COMPRAS.BackgroundImage")));
-            this.COMPRAS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.COMPRAS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.COMPRAS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.COMPRAS.FlatAppearance.BorderSize = 0;
-            this.COMPRAS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
+            this.COMPRAS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.COMPRAS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.COMPRAS.ForeColor = System.Drawing.SystemColors.Window;
             this.COMPRAS.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -72,18 +74,19 @@ namespace menu
             this.COMPRAS.Name = "COMPRAS";
             this.COMPRAS.Size = new System.Drawing.Size(184, 101);
             this.COMPRAS.TabIndex = 2;
-            this.COMPRAS.Text = "COMPRAS";
+            this.COMPRAS.Text = "CONTRATO";
             this.COMPRAS.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.COMPRAS.UseVisualStyleBackColor = true;
+            this.COMPRAS.UseVisualStyleBackColor = false;
             this.COMPRAS.Click += new System.EventHandler(this.COMPRAS_Click);
             // 
             // produto
             // 
+            this.produto.BackColor = System.Drawing.Color.Black;
             this.produto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("produto.BackgroundImage")));
-            this.produto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.produto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.produto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.produto.FlatAppearance.BorderSize = 0;
-            this.produto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
+            this.produto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.produto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.produto.ForeColor = System.Drawing.SystemColors.Window;
             this.produto.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -92,20 +95,20 @@ namespace menu
             this.produto.Name = "produto";
             this.produto.Size = new System.Drawing.Size(184, 101);
             this.produto.TabIndex = 4;
-            this.produto.Text = "PRODUTO";
+            this.produto.Text = "VESTIDOS";
             this.produto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.produto.UseVisualStyleBackColor = true;
+            this.produto.UseVisualStyleBackColor = false;
             this.produto.Click += new System.EventHandler(this.produto_Click);
             // 
             // CLIENTES
             // 
-            this.CLIENTES.BackColor = System.Drawing.Color.DarkBlue;
+            this.CLIENTES.BackColor = System.Drawing.Color.Black;
             this.CLIENTES.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CLIENTES.BackgroundImage")));
-            this.CLIENTES.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.CLIENTES.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CLIENTES.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CLIENTES.FlatAppearance.BorderSize = 0;
             this.CLIENTES.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.CLIENTES.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
+            this.CLIENTES.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.CLIENTES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CLIENTES.ForeColor = System.Drawing.SystemColors.Window;
             this.CLIENTES.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -126,7 +129,7 @@ namespace menu
             this.CONTAS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CONTAS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CONTAS.FlatAppearance.BorderSize = 0;
-            this.CONTAS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
+            this.CONTAS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.CONTAS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CONTAS.ForeColor = System.Drawing.SystemColors.Window;
             this.CONTAS.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -142,11 +145,12 @@ namespace menu
             // 
             // VENDAS
             // 
+            this.VENDAS.BackColor = System.Drawing.Color.Black;
             this.VENDAS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("VENDAS.BackgroundImage")));
             this.VENDAS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.VENDAS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.VENDAS.FlatAppearance.BorderSize = 0;
-            this.VENDAS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
+            this.VENDAS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.VENDAS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.VENDAS.ForeColor = System.Drawing.SystemColors.Window;
             this.VENDAS.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -157,7 +161,7 @@ namespace menu
             this.VENDAS.TabIndex = 2;
             this.VENDAS.Text = "VENDAS";
             this.VENDAS.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.VENDAS.UseVisualStyleBackColor = true;
+            this.VENDAS.UseVisualStyleBackColor = false;
             this.VENDAS.Click += new System.EventHandler(this.VENDAS_Click);
             // 
             // labelData
@@ -198,9 +202,9 @@ namespace menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackgroundImage = global::menu.Properties.Resources.flordeliz;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(913, 685);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelDataa);

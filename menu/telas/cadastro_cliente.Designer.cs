@@ -84,7 +84,7 @@ namespace menu.telas
             // 
             // CADASTRO
             // 
-            this.CADASTRO.BackColor = System.Drawing.Color.Teal;
+            this.CADASTRO.BackColor = System.Drawing.Color.SlateGray;
             this.CADASTRO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CADASTRO.Controls.Add(this.buttonLimpar);
             this.CADASTRO.Controls.Add(this.textIDESCONDIDO);
@@ -117,13 +117,15 @@ namespace menu.telas
             // 
             // buttonLimpar
             // 
+            this.buttonLimpar.BackColor = System.Drawing.Color.Yellow;
+            this.buttonLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLimpar.Location = new System.Drawing.Point(584, 184);
+            this.buttonLimpar.Location = new System.Drawing.Point(665, 456);
             this.buttonLimpar.Name = "buttonLimpar";
-            this.buttonLimpar.Size = new System.Drawing.Size(75, 23);
+            this.buttonLimpar.Size = new System.Drawing.Size(102, 40);
             this.buttonLimpar.TabIndex = 20;
             this.buttonLimpar.Text = "LIMPAR";
-            this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.buttonLimpar.UseVisualStyleBackColor = false;
             this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
             // 
             // textIDESCONDIDO
@@ -137,18 +139,20 @@ namespace menu.telas
             // 
             // delet_cliente
             // 
+            this.delet_cliente.BackColor = System.Drawing.Color.Red;
+            this.delet_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.delet_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delet_cliente.Location = new System.Drawing.Point(487, 184);
+            this.delet_cliente.Location = new System.Drawing.Point(436, 456);
             this.delet_cliente.Name = "delet_cliente";
-            this.delet_cliente.Size = new System.Drawing.Size(75, 23);
+            this.delet_cliente.Size = new System.Drawing.Size(116, 40);
             this.delet_cliente.TabIndex = 17;
             this.delet_cliente.Text = "EXCLUIR";
-            this.delet_cliente.UseVisualStyleBackColor = true;
+            this.delet_cliente.UseVisualStyleBackColor = false;
             this.delet_cliente.Click += new System.EventHandler(this.delet_cliente_Click);
             // 
             // textBoxUf
             // 
-            this.textBoxUf.Location = new System.Drawing.Point(369, 113);
+            this.textBoxUf.Location = new System.Drawing.Point(363, 346);
             this.textBoxUf.Name = "textBoxUf";
             this.textBoxUf.Size = new System.Drawing.Size(53, 20);
             this.textBoxUf.TabIndex = 16;
@@ -157,7 +161,7 @@ namespace menu.telas
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(342, 116);
+            this.label8.Location = new System.Drawing.Point(336, 349);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(21, 13);
             this.label8.TabIndex = 15;
@@ -165,7 +169,7 @@ namespace menu.telas
             // 
             // textBoxBairro
             // 
-            this.textBoxBairro.Location = new System.Drawing.Point(665, 55);
+            this.textBoxBairro.Location = new System.Drawing.Point(659, 288);
             this.textBoxBairro.Name = "textBoxBairro";
             this.textBoxBairro.Size = new System.Drawing.Size(164, 20);
             this.textBoxBairro.TabIndex = 14;
@@ -174,7 +178,7 @@ namespace menu.telas
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(611, 58);
+            this.label7.Location = new System.Drawing.Point(605, 291);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 13);
             this.label7.TabIndex = 13;
@@ -182,7 +186,7 @@ namespace menu.telas
             // 
             // textBoxCpf
             // 
-            this.textBoxCpf.Location = new System.Drawing.Point(899, 59);
+            this.textBoxCpf.Location = new System.Drawing.Point(893, 292);
             this.textBoxCpf.Name = "textBoxCpf";
             this.textBoxCpf.Size = new System.Drawing.Size(114, 20);
             this.textBoxCpf.TabIndex = 12;
@@ -190,7 +194,7 @@ namespace menu.telas
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(865, 62);
+            this.label6.Location = new System.Drawing.Point(859, 295);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(27, 13);
             this.label6.TabIndex = 11;
@@ -198,7 +202,7 @@ namespace menu.telas
             // 
             // textBoxEndereco
             // 
-            this.textBoxEndereco.Location = new System.Drawing.Point(82, 110);
+            this.textBoxEndereco.Location = new System.Drawing.Point(76, 343);
             this.textBoxEndereco.Name = "textBoxEndereco";
             this.textBoxEndereco.Size = new System.Drawing.Size(229, 20);
             this.textBoxEndereco.TabIndex = 10;
@@ -207,7 +211,7 @@ namespace menu.telas
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(9, 113);
+            this.label5.Location = new System.Drawing.Point(6, 346);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 9;
@@ -215,18 +219,20 @@ namespace menu.telas
             // 
             // salvar_cliente
             // 
+            this.salvar_cliente.BackColor = System.Drawing.Color.Green;
+            this.salvar_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salvar_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.salvar_cliente.Location = new System.Drawing.Point(386, 184);
+            this.salvar_cliente.Location = new System.Drawing.Point(227, 456);
             this.salvar_cliente.Name = "salvar_cliente";
-            this.salvar_cliente.Size = new System.Drawing.Size(75, 23);
+            this.salvar_cliente.Size = new System.Drawing.Size(124, 40);
             this.salvar_cliente.TabIndex = 8;
             this.salvar_cliente.Text = "SALVAR";
-            this.salvar_cliente.UseVisualStyleBackColor = true;
+            this.salvar_cliente.UseVisualStyleBackColor = false;
             this.salvar_cliente.Click += new System.EventHandler(this.salvar_cliente_Click);
             // 
             // textBoxCidade
             // 
-            this.textBoxCidade.Location = new System.Drawing.Point(348, 52);
+            this.textBoxCidade.Location = new System.Drawing.Point(342, 285);
             this.textBoxCidade.Name = "textBoxCidade";
             this.textBoxCidade.Size = new System.Drawing.Size(239, 20);
             this.textBoxCidade.TabIndex = 7;
@@ -235,7 +241,7 @@ namespace menu.telas
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(295, 59);
+            this.label4.Location = new System.Drawing.Point(289, 292);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 6;
@@ -243,14 +249,14 @@ namespace menu.telas
             // 
             // textBoxTelefone
             // 
-            this.textBoxTelefone.Location = new System.Drawing.Point(528, 113);
+            this.textBoxTelefone.Location = new System.Drawing.Point(522, 346);
             this.textBoxTelefone.Name = "textBoxTelefone";
             this.textBoxTelefone.Size = new System.Drawing.Size(223, 20);
             this.textBoxTelefone.TabIndex = 5;
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(61, 181);
+            this.textBoxEmail.Location = new System.Drawing.Point(55, 414);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(250, 20);
             this.textBoxEmail.TabIndex = 4;
@@ -259,7 +265,7 @@ namespace menu.telas
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(459, 120);
+            this.label3.Location = new System.Drawing.Point(453, 353);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 3;
@@ -269,7 +275,7 @@ namespace menu.telas
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(19, 184);
+            this.label2.Location = new System.Drawing.Point(16, 417);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 2;
@@ -278,23 +284,24 @@ namespace menu.telas
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(9, 55);
+            this.label1.Location = new System.Drawing.Point(50, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.Size = new System.Drawing.Size(72, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "NOME";
             // 
             // TextBoxNome
             // 
-            this.TextBoxNome.Location = new System.Drawing.Point(54, 52);
+            this.TextBoxNome.Location = new System.Drawing.Point(136, 60);
             this.TextBoxNome.Name = "TextBoxNome";
-            this.TextBoxNome.Size = new System.Drawing.Size(209, 20);
+            this.TextBoxNome.Size = new System.Drawing.Size(347, 20);
             this.TextBoxNome.TabIndex = 0;
             // 
             // PESQUISA
             // 
-            this.PESQUISA.BackColor = System.Drawing.Color.Teal;
+            this.PESQUISA.BackColor = System.Drawing.Color.SlateGray;
             this.PESQUISA.Controls.Add(this.button_Atualizar);
             this.PESQUISA.Controls.Add(this.button_Pesquisar);
             this.PESQUISA.Controls.Add(this.textBoxPesquisa);
