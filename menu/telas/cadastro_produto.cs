@@ -40,6 +40,7 @@ namespace menu.telas
 
         private void limpar_produto()
         {
+            textCODPRODUTO.Text = "";
             textBoxNomeProd.Text = "";
             textBoxValor.Text = "";
             textBoxDescricao.Text = "";
@@ -57,8 +58,9 @@ namespace menu.telas
                 if (textBoxNomeProd.Text != "" && textBoxValor.Text != "")
                 {
                     connection.Open();
-                    strSQL = "INSERT INTO PRODUTO (NOME, VALOR, DESCRICAO, QUANTIDADE) VALUES (@NOME, @VALOR, @DESCRICAO, @QUANTIDADE)";
+                    strSQL = "INSERT INTO PRODUTO (CODPRODUTO, NOME, VALOR, DESCRICAO, QUANTIDADE) VALUES (@CODPRODUTO, @NOME, @VALOR, @DESCRICAO, @QUANTIDADE)";
                     command = new MySqlCommand(strSQL, connection);
+                    command.Parameters.AddWithValue("@CODPRODUTO", textCODPRODUTO.Text);
                     command.Parameters.AddWithValue("@NOME", textBoxNomeProd.Text);
                     command.Parameters.AddWithValue("@VALOR", textBoxValor.Text);
                     command.Parameters.AddWithValue("@DESCRICAO", textBoxDescricao.Text);
@@ -125,10 +127,11 @@ namespace menu.telas
                 }
                 
                 connection.Open();
-                strSQL = "UPDATE PRODUTO SET NOME = @NOME, VALOR = @VALOR, QUANTIDADE = @QUANTIDADE, DESCRICAO = @DESCRICAO WHERE ID_PRODUTO = @ID_PRODUTO";
+                strSQL = "UPDATE PRODUTO SET CODPRODUTO = @CODPRODUTO, NOME = @NOME, VALOR = @VALOR, QUANTIDADE = @QUANTIDADE, DESCRICAO = @DESCRICAO WHERE ID_PRODUTO = @ID_PRODUTO";
                 command = new MySqlCommand(strSQL, connection);
 
                 command.Parameters.AddWithValue("@ID_PRODUTO", Convert.ToInt32(txtIDPRODUTOESCONDIDO.Text));
+                command.Parameters.AddWithValue("@CODPRODUTO", Convert.ToInt32(textCODPRODUTO.Text));
                 command.Parameters.AddWithValue("@NOME", textBoxNomeProd.Text);
                 command.Parameters.AddWithValue("@VALOR", textBoxValor.Text);
                 command.Parameters.AddWithValue("@DESCRICAO", textBoxDescricao.Text);
@@ -256,12 +259,14 @@ namespace menu.telas
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int indexID_PRODUTO = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ID_PRODUTO"].Value);
+            int indexCODPRODUTO = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["CODPRODUTO"].Value);
             string indexNOME = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["NOME"].Value);
             string indexVALOR = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["VALOR"].Value);
             string indexDESCRICAO = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["DESCRICAO"].Value);
             string indexQUANTIDADE = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["QUANTIDADE"].Value);
 
             txtIDPRODUTOESCONDIDO.Text = indexID_PRODUTO.ToString();
+            textCODPRODUTO.Text = indexCODPRODUTO.ToString();
             textBoxNomeProd.Text = indexNOME.ToString();
             textBoxValor.Text = indexVALOR.ToString();
             textBoxDescricao.Text = indexDESCRICAO.ToString();

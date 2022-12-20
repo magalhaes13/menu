@@ -47,7 +47,10 @@ namespace menu.telas
             this.tabPagePESQUISA = new System.Windows.Forms.TabPage();
             this.button_AtualizarProd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textCODPRODUTO = new System.Windows.Forms.TextBox();
             this.ID_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODPRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VALOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +75,8 @@ namespace menu.telas
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Teal;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.textCODPRODUTO);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.textBoxQuantidade);
             this.tabPage1.Controls.Add(this.LimparProduto);
@@ -238,23 +243,47 @@ namespace menu.telas
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_PRODUTO,
+            this.CODPRODUTO,
             this.NOME,
             this.VALOR,
             this.DESCRICAO,
             this.QUANTIDADE});
             this.dataGridView1.Location = new System.Drawing.Point(49, 73);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(633, 180);
+            this.dataGridView1.Size = new System.Drawing.Size(821, 180);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.Window;
+            this.label5.Location = new System.Drawing.Point(397, 274);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(106, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "CÓDIGO PRODUTO";
+            // 
+            // textCODPRODUTO
+            // 
+            this.textCODPRODUTO.Location = new System.Drawing.Point(509, 271);
+            this.textCODPRODUTO.Name = "textCODPRODUTO";
+            this.textCODPRODUTO.Size = new System.Drawing.Size(165, 20);
+            this.textCODPRODUTO.TabIndex = 12;
             // 
             // ID_PRODUTO
             // 
             this.ID_PRODUTO.DataPropertyName = "ID_PRODUTO";
             this.ID_PRODUTO.HeaderText = "ID";
             this.ID_PRODUTO.Name = "ID_PRODUTO";
+            // 
+            // CODPRODUTO
+            // 
+            this.CODPRODUTO.DataPropertyName = "CODPRODUTO";
+            this.CODPRODUTO.HeaderText = "COD PRODUTO";
+            this.CODPRODUTO.Name = "CODPRODUTO";
             // 
             // NOME
             // 
@@ -320,7 +349,10 @@ namespace menu.telas
         private System.Windows.Forms.Button LimparProduto;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxQuantidade;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textCODPRODUTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_PRODUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODPRODUTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOME;
         private System.Windows.Forms.DataGridViewTextBoxColumn VALOR;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
