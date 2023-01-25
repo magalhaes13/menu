@@ -469,6 +469,7 @@ namespace menu.telas
             this.Name = "cadastro_cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.cadastro_cliente_Load);
             this.pg_cadastro.ResumeLayout(false);
             this.CADASTRO.ResumeLayout(false);

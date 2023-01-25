@@ -63,6 +63,27 @@ namespace menu.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap am7 {
+            get {
+                object obj = ResourceManager.GetObject("am7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fleur_de_lis_new_orleans_simbolo_dourado_logotipo_da_flor_icone_do_vetor_modelo_de_imagem_400_112543179_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("fleur-de-lis-new-orleans-simbolo-dourado-logotipo-da-flor-icone-do-vetor-modelo-d" +
+                        "e-imagem-400-112543179-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flordeliz {
             get {
                 object obj = ResourceManager.GetObject("flordeliz", resourceCulture);

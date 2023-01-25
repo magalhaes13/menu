@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using menu.telas;
+using Guna.UI2.WinForms;
 
 namespace menu
 {
@@ -41,8 +42,7 @@ namespace menu
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            data_teste = DateTime.Now;
-            labelData.Text = data_teste.ToLongDateString();
+
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -153,6 +153,18 @@ namespace menu
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void moveImageBox(object sender) {
+
+            Guna2Button b = (Guna2Button)sender;
+            imgSlide.Location = new Point(b.Location.X + 118, b.Location.Y - 30);
+            imgSlide.SendToBack();
+
+        }
+        private void CLIENTES_CheckedChanged(object sender, EventArgs e)
+        {
+            moveImageBox(sender);
         }
     }
 }

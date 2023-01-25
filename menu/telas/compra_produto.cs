@@ -491,7 +491,7 @@ namespace menu.telas
             connectionX();
             open(connection);
 
-            strSQL = $"SELECT VALOR from PRODUTO where ID_PRODUTO = {ID_PRODUTO}";
+            strSQL = $"SELECT VALOR from PRODUTO where ID_PRODUTO";
             command = new MySqlCommand(strSQL, connection);
             MySqlDataReader leitura = command.ExecuteReader();
 
