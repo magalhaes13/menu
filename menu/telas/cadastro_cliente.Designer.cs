@@ -32,6 +32,7 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_cliente));
             this.pg_cadastro = new System.Windows.Forms.TabControl();
             this.CADASTRO = new System.Windows.Forms.TabPage();
+            this.buttonNewClient = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.buttonLimpar = new System.Windows.Forms.Button();
@@ -55,7 +56,6 @@ namespace menu.telas
             this.label1 = new System.Windows.Forms.Label();
             this.TextBoxNome = new System.Windows.Forms.TextBox();
             this.PESQUISA = new System.Windows.Forms.TabPage();
-            this.button_Atualizar = new System.Windows.Forms.Button();
             this.button_Pesquisar = new System.Windows.Forms.Button();
             this.textBoxPesquisa = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -88,6 +88,7 @@ namespace menu.telas
             // 
             this.CADASTRO.BackColor = System.Drawing.Color.SlateGray;
             this.CADASTRO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CADASTRO.Controls.Add(this.buttonNewClient);
             this.CADASTRO.Controls.Add(this.label10);
             this.CADASTRO.Controls.Add(this.label9);
             this.CADASTRO.Controls.Add(this.buttonLimpar);
@@ -119,6 +120,19 @@ namespace menu.telas
             this.CADASTRO.Text = "CADASTRO";
             this.CADASTRO.Click += new System.EventHandler(this.CADASTRO_Click);
             // 
+            // buttonNewClient
+            // 
+            this.buttonNewClient.BackColor = System.Drawing.Color.DarkCyan;
+            this.buttonNewClient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNewClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNewClient.Location = new System.Drawing.Point(146, 456);
+            this.buttonNewClient.Name = "buttonNewClient";
+            this.buttonNewClient.Size = new System.Drawing.Size(124, 40);
+            this.buttonNewClient.TabIndex = 23;
+            this.buttonNewClient.Text = "NOVO";
+            this.buttonNewClient.UseVisualStyleBackColor = false;
+            this.buttonNewClient.Click += new System.EventHandler(this.buttonNewClient_Click);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -145,9 +159,9 @@ namespace menu.telas
             this.buttonLimpar.BackColor = System.Drawing.Color.Yellow;
             this.buttonLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLimpar.Location = new System.Drawing.Point(665, 456);
+            this.buttonLimpar.Location = new System.Drawing.Point(842, 456);
             this.buttonLimpar.Name = "buttonLimpar";
-            this.buttonLimpar.Size = new System.Drawing.Size(102, 40);
+            this.buttonLimpar.Size = new System.Drawing.Size(124, 40);
             this.buttonLimpar.TabIndex = 20;
             this.buttonLimpar.Text = "LIMPAR";
             this.buttonLimpar.UseVisualStyleBackColor = false;
@@ -167,9 +181,9 @@ namespace menu.telas
             this.delet_cliente.BackColor = System.Drawing.Color.Red;
             this.delet_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.delet_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delet_cliente.Location = new System.Drawing.Point(436, 456);
+            this.delet_cliente.Location = new System.Drawing.Point(628, 456);
             this.delet_cliente.Name = "delet_cliente";
-            this.delet_cliente.Size = new System.Drawing.Size(116, 40);
+            this.delet_cliente.Size = new System.Drawing.Size(124, 40);
             this.delet_cliente.TabIndex = 17;
             this.delet_cliente.Text = "EXCLUIR";
             this.delet_cliente.UseVisualStyleBackColor = false;
@@ -251,7 +265,7 @@ namespace menu.telas
             this.salvar_cliente.BackColor = System.Drawing.Color.Green;
             this.salvar_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salvar_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.salvar_cliente.Location = new System.Drawing.Point(227, 456);
+            this.salvar_cliente.Location = new System.Drawing.Point(379, 456);
             this.salvar_cliente.Name = "salvar_cliente";
             this.salvar_cliente.Size = new System.Drawing.Size(124, 40);
             this.salvar_cliente.TabIndex = 8;
@@ -336,7 +350,6 @@ namespace menu.telas
             // PESQUISA
             // 
             this.PESQUISA.BackColor = System.Drawing.Color.SlateGray;
-            this.PESQUISA.Controls.Add(this.button_Atualizar);
             this.PESQUISA.Controls.Add(this.button_Pesquisar);
             this.PESQUISA.Controls.Add(this.textBoxPesquisa);
             this.PESQUISA.Controls.Add(this.dataGridView1);
@@ -349,33 +362,19 @@ namespace menu.telas
             this.PESQUISA.Text = "PESQUISA";
             this.PESQUISA.Click += new System.EventHandler(this.PESQUISA_Click);
             // 
-            // button_Atualizar
-            // 
-            this.button_Atualizar.BackColor = System.Drawing.Color.Transparent;
-            this.button_Atualizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Atualizar.BackgroundImage")));
-            this.button_Atualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_Atualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_Atualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Atualizar.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button_Atualizar.Location = new System.Drawing.Point(474, 73);
-            this.button_Atualizar.Name = "button_Atualizar";
-            this.button_Atualizar.Size = new System.Drawing.Size(37, 36);
-            this.button_Atualizar.TabIndex = 3;
-            this.button_Atualizar.UseVisualStyleBackColor = false;
-            this.button_Atualizar.Click += new System.EventHandler(this.button_Atualizar_Click);
-            // 
             // button_Pesquisar
             // 
             this.button_Pesquisar.Location = new System.Drawing.Point(42, 82);
             this.button_Pesquisar.Name = "button_Pesquisar";
-            this.button_Pesquisar.Size = new System.Drawing.Size(75, 23);
+            this.button_Pesquisar.Size = new System.Drawing.Size(208, 23);
             this.button_Pesquisar.TabIndex = 2;
-            this.button_Pesquisar.Text = "PESQUISA";
+            this.button_Pesquisar.Text = "PESQUISAR";
             this.button_Pesquisar.UseVisualStyleBackColor = true;
+            this.button_Pesquisar.Click += new System.EventHandler(this.button_Pesquisar_Click);
             // 
             // textBoxPesquisa
             // 
-            this.textBoxPesquisa.Location = new System.Drawing.Point(132, 82);
+            this.textBoxPesquisa.Location = new System.Drawing.Point(256, 82);
             this.textBoxPesquisa.Multiline = true;
             this.textBoxPesquisa.Name = "textBoxPesquisa";
             this.textBoxPesquisa.Size = new System.Drawing.Size(194, 23);
@@ -507,7 +506,6 @@ namespace menu.telas
         private System.Windows.Forms.Button delet_cliente;
         private System.Windows.Forms.Button button_Pesquisar;
         private System.Windows.Forms.TextBox textBoxPesquisa;
-        private System.Windows.Forms.Button button_Atualizar;
         private System.Windows.Forms.TextBox textIDESCONDIDO;
         private System.Windows.Forms.Button buttonLimpar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_CLIENTE;
@@ -521,5 +519,6 @@ namespace menu.telas
         private System.Windows.Forms.DataGridViewTextBoxColumn UF;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button buttonNewClient;
     }
 }

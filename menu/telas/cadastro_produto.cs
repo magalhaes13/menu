@@ -55,7 +55,7 @@ namespace menu.telas
         {
             try
             {
-                if (textBoxNomeProd.Text != "" && textBoxValor.Text != "")
+                if (textBoxNomeProd.Text != "" && textBoxValor.Text != "" && textCODPRODUTO.Text != "")
                 {
                     connection.Open();
                     strSQL = "INSERT INTO PRODUTO (CODPRODUTO, NOME, VALOR, DESCRICAO, QUANTIDADE) VALUES (@CODPRODUTO, @NOME, @VALOR, @DESCRICAO, @QUANTIDADE)";
@@ -72,7 +72,7 @@ namespace menu.telas
                     MessageBox.Show("SALVO COM SUCESSO");
                     return;
                 }
-                MessageBox.Show("NOME E VALOR OBIGATORIO");
+                MessageBox.Show("NOME, VALOR E CÓDIGO DO VESTIDO SÃO OBIGATÓRIOS");
 
             }
 
@@ -225,7 +225,7 @@ namespace menu.telas
 
                 if (conexao.State == ConnectionState.Open)
                 {
-                    string comando = "SELECT * FROM PRODUTO";
+                    string comando = "SELECT * FROM PRODUTO ORDER BY CODPRODUTO";
 
                     MySqlCommand cmd = new MySqlCommand(comando, conexao);
 

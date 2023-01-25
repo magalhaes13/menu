@@ -110,8 +110,6 @@ namespace menu.telas
                 command.ExecuteNonQuery();
                 connection.Close();
                 MessageBox.Show("REGISTRO ALTERADO");
-                limpar_cliente();
-                ATUALIZAR();
 
             }
             catch (Exception erro)
@@ -130,8 +128,6 @@ namespace menu.telas
             }
 
             save_cliente();
-            limpar_cliente();
-            ATUALIZAR();
         }
 
         private void readCliente()
@@ -173,7 +169,6 @@ namespace menu.telas
         private void delet_cliente_Click(object sender, EventArgs e)
         {
             deletar_cliente();
-            ATUALIZAR();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -187,7 +182,7 @@ namespace menu.telas
             
         }
 
-        private void ATUALIZAR()
+        private void searchClient()
         {
             try
             {
@@ -198,9 +193,13 @@ namespace menu.telas
 
                 if (conexao.State == ConnectionState.Open)
                 {
-                    string comando = "SELECT * FROM CLIENTE";
+                    string comando = "SELECT * FROM CLIENTE WHERE (CPF LIKE \'%" + (textBoxPesquisa.Text + "%\') OR (NOME LIKE \'%" + (textBoxPesquisa.Text + "%\')"));
+
+                    //string comando = "SELECT * FROM CLIENTE WHERE CPF = " + textBoxPesquisa.Text + "AND CPF LIKE =" + CPF + "";
+
 
                     MySqlCommand cmd = new MySqlCommand(comando, conexao);
+                    cmd.Parameters.AddWithValue("@CPF", "%" + CPF + "%");
 
                     DataTable dt = new DataTable();
 
@@ -218,12 +217,6 @@ namespace menu.telas
                 MessageBox.Show(ex.Message, ex.Number.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-        }
-
-        private void button_Atualizar_Click(object sender, EventArgs e)
-        {
-            //datagrid clientes
-            ATUALIZAR();
         }
 
         private void textIDESCONDIDO_TextChanged(object sender, EventArgs e)
@@ -274,6 +267,24 @@ namespace menu.telas
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonNewClient_Click(object sender, EventArgs e)
+        {
+            textIDESCONDIDO.Text = "";
+            TextBoxNome.Text = "";
+            textBoxBairro.Text = "";
+            textBoxCidade.Text = "";
+            textBoxCpf.Text = "";
+            textBoxEmail.Text = "";
+            textBoxEndereco.Text = "";
+            textBoxTelefone.Text = "";
+            textBoxUf.Text = "";
+        }
+
+        private void button_Pesquisar_Click(object sender, EventArgs e)
+        {
+            searchClient();
         }
     }
 }

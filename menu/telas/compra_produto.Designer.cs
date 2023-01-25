@@ -50,12 +50,12 @@ namespace menu.telas
             this.label1 = new System.Windows.Forms.Label();
             this.pesquisa_compras = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ATUALIZAR_COMPRA = new System.Windows.Forms.Button();
             this.ID_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VALOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ATUALIZAR_COMPRA = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.compras.SuspendLayout();
             this.pesquisa_compras.SuspendLayout();
@@ -74,7 +74,7 @@ namespace menu.telas
             // 
             // compras
             // 
-            this.compras.BackColor = System.Drawing.Color.Teal;
+            this.compras.BackColor = System.Drawing.Color.SlateGray;
             this.compras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.compras.Controls.Add(this.label5);
             this.compras.Controls.Add(this.textBoxPegarData);
@@ -260,7 +260,7 @@ namespace menu.telas
             // 
             // pesquisa_compras
             // 
-            this.pesquisa_compras.BackColor = System.Drawing.Color.Teal;
+            this.pesquisa_compras.BackColor = System.Drawing.Color.SlateGray;
             this.pesquisa_compras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pesquisa_compras.Controls.Add(this.dataGridView1);
             this.pesquisa_compras.Controls.Add(this.ATUALIZAR_COMPRA);
@@ -285,19 +285,6 @@ namespace menu.telas
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(814, 266);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // ATUALIZAR_COMPRA
-            // 
-            this.ATUALIZAR_COMPRA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ATUALIZAR_COMPRA.BackgroundImage")));
-            this.ATUALIZAR_COMPRA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ATUALIZAR_COMPRA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ATUALIZAR_COMPRA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ATUALIZAR_COMPRA.Location = new System.Drawing.Point(460, 61);
-            this.ATUALIZAR_COMPRA.Name = "ATUALIZAR_COMPRA";
-            this.ATUALIZAR_COMPRA.Size = new System.Drawing.Size(42, 36);
-            this.ATUALIZAR_COMPRA.TabIndex = 1;
-            this.ATUALIZAR_COMPRA.UseVisualStyleBackColor = true;
-            this.ATUALIZAR_COMPRA.Click += new System.EventHandler(this.ATUALIZAR_COMPRA_Click);
             // 
             // ID_PRODUTO
             // 
@@ -329,11 +316,24 @@ namespace menu.telas
             this.DESCRICAO.HeaderText = "DESCRICAO";
             this.DESCRICAO.Name = "DESCRICAO";
             // 
+            // ATUALIZAR_COMPRA
+            // 
+            this.ATUALIZAR_COMPRA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ATUALIZAR_COMPRA.BackgroundImage")));
+            this.ATUALIZAR_COMPRA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ATUALIZAR_COMPRA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ATUALIZAR_COMPRA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ATUALIZAR_COMPRA.Location = new System.Drawing.Point(460, 61);
+            this.ATUALIZAR_COMPRA.Name = "ATUALIZAR_COMPRA";
+            this.ATUALIZAR_COMPRA.Size = new System.Drawing.Size(42, 36);
+            this.ATUALIZAR_COMPRA.TabIndex = 1;
+            this.ATUALIZAR_COMPRA.UseVisualStyleBackColor = true;
+            this.ATUALIZAR_COMPRA.Click += new System.EventHandler(this.ATUALIZAR_COMPRA_Click);
+            // 
             // compra_produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.InfoText;
             this.ClientSize = new System.Drawing.Size(1179, 681);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
