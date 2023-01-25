@@ -366,7 +366,7 @@ namespace menu.telas
             // 
             this.button_Pesquisar.Location = new System.Drawing.Point(42, 82);
             this.button_Pesquisar.Name = "button_Pesquisar";
-            this.button_Pesquisar.Size = new System.Drawing.Size(208, 23);
+            this.button_Pesquisar.Size = new System.Drawing.Size(90, 23);
             this.button_Pesquisar.TabIndex = 2;
             this.button_Pesquisar.Text = "PESQUISAR";
             this.button_Pesquisar.UseVisualStyleBackColor = true;
@@ -374,7 +374,7 @@ namespace menu.telas
             // 
             // textBoxPesquisa
             // 
-            this.textBoxPesquisa.Location = new System.Drawing.Point(256, 82);
+            this.textBoxPesquisa.Location = new System.Drawing.Point(138, 82);
             this.textBoxPesquisa.Multiline = true;
             this.textBoxPesquisa.Name = "textBoxPesquisa";
             this.textBoxPesquisa.Size = new System.Drawing.Size(194, 23);

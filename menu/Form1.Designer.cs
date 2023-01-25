@@ -40,6 +40,8 @@ namespace menu
             this.imgSlide = new System.Windows.Forms.PictureBox();
             this.CONTAS = new System.Windows.Forms.Button();
             this.VENDAS = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSlide)).BeginInit();
@@ -69,7 +71,7 @@ namespace menu
             this.CLIENTES.CheckedState.Parent = this.CLIENTES;
             this.CLIENTES.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CLIENTES.CustomImages.Parent = this.CLIENTES;
-            this.CLIENTES.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.CLIENTES.FillColor = System.Drawing.Color.Goldenrod;
             this.CLIENTES.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CLIENTES.ForeColor = System.Drawing.Color.White;
             this.CLIENTES.HoverState.Parent = this.CLIENTES;
@@ -94,7 +96,7 @@ namespace menu
             this.produto.CheckedState.Parent = this.produto;
             this.produto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.produto.CustomImages.Parent = this.produto;
-            this.produto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.produto.FillColor = System.Drawing.Color.Goldenrod;
             this.produto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.produto.ForeColor = System.Drawing.Color.White;
             this.produto.HoverState.Parent = this.produto;
@@ -119,7 +121,7 @@ namespace menu
             this.COMPRAS.CheckedState.Parent = this.COMPRAS;
             this.COMPRAS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.COMPRAS.CustomImages.Parent = this.COMPRAS;
-            this.COMPRAS.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.COMPRAS.FillColor = System.Drawing.Color.Goldenrod;
             this.COMPRAS.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.COMPRAS.ForeColor = System.Drawing.Color.White;
             this.COMPRAS.HoverState.Parent = this.COMPRAS;
@@ -135,7 +137,9 @@ namespace menu
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.guna2Button1);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.CLIENTES);
@@ -157,7 +161,7 @@ namespace menu
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 23);
             this.label2.TabIndex = 0;
-            this.label2.Text = "FLOR DE LIS";
+            this.label2.Text = "FLOR DE LIZ";
             // 
             // pictureBox1
             // 
@@ -223,12 +227,39 @@ namespace menu
             this.VENDAS.Visible = false;
             this.VENDAS.Click += new System.EventHandler(this.VENDAS_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Goldenrod;
+            this.label3.Location = new System.Drawing.Point(-3, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(193, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "_______________________________";
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.Goldenrod;
+            this.guna2Button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(70, 629);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(45, 38);
+            this.guna2Button1.TabIndex = 9;
+            this.guna2Button1.Text = "Sair";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // panelConteudo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1000, 795);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1000, 756);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CONTAS);
             this.Controls.Add(this.VENDAS);
@@ -261,6 +292,8 @@ namespace menu
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox imgSlide;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
 

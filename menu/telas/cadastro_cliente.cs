@@ -193,7 +193,7 @@ namespace menu.telas
 
                 if (conexao.State == ConnectionState.Open)
                 {
-                    string comando = "SELECT * FROM CLIENTE WHERE (CPF LIKE \'%" + (textBoxPesquisa.Text + "%\') OR (NOME LIKE \'%" + (textBoxPesquisa.Text + "%\')"));
+                    string comando = "SELECT * FROM CLIENTE WHERE (CPF LIKE \'%" + (textBoxPesquisa.Text + "%\') OR (NOME LIKE \'%" + (textBoxPesquisa.Text + "%\') ORDER BY NOME,CPF"));
 
                     //string comando = "SELECT * FROM CLIENTE WHERE CPF = " + textBoxPesquisa.Text + "AND CPF LIKE =" + CPF + "";
 

@@ -56,6 +56,7 @@ namespace menu.telas
             this.VALOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBoxPesquisaVestidos = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPagePESQUISA.SuspendLayout();
@@ -252,6 +253,7 @@ namespace menu.telas
             // 
             this.tabPagePESQUISA.BackColor = System.Drawing.Color.SlateGray;
             this.tabPagePESQUISA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPagePESQUISA.Controls.Add(this.textBoxPesquisaVestidos);
             this.tabPagePESQUISA.Controls.Add(this.button_AtualizarProd);
             this.tabPagePESQUISA.Controls.Add(this.dataGridView1);
             this.tabPagePESQUISA.Location = new System.Drawing.Point(4, 22);
@@ -269,7 +271,7 @@ namespace menu.telas
             this.button_AtualizarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_AtualizarProd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_AtualizarProd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_AtualizarProd.Location = new System.Drawing.Point(369, 27);
+            this.button_AtualizarProd.Location = new System.Drawing.Point(49, 27);
             this.button_AtualizarProd.Name = "button_AtualizarProd";
             this.button_AtualizarProd.Size = new System.Drawing.Size(40, 40);
             this.button_AtualizarProd.TabIndex = 1;
@@ -330,6 +332,13 @@ namespace menu.telas
             this.QUANTIDADE.HeaderText = "QUANTIDADE";
             this.QUANTIDADE.Name = "QUANTIDADE";
             // 
+            // textBoxPesquisaVestidos
+            // 
+            this.textBoxPesquisaVestidos.Location = new System.Drawing.Point(95, 41);
+            this.textBoxPesquisaVestidos.Name = "textBoxPesquisaVestidos";
+            this.textBoxPesquisaVestidos.Size = new System.Drawing.Size(189, 20);
+            this.textBoxPesquisaVestidos.TabIndex = 2;
+            // 
             // cadastro_produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,6 +356,7 @@ namespace menu.telas
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPagePESQUISA.ResumeLayout(false);
+            this.tabPagePESQUISA.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -380,5 +390,6 @@ namespace menu.telas
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxPesquisaVestidos;
     }
 }

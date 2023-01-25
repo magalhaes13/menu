@@ -225,7 +225,7 @@ namespace menu.telas
 
                 if (conexao.State == ConnectionState.Open)
                 {
-                    string comando = "SELECT * FROM PRODUTO ORDER BY CODPRODUTO";
+                    string comando = "SELECT * FROM PRODUTO WHERE (CODPRODUTO LIKE \'%" + (textBoxPesquisaVestidos.Text + "%\') OR (NOME LIKE \'%" + (textBoxPesquisaVestidos.Text + "%') ORDER BY CODPRODUTO, NOME"));
 
                     MySqlCommand cmd = new MySqlCommand(comando, conexao);
 
