@@ -82,8 +82,8 @@ namespace menu
         private void ArrangeFormSize0()
         {
             this.Form.Location = new Point(
-                this.ClientSize.Width - this.Form.Width,
-            this.ClientSize.Height - this.Form.Height + 16);
+                this.ClientSize.Width - this.Form.Width - 5,
+            this.ClientSize.Height - this.Form.Height - 75);
         }
 
         //produto
@@ -98,8 +98,8 @@ namespace menu
         private void ArrangeFormSize1()
         {
             this.Form1.Location = new Point(
-                this.ClientSize.Width - this.Form1.Width,
-            this.ClientSize.Height - this.Form1.Height + 16);
+                this.ClientSize.Width - this.Form1.Width - 5,
+            this.ClientSize.Height - this.Form1.Height - 75);
         }
 
         //compra
@@ -114,8 +114,8 @@ namespace menu
         private void ArrangeFormSize2()
         {
             this.Form2.Location = new Point(
-                this.ClientSize.Width - this.Form2.Width,
-            this.ClientSize.Height - this.Form2.Height + 16);
+                this.ClientSize.Width - this.Form2.Width - 5,
+            this.ClientSize.Height - this.Form2.Height - 75);
         }
 
         //vendas
@@ -130,8 +130,8 @@ namespace menu
         private void ArrangeFormSize3()
         {
             this.Form3.Location = new Point(
-                this.ClientSize.Width - this.Form3.Width,
-            this.ClientSize.Height - this.Form3.Height + 16);
+                this.ClientSize.Width - this.Form3.Width - 5,
+            this.ClientSize.Height - this.Form3.Height - 75);
         }
 
         //contas

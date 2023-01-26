@@ -35,13 +35,13 @@ namespace menu
             this.produto = new Guna.UI2.WinForms.Guna2Button();
             this.COMPRAS = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imgSlide = new System.Windows.Forms.PictureBox();
             this.CONTAS = new System.Windows.Forms.Button();
             this.VENDAS = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSlide)).BeginInit();
@@ -151,6 +151,33 @@ namespace menu
             this.panel1.Size = new System.Drawing.Size(180, 790);
             this.panel1.TabIndex = 8;
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.Goldenrod;
+            this.guna2Button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(70, 629);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(45, 38);
+            this.guna2Button1.TabIndex = 9;
+            this.guna2Button1.Text = "Sair";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Goldenrod;
+            this.label3.Location = new System.Drawing.Point(-3, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(193, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "_______________________________";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -226,33 +253,6 @@ namespace menu
             this.VENDAS.UseVisualStyleBackColor = false;
             this.VENDAS.Visible = false;
             this.VENDAS.Click += new System.EventHandler(this.VENDAS_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label3.Location = new System.Drawing.Point(-3, 80);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(193, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "_______________________________";
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Goldenrod;
-            this.guna2Button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(70, 629);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(45, 38);
-            this.guna2Button1.TabIndex = 9;
-            this.guna2Button1.Text = "Sair";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // panelConteudo
             // 

@@ -32,6 +32,8 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_cliente));
             this.pg_cadastro = new System.Windows.Forms.TabControl();
             this.CADASTRO = new System.Windows.Forms.TabPage();
+            this.textBoxTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxCpf = new System.Windows.Forms.MaskedTextBox();
             this.buttonNewClient = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -42,14 +44,12 @@ namespace menu.telas
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxBairro = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxCpf = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxEndereco = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.salvar_cliente = new System.Windows.Forms.Button();
             this.textBoxCidade = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxTelefone = new System.Windows.Forms.TextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,26 +68,31 @@ namespace menu.telas
             this.BAIRRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ENDERECO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pg_cadastro.SuspendLayout();
             this.CADASTRO.SuspendLayout();
             this.PESQUISA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pg_cadastro
             // 
             this.pg_cadastro.Controls.Add(this.CADASTRO);
             this.pg_cadastro.Controls.Add(this.PESQUISA);
-            this.pg_cadastro.Location = new System.Drawing.Point(12, 30);
+            this.pg_cadastro.Location = new System.Drawing.Point(12, 28);
             this.pg_cadastro.Name = "pg_cadastro";
             this.pg_cadastro.SelectedIndex = 0;
-            this.pg_cadastro.Size = new System.Drawing.Size(1155, 615);
-            this.pg_cadastro.TabIndex = 0;
+            this.pg_cadastro.Size = new System.Drawing.Size(1155, 1000);
+            this.pg_cadastro.TabIndex = 13;
             // 
             // CADASTRO
             // 
-            this.CADASTRO.BackColor = System.Drawing.Color.SlateGray;
+            this.CADASTRO.BackColor = System.Drawing.Color.Goldenrod;
             this.CADASTRO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CADASTRO.Controls.Add(this.textBoxTelefone);
+            this.CADASTRO.Controls.Add(this.textBoxCpf);
             this.CADASTRO.Controls.Add(this.buttonNewClient);
             this.CADASTRO.Controls.Add(this.label10);
             this.CADASTRO.Controls.Add(this.label9);
@@ -98,14 +103,12 @@ namespace menu.telas
             this.CADASTRO.Controls.Add(this.label8);
             this.CADASTRO.Controls.Add(this.textBoxBairro);
             this.CADASTRO.Controls.Add(this.label7);
-            this.CADASTRO.Controls.Add(this.textBoxCpf);
             this.CADASTRO.Controls.Add(this.label6);
             this.CADASTRO.Controls.Add(this.textBoxEndereco);
             this.CADASTRO.Controls.Add(this.label5);
             this.CADASTRO.Controls.Add(this.salvar_cliente);
             this.CADASTRO.Controls.Add(this.textBoxCidade);
             this.CADASTRO.Controls.Add(this.label4);
-            this.CADASTRO.Controls.Add(this.textBoxTelefone);
             this.CADASTRO.Controls.Add(this.textBoxEmail);
             this.CADASTRO.Controls.Add(this.label3);
             this.CADASTRO.Controls.Add(this.label2);
@@ -113,12 +116,32 @@ namespace menu.telas
             this.CADASTRO.Controls.Add(this.TextBoxNome);
             this.CADASTRO.ForeColor = System.Drawing.SystemColors.Window;
             this.CADASTRO.Location = new System.Drawing.Point(4, 22);
+            this.CADASTRO.Margin = new System.Windows.Forms.Padding(10);
             this.CADASTRO.Name = "CADASTRO";
             this.CADASTRO.Padding = new System.Windows.Forms.Padding(3);
-            this.CADASTRO.Size = new System.Drawing.Size(1147, 589);
+            this.CADASTRO.Size = new System.Drawing.Size(1147, 974);
             this.CADASTRO.TabIndex = 0;
             this.CADASTRO.Text = "CADASTRO";
             this.CADASTRO.Click += new System.EventHandler(this.CADASTRO_Click);
+            // 
+            // textBoxTelefone
+            // 
+            this.textBoxTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTelefone.Location = new System.Drawing.Point(175, 171);
+            this.textBoxTelefone.Mask = "(00) 0 0000-0000";
+            this.textBoxTelefone.Name = "textBoxTelefone";
+            this.textBoxTelefone.Size = new System.Drawing.Size(129, 24);
+            this.textBoxTelefone.TabIndex = 2;
+            // 
+            // textBoxCpf
+            // 
+            this.textBoxCpf.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxCpf.Location = new System.Drawing.Point(758, 108);
+            this.textBoxCpf.Mask = "000.000.000-00";
+            this.textBoxCpf.Name = "textBoxCpf";
+            this.textBoxCpf.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBoxCpf.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCpf.TabIndex = 1;
             // 
             // buttonNewClient
             // 
@@ -128,7 +151,7 @@ namespace menu.telas
             this.buttonNewClient.Location = new System.Drawing.Point(146, 456);
             this.buttonNewClient.Name = "buttonNewClient";
             this.buttonNewClient.Size = new System.Drawing.Size(124, 40);
-            this.buttonNewClient.TabIndex = 23;
+            this.buttonNewClient.TabIndex = 8;
             this.buttonNewClient.Text = "NOVO";
             this.buttonNewClient.UseVisualStyleBackColor = false;
             this.buttonNewClient.Click += new System.EventHandler(this.buttonNewClient_Click);
@@ -162,7 +185,7 @@ namespace menu.telas
             this.buttonLimpar.Location = new System.Drawing.Point(842, 456);
             this.buttonLimpar.Name = "buttonLimpar";
             this.buttonLimpar.Size = new System.Drawing.Size(124, 40);
-            this.buttonLimpar.TabIndex = 20;
+            this.buttonLimpar.TabIndex = 11;
             this.buttonLimpar.Text = "LIMPAR";
             this.buttonLimpar.UseVisualStyleBackColor = false;
             this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
@@ -184,17 +207,20 @@ namespace menu.telas
             this.delet_cliente.Location = new System.Drawing.Point(628, 456);
             this.delet_cliente.Name = "delet_cliente";
             this.delet_cliente.Size = new System.Drawing.Size(124, 40);
-            this.delet_cliente.TabIndex = 17;
+            this.delet_cliente.TabIndex = 10;
             this.delet_cliente.Text = "EXCLUIR";
             this.delet_cliente.UseVisualStyleBackColor = false;
             this.delet_cliente.Click += new System.EventHandler(this.delet_cliente_Click);
             // 
             // textBoxUf
             // 
+            this.textBoxUf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxUf.Location = new System.Drawing.Point(758, 367);
+            this.textBoxUf.MaxLength = 2;
             this.textBoxUf.Name = "textBoxUf";
             this.textBoxUf.Size = new System.Drawing.Size(53, 20);
-            this.textBoxUf.TabIndex = 16;
+            this.textBoxUf.TabIndex = 7;
+            this.textBoxUf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -210,9 +236,10 @@ namespace menu.telas
             // textBoxBairro
             // 
             this.textBoxBairro.Location = new System.Drawing.Point(758, 288);
+            this.textBoxBairro.MaxLength = 100;
             this.textBoxBairro.Name = "textBoxBairro";
             this.textBoxBairro.Size = new System.Drawing.Size(164, 20);
-            this.textBoxBairro.TabIndex = 14;
+            this.textBoxBairro.TabIndex = 5;
             // 
             // label7
             // 
@@ -224,13 +251,6 @@ namespace menu.telas
             this.label7.Size = new System.Drawing.Size(101, 25);
             this.label7.TabIndex = 13;
             this.label7.Text = "BAIRRO:";
-            // 
-            // textBoxCpf
-            // 
-            this.textBoxCpf.Location = new System.Drawing.Point(758, 106);
-            this.textBoxCpf.Name = "textBoxCpf";
-            this.textBoxCpf.Size = new System.Drawing.Size(159, 20);
-            this.textBoxCpf.TabIndex = 12;
             // 
             // label6
             // 
@@ -245,9 +265,10 @@ namespace menu.telas
             // textBoxEndereco
             // 
             this.textBoxEndereco.Location = new System.Drawing.Point(175, 367);
+            this.textBoxEndereco.MaxLength = 100;
             this.textBoxEndereco.Name = "textBoxEndereco";
             this.textBoxEndereco.Size = new System.Drawing.Size(229, 20);
-            this.textBoxEndereco.TabIndex = 10;
+            this.textBoxEndereco.TabIndex = 6;
             // 
             // label5
             // 
@@ -268,7 +289,7 @@ namespace menu.telas
             this.salvar_cliente.Location = new System.Drawing.Point(379, 456);
             this.salvar_cliente.Name = "salvar_cliente";
             this.salvar_cliente.Size = new System.Drawing.Size(124, 40);
-            this.salvar_cliente.TabIndex = 8;
+            this.salvar_cliente.TabIndex = 9;
             this.salvar_cliente.Text = "SALVAR";
             this.salvar_cliente.UseVisualStyleBackColor = false;
             this.salvar_cliente.Click += new System.EventHandler(this.salvar_cliente_Click);
@@ -276,9 +297,10 @@ namespace menu.telas
             // textBoxCidade
             // 
             this.textBoxCidade.Location = new System.Drawing.Point(175, 284);
+            this.textBoxCidade.MaxLength = 100;
             this.textBoxCidade.Name = "textBoxCidade";
             this.textBoxCidade.Size = new System.Drawing.Size(239, 20);
-            this.textBoxCidade.TabIndex = 7;
+            this.textBoxCidade.TabIndex = 4;
             this.textBoxCidade.TextChanged += new System.EventHandler(this.textBoxCidade_TextChanged);
             // 
             // label4
@@ -293,19 +315,13 @@ namespace menu.telas
             this.label4.Text = "CIDADE:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBoxTelefone
-            // 
-            this.textBoxTelefone.Location = new System.Drawing.Point(175, 173);
-            this.textBoxTelefone.Name = "textBoxTelefone";
-            this.textBoxTelefone.Size = new System.Drawing.Size(223, 20);
-            this.textBoxTelefone.TabIndex = 5;
-            // 
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(758, 180);
+            this.textBoxEmail.MaxLength = 100;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(250, 20);
-            this.textBoxEmail.TabIndex = 4;
+            this.textBoxEmail.TabIndex = 3;
             // 
             // label3
             // 
@@ -343,6 +359,7 @@ namespace menu.telas
             // TextBoxNome
             // 
             this.TextBoxNome.Location = new System.Drawing.Point(175, 104);
+            this.TextBoxNome.MaxLength = 100;
             this.TextBoxNome.Name = "TextBoxNome";
             this.TextBoxNome.Size = new System.Drawing.Size(347, 20);
             this.TextBoxNome.TabIndex = 0;
@@ -357,7 +374,7 @@ namespace menu.telas
             this.PESQUISA.Location = new System.Drawing.Point(4, 22);
             this.PESQUISA.Name = "PESQUISA";
             this.PESQUISA.Padding = new System.Windows.Forms.Padding(3);
-            this.PESQUISA.Size = new System.Drawing.Size(1147, 589);
+            this.PESQUISA.Size = new System.Drawing.Size(1147, 974);
             this.PESQUISA.TabIndex = 1;
             this.PESQUISA.Text = "PESQUISA";
             this.PESQUISA.Click += new System.EventHandler(this.PESQUISA_Click);
@@ -367,7 +384,7 @@ namespace menu.telas
             this.button_Pesquisar.Location = new System.Drawing.Point(42, 82);
             this.button_Pesquisar.Name = "button_Pesquisar";
             this.button_Pesquisar.Size = new System.Drawing.Size(90, 23);
-            this.button_Pesquisar.TabIndex = 2;
+            this.button_Pesquisar.TabIndex = 15;
             this.button_Pesquisar.Text = "PESQUISAR";
             this.button_Pesquisar.UseVisualStyleBackColor = true;
             this.button_Pesquisar.Click += new System.EventHandler(this.button_Pesquisar_Click);
@@ -378,7 +395,7 @@ namespace menu.telas
             this.textBoxPesquisa.Multiline = true;
             this.textBoxPesquisa.Name = "textBoxPesquisa";
             this.textBoxPesquisa.Size = new System.Drawing.Size(194, 23);
-            this.textBoxPesquisa.TabIndex = 1;
+            this.textBoxPesquisa.TabIndex = 14;
             this.textBoxPesquisa.TextChanged += new System.EventHandler(this.textBoxPesquisa_TextChanged);
             // 
             // dataGridView1
@@ -455,15 +472,40 @@ namespace menu.telas
             this.UF.HeaderText = "UF";
             this.UF.Name = "UF";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Location = new System.Drawing.Point(-4, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1186, 22);
+            this.panel1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.ForeColor = System.Drawing.Color.Goldenrod;
+            this.button1.Location = new System.Drawing.Point(1142, -1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(31, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // cadastro_cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InfoText;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1179, 681);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pg_cadastro);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(12, 28);
             this.Name = "cadastro_cliente";
@@ -477,6 +519,7 @@ namespace menu.telas
             this.PESQUISA.ResumeLayout(false);
             this.PESQUISA.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -487,7 +530,6 @@ namespace menu.telas
         private System.Windows.Forms.TabPage CADASTRO;
         private System.Windows.Forms.TextBox textBoxCidade;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxTelefone;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -500,7 +542,6 @@ namespace menu.telas
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxBairro;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxCpf;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxEndereco;
         private System.Windows.Forms.Label label5;
@@ -521,5 +562,9 @@ namespace menu.telas
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonNewClient;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MaskedTextBox textBoxCpf;
+        private System.Windows.Forms.MaskedTextBox textBoxTelefone;
     }
 }

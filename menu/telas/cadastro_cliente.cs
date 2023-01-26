@@ -26,7 +26,7 @@ namespace menu.telas
 
         private void cadastro_cliente_Load(object sender, EventArgs e)
         {
-            connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456");         
+            connection = new MySqlConnection("Server=Localhost;Database=PrimeiroSistema;Uid=root;Pwd=123456");
         }
 
         private void del_cliente()
@@ -58,10 +58,10 @@ namespace menu.telas
                     command.Parameters.AddWithValue("@NOME", TextBoxNome.Text);
                     command.Parameters.AddWithValue("@CIDADE", textBoxCidade.Text);
                     command.Parameters.AddWithValue("@BAIRRO", textBoxBairro.Text);
-                    command.Parameters.AddWithValue("@CPF", textBoxCpf.Text);
+                    command.Parameters.AddWithValue("@CPF", textBoxCpf.Text.Replace(",","").Replace("-",""));
                     command.Parameters.AddWithValue("@ENDERECO", textBoxEndereco.Text);
                     command.Parameters.AddWithValue("@UF", textBoxUf.Text);
-                    command.Parameters.AddWithValue("@TELEFONE", textBoxTelefone.Text);
+                    command.Parameters.AddWithValue("@TELEFONE", textBoxTelefone.Text.Replace(" ","").Replace("-","").Replace("(","").Replace(")",""));
                     command.Parameters.AddWithValue("@EMAIL", textBoxEmail.Text);
 
                     command.ExecuteNonQuery();
@@ -285,6 +285,11 @@ namespace menu.telas
         private void button_Pesquisar_Click(object sender, EventArgs e)
         {
             searchClient();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
