@@ -163,7 +163,7 @@ namespace menu.telas
             catch (Exception erro)
             {
                 connection.Close();
-                MessageBox.Show("ERRO AO EXCLUIR" + erro);
+                MessageBox.Show("ERRO AO EXCLUIR" /*+ erro*/);
             }
         }
         private void delet_cliente_Click(object sender, EventArgs e)

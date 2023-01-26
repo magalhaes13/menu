@@ -59,6 +59,8 @@ namespace menu.telas
             this.button_Pesquisar = new System.Windows.Forms.Button();
             this.textBoxPesquisa = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,8 +70,6 @@ namespace menu.telas
             this.BAIRRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ENDERECO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.pg_cadastro.SuspendLayout();
             this.CADASTRO.SuspendLayout();
             this.PESQUISA.SuspendLayout();
@@ -366,7 +366,7 @@ namespace menu.telas
             // 
             // PESQUISA
             // 
-            this.PESQUISA.BackColor = System.Drawing.Color.SlateGray;
+            this.PESQUISA.BackColor = System.Drawing.Color.Goldenrod;
             this.PESQUISA.Controls.Add(this.button_Pesquisar);
             this.PESQUISA.Controls.Add(this.textBoxPesquisa);
             this.PESQUISA.Controls.Add(this.dataGridView1);
@@ -381,12 +381,13 @@ namespace menu.telas
             // 
             // button_Pesquisar
             // 
+            this.button_Pesquisar.BackColor = System.Drawing.Color.White;
             this.button_Pesquisar.Location = new System.Drawing.Point(42, 82);
             this.button_Pesquisar.Name = "button_Pesquisar";
             this.button_Pesquisar.Size = new System.Drawing.Size(90, 23);
             this.button_Pesquisar.TabIndex = 15;
             this.button_Pesquisar.Text = "PESQUISAR";
-            this.button_Pesquisar.UseVisualStyleBackColor = true;
+            this.button_Pesquisar.UseVisualStyleBackColor = false;
             this.button_Pesquisar.Click += new System.EventHandler(this.button_Pesquisar_Click);
             // 
             // textBoxPesquisa
@@ -400,6 +401,7 @@ namespace menu.telas
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_CLIENTE,
@@ -411,24 +413,50 @@ namespace menu.telas
             this.BAIRRO,
             this.ENDERECO,
             this.UF});
+            this.dataGridView1.GridColor = System.Drawing.Color.Black;
             this.dataGridView1.Location = new System.Drawing.Point(42, 115);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1063, 292);
+            this.dataGridView1.Size = new System.Drawing.Size(1063, 433);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Location = new System.Drawing.Point(-4, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1186, 22);
+            this.panel1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.ForeColor = System.Drawing.Color.Goldenrod;
+            this.button1.Location = new System.Drawing.Point(1142, -1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(31, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ID_CLIENTE
             // 
             this.ID_CLIENTE.DataPropertyName = "ID_CLIENTE";
             this.ID_CLIENTE.HeaderText = "ID";
             this.ID_CLIENTE.Name = "ID_CLIENTE";
+            this.ID_CLIENTE.Width = 50;
             // 
             // NOME
             // 
             this.NOME.DataPropertyName = "NOME";
             this.NOME.HeaderText = "Nome";
             this.NOME.Name = "NOME";
+            this.NOME.Width = 120;
             // 
             // CPF
             // 
@@ -465,35 +493,13 @@ namespace menu.telas
             this.ENDERECO.DataPropertyName = "ENDERECO";
             this.ENDERECO.HeaderText = "Endereço";
             this.ENDERECO.Name = "ENDERECO";
+            this.ENDERECO.Width = 250;
             // 
             // UF
             // 
             this.UF.DataPropertyName = "UF";
             this.UF.HeaderText = "UF";
             this.UF.Name = "UF";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Goldenrod;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(-4, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1186, 22);
-            this.panel1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ForeColor = System.Drawing.Color.Goldenrod;
-            this.button1.Location = new System.Drawing.Point(1142, -1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cadastro_cliente
             // 
@@ -550,6 +556,13 @@ namespace menu.telas
         private System.Windows.Forms.TextBox textBoxPesquisa;
         private System.Windows.Forms.TextBox textIDESCONDIDO;
         private System.Windows.Forms.Button buttonLimpar;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button buttonNewClient;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MaskedTextBox textBoxCpf;
+        private System.Windows.Forms.MaskedTextBox textBoxTelefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_CLIENTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOME;
         private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
@@ -559,12 +572,5 @@ namespace menu.telas
         private System.Windows.Forms.DataGridViewTextBoxColumn BAIRRO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ENDERECO;
         private System.Windows.Forms.DataGridViewTextBoxColumn UF;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button buttonNewClient;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.MaskedTextBox textBoxCpf;
-        private System.Windows.Forms.MaskedTextBox textBoxTelefone;
     }
 }

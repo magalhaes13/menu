@@ -520,5 +520,15 @@ namespace menu.telas
             //resultado = leitura.GetString(0);
             //textBoxComprasValor.Text = resultado;
         }
+
+        private void buttonCloseProducts_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCloseProducts_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

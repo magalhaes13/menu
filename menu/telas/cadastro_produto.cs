@@ -44,6 +44,7 @@ namespace menu.telas
             textBoxNomeProd.Text = "";
             textBoxValor.Text = "";
             textBoxDescricao.Text = "";
+            textBoxQuantidade.Text = "";
 
         }
         private void LimparProduto_Click(object sender, EventArgs e)
@@ -62,7 +63,7 @@ namespace menu.telas
                     command = new MySqlCommand(strSQL, connection);
                     command.Parameters.AddWithValue("@CODPRODUTO", textCODPRODUTO.Text);
                     command.Parameters.AddWithValue("@NOME", textBoxNomeProd.Text);
-                    command.Parameters.AddWithValue("@VALOR", textBoxValor.Text);
+                    command.Parameters.AddWithValue("@VALOR", textBoxValor.Text.Replace("R","").Replace("$",""));
                     command.Parameters.AddWithValue("@DESCRICAO", textBoxDescricao.Text);
                     command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
 
@@ -161,7 +162,6 @@ namespace menu.telas
                 return;
             }
             save_produto();
-            limpar_produto();
             atualizar();
 
         }
@@ -194,7 +194,7 @@ namespace menu.telas
             catch (Exception erro)
             {
                 connection.Close();
-                MessageBox.Show("ERRO AO EXCLUIR" + erro);
+                MessageBox.Show("ERRO AO EXCLUIR" /*+ erro*/);
             }
         }
         private void EXCLUIRPRODUTO_Click(object sender, EventArgs e)
@@ -270,6 +270,7 @@ namespace menu.telas
             textBoxNomeProd.Text = indexNOME.ToString();
             textBoxValor.Text = indexVALOR.ToString();
             textBoxDescricao.Text = indexDESCRICAO.ToString();
+            textBoxQuantidade.Text = indexQUANTIDADE.ToString();
 
             tabControl1.SelectedIndex = 0;
         }
@@ -277,6 +278,21 @@ namespace menu.telas
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonCloseProducts_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonNewProduct_Click(object sender, EventArgs e)
+        {
+            txtIDPRODUTOESCONDIDO.Text = "";
+            textCODPRODUTO.Text = "";
+            textBoxNomeProd.Text = "";
+            textBoxQuantidade.Text = "";
+            textBoxDescricao.Text = "";
+            textBoxValor.Text = "";
         }
     }
 }
