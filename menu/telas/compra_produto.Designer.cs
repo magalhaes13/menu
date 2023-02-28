@@ -32,8 +32,17 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(compra_produto));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.compras = new System.Windows.Forms.TabPage();
+            this.textBoxDataDevolucao = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxDataEntrega = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxDataLocacao = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.buttonNovoContrato = new System.Windows.Forms.Button();
+            this.LimparCompra = new System.Windows.Forms.Button();
+            this.ExcluirCompra = new System.Windows.Forms.Button();
+            this.SalvarCompra = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxPegarData = new System.Windows.Forms.TextBox();
             this.labelData = new System.Windows.Forms.Label();
             this.IDCOMPRAESCONDIDO = new System.Windows.Forms.TextBox();
             this.textBoxNomeCompras = new System.Windows.Forms.ComboBox();
@@ -55,11 +64,8 @@ namespace menu.telas
             this.ATUALIZAR_COMPRA = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonCloseProducts = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.buttonNovoContrato = new System.Windows.Forms.Button();
-            this.LimparCompra = new System.Windows.Forms.Button();
-            this.ExcluirCompra = new System.Windows.Forms.Button();
-            this.SalvarCompra = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.codVestido = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.compras.SuspendLayout();
             this.pesquisa_compras.SuspendLayout();
@@ -81,13 +87,19 @@ namespace menu.telas
             // 
             this.compras.BackColor = System.Drawing.Color.Goldenrod;
             this.compras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.compras.Controls.Add(this.label9);
+            this.compras.Controls.Add(this.codVestido);
+            this.compras.Controls.Add(this.textBoxDataDevolucao);
+            this.compras.Controls.Add(this.textBoxDataEntrega);
+            this.compras.Controls.Add(this.textBoxDataLocacao);
+            this.compras.Controls.Add(this.label8);
+            this.compras.Controls.Add(this.label7);
             this.compras.Controls.Add(this.buttonNovoContrato);
             this.compras.Controls.Add(this.LimparCompra);
             this.compras.Controls.Add(this.ExcluirCompra);
             this.compras.Controls.Add(this.SalvarCompra);
             this.compras.Controls.Add(this.label6);
             this.compras.Controls.Add(this.label5);
-            this.compras.Controls.Add(this.textBoxPegarData);
             this.compras.Controls.Add(this.labelData);
             this.compras.Controls.Add(this.IDCOMPRAESCONDIDO);
             this.compras.Controls.Add(this.textBoxNomeCompras);
@@ -107,25 +119,134 @@ namespace menu.telas
             this.compras.Text = "COMPRAS";
             this.compras.Click += new System.EventHandler(this.compras_Click);
             // 
+            // textBoxDataDevolucao
+            // 
+            this.textBoxDataDevolucao.Location = new System.Drawing.Point(1006, 269);
+            this.textBoxDataDevolucao.Mask = "00/00/0000";
+            this.textBoxDataDevolucao.Name = "textBoxDataDevolucao";
+            this.textBoxDataDevolucao.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDataDevolucao.TabIndex = 29;
+            this.textBoxDataDevolucao.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.textBoxDataDevolucao.ValidatingType = typeof(System.DateTime);
+            // 
+            // textBoxDataEntrega
+            // 
+            this.textBoxDataEntrega.Location = new System.Drawing.Point(610, 266);
+            this.textBoxDataEntrega.Mask = "00/00/0000";
+            this.textBoxDataEntrega.Name = "textBoxDataEntrega";
+            this.textBoxDataEntrega.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDataEntrega.TabIndex = 28;
+            this.textBoxDataEntrega.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.textBoxDataEntrega.ValidatingType = typeof(System.DateTime);
+            // 
+            // textBoxDataLocacao
+            // 
+            this.textBoxDataLocacao.Location = new System.Drawing.Point(244, 265);
+            this.textBoxDataLocacao.Mask = "00/00/0000";
+            this.textBoxDataLocacao.Name = "textBoxDataLocacao";
+            this.textBoxDataLocacao.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDataLocacao.TabIndex = 27;
+            this.textBoxDataLocacao.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.textBoxDataLocacao.ValidatingType = typeof(System.DateTime);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Enabled = false;
+            this.label8.Font = new System.Drawing.Font("Verdana", 15F);
+            this.label8.ForeColor = System.Drawing.SystemColors.Window;
+            this.label8.Location = new System.Drawing.Point(756, 264);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(244, 25);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "DATA DE DEVOLUÇÃO:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Enabled = false;
+            this.label7.Font = new System.Drawing.Font("Verdana", 15F);
+            this.label7.ForeColor = System.Drawing.SystemColors.Window;
+            this.label7.Location = new System.Drawing.Point(391, 261);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(213, 25);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "DATA DE ENTREGA:";
+            // 
+            // buttonNovoContrato
+            // 
+            this.buttonNovoContrato.BackColor = System.Drawing.Color.DarkCyan;
+            this.buttonNovoContrato.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNovoContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNovoContrato.ForeColor = System.Drawing.Color.White;
+            this.buttonNovoContrato.Location = new System.Drawing.Point(147, 391);
+            this.buttonNovoContrato.Name = "buttonNovoContrato";
+            this.buttonNovoContrato.Size = new System.Drawing.Size(124, 40);
+            this.buttonNovoContrato.TabIndex = 19;
+            this.buttonNovoContrato.Text = "NOVO";
+            this.buttonNovoContrato.UseVisualStyleBackColor = false;
+            // 
+            // LimparCompra
+            // 
+            this.LimparCompra.BackColor = System.Drawing.Color.Yellow;
+            this.LimparCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LimparCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LimparCompra.ForeColor = System.Drawing.Color.White;
+            this.LimparCompra.Location = new System.Drawing.Point(843, 391);
+            this.LimparCompra.Name = "LimparCompra";
+            this.LimparCompra.Size = new System.Drawing.Size(124, 40);
+            this.LimparCompra.TabIndex = 22;
+            this.LimparCompra.Text = "LIMPAR";
+            this.LimparCompra.UseVisualStyleBackColor = false;
+            // 
+            // ExcluirCompra
+            // 
+            this.ExcluirCompra.BackColor = System.Drawing.Color.Red;
+            this.ExcluirCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExcluirCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExcluirCompra.ForeColor = System.Drawing.Color.White;
+            this.ExcluirCompra.Location = new System.Drawing.Point(629, 391);
+            this.ExcluirCompra.Name = "ExcluirCompra";
+            this.ExcluirCompra.Size = new System.Drawing.Size(124, 40);
+            this.ExcluirCompra.TabIndex = 21;
+            this.ExcluirCompra.Text = "EXCLUIR";
+            this.ExcluirCompra.UseVisualStyleBackColor = false;
+            // 
+            // SalvarCompra
+            // 
+            this.SalvarCompra.BackColor = System.Drawing.Color.Green;
+            this.SalvarCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SalvarCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalvarCompra.ForeColor = System.Drawing.Color.White;
+            this.SalvarCompra.Location = new System.Drawing.Point(380, 391);
+            this.SalvarCompra.Name = "SalvarCompra";
+            this.SalvarCompra.Size = new System.Drawing.Size(124, 40);
+            this.SalvarCompra.TabIndex = 20;
+            this.SalvarCompra.Text = "SALVAR";
+            this.SalvarCompra.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Perpetua Titling MT", 15F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(469, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(133, 24);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "CONTRATO";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Enabled = false;
+            this.label5.Font = new System.Drawing.Font("Verdana", 15F);
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(52, 20);
+            this.label5.Location = new System.Drawing.Point(23, 260);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.Size = new System.Drawing.Size(215, 25);
             this.label5.TabIndex = 17;
-            this.label5.Text = "DATA";
-            // 
-            // textBoxPegarData
-            // 
-            this.textBoxPegarData.Enabled = false;
-            this.textBoxPegarData.Location = new System.Drawing.Point(97, 20);
-            this.textBoxPegarData.Multiline = true;
-            this.textBoxPegarData.Name = "textBoxPegarData";
-            this.textBoxPegarData.Size = new System.Drawing.Size(124, 17);
-            this.textBoxPegarData.TabIndex = 16;
+            this.label5.Text = "DATA DE LOCAÇÃO:";
             // 
             // labelData
             // 
@@ -149,7 +270,7 @@ namespace menu.telas
             // 
             this.textBoxNomeCompras.DisplayMember = "NOME";
             this.textBoxNomeCompras.FormattingEnabled = true;
-            this.textBoxNomeCompras.Location = new System.Drawing.Point(175, 103);
+            this.textBoxNomeCompras.Location = new System.Drawing.Point(453, 103);
             this.textBoxNomeCompras.Name = "textBoxNomeCompras";
             this.textBoxNomeCompras.Size = new System.Drawing.Size(121, 21);
             this.textBoxNomeCompras.TabIndex = 12;
@@ -227,11 +348,11 @@ namespace menu.telas
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 15F);
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(87, 101);
+            this.label1.Location = new System.Drawing.Point(344, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 25);
+            this.label1.Size = new System.Drawing.Size(113, 25);
             this.label1.TabIndex = 1;
-            this.label1.Text = "NOME:";
+            this.label1.Text = "VESTIDO:";
             // 
             // pesquisa_compras
             // 
@@ -329,68 +450,24 @@ namespace menu.telas
             this.buttonCloseProducts.UseVisualStyleBackColor = false;
             this.buttonCloseProducts.Click += new System.EventHandler(this.buttonCloseProducts_Click_1);
             // 
-            // label6
+            // label9
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Perpetua Titling MT", 15F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(469, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 24);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "CONTRATO";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Verdana", 15F);
+            this.label9.ForeColor = System.Drawing.SystemColors.Window;
+            this.label9.Location = new System.Drawing.Point(80, 103);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 25);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "COD:";
             // 
-            // buttonNovoContrato
+            // codVestido
             // 
-            this.buttonNovoContrato.BackColor = System.Drawing.Color.DarkCyan;
-            this.buttonNovoContrato.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonNovoContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNovoContrato.ForeColor = System.Drawing.Color.White;
-            this.buttonNovoContrato.Location = new System.Drawing.Point(147, 391);
-            this.buttonNovoContrato.Name = "buttonNovoContrato";
-            this.buttonNovoContrato.Size = new System.Drawing.Size(124, 40);
-            this.buttonNovoContrato.TabIndex = 19;
-            this.buttonNovoContrato.Text = "NOVO";
-            this.buttonNovoContrato.UseVisualStyleBackColor = false;
-            // 
-            // LimparCompra
-            // 
-            this.LimparCompra.BackColor = System.Drawing.Color.Yellow;
-            this.LimparCompra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LimparCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LimparCompra.ForeColor = System.Drawing.Color.White;
-            this.LimparCompra.Location = new System.Drawing.Point(843, 391);
-            this.LimparCompra.Name = "LimparCompra";
-            this.LimparCompra.Size = new System.Drawing.Size(124, 40);
-            this.LimparCompra.TabIndex = 22;
-            this.LimparCompra.Text = "LIMPAR";
-            this.LimparCompra.UseVisualStyleBackColor = false;
-            // 
-            // ExcluirCompra
-            // 
-            this.ExcluirCompra.BackColor = System.Drawing.Color.Red;
-            this.ExcluirCompra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExcluirCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExcluirCompra.ForeColor = System.Drawing.Color.White;
-            this.ExcluirCompra.Location = new System.Drawing.Point(629, 391);
-            this.ExcluirCompra.Name = "ExcluirCompra";
-            this.ExcluirCompra.Size = new System.Drawing.Size(124, 40);
-            this.ExcluirCompra.TabIndex = 21;
-            this.ExcluirCompra.Text = "EXCLUIR";
-            this.ExcluirCompra.UseVisualStyleBackColor = false;
-            // 
-            // SalvarCompra
-            // 
-            this.SalvarCompra.BackColor = System.Drawing.Color.Green;
-            this.SalvarCompra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SalvarCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SalvarCompra.ForeColor = System.Drawing.Color.White;
-            this.SalvarCompra.Location = new System.Drawing.Point(380, 391);
-            this.SalvarCompra.Name = "SalvarCompra";
-            this.SalvarCompra.Size = new System.Drawing.Size(124, 40);
-            this.SalvarCompra.TabIndex = 20;
-            this.SalvarCompra.Text = "SALVAR";
-            this.SalvarCompra.UseVisualStyleBackColor = false;
+            this.codVestido.Enabled = false;
+            this.codVestido.Location = new System.Drawing.Point(147, 106);
+            this.codVestido.Name = "codVestido";
+            this.codVestido.Size = new System.Drawing.Size(100, 20);
+            this.codVestido.TabIndex = 30;
             // 
             // compra_produto
             // 
@@ -434,7 +511,6 @@ namespace menu.telas
         private System.Windows.Forms.ComboBox textBoxNomeCompras;
         private System.Windows.Forms.TextBox IDCOMPRAESCONDIDO;
         private System.Windows.Forms.Label labelData;
-        private System.Windows.Forms.TextBox textBoxPegarData;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_PRODUTO;
@@ -449,5 +525,12 @@ namespace menu.telas
         private System.Windows.Forms.Button LimparCompra;
         private System.Windows.Forms.Button ExcluirCompra;
         private System.Windows.Forms.Button SalvarCompra;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.MaskedTextBox textBoxDataDevolucao;
+        private System.Windows.Forms.MaskedTextBox textBoxDataEntrega;
+        private System.Windows.Forms.MaskedTextBox textBoxDataLocacao;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox codVestido;
     }
 }

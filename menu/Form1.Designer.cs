@@ -153,6 +153,7 @@ namespace menu
             // 
             // guna2Button1
             // 
+            this.guna2Button1.BorderRadius = 22;
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
@@ -160,10 +161,10 @@ namespace menu
             this.guna2Button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(70, 629);
+            this.guna2Button1.Location = new System.Drawing.Point(57, 622);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(45, 38);
+            this.guna2Button1.Size = new System.Drawing.Size(61, 51);
             this.guna2Button1.TabIndex = 9;
             this.guna2Button1.Text = "Sair";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);

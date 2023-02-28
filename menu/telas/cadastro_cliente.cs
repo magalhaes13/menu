@@ -61,7 +61,7 @@ namespace menu.telas
                     command.Parameters.AddWithValue("@CPF", textBoxCpf.Text.Replace(",","").Replace("-",""));
                     command.Parameters.AddWithValue("@ENDERECO", textBoxEndereco.Text);
                     command.Parameters.AddWithValue("@UF", textBoxUf.Text);
-                    command.Parameters.AddWithValue("@TELEFONE", textBoxTelefone.Text.Replace(" ","").Replace("-","").Replace("(","").Replace(")",""));
+                    command.Parameters.AddWithValue("@TELEFONE", textBoxTelefone.Text);
                     command.Parameters.AddWithValue("@EMAIL", textBoxEmail.Text);
 
                     command.ExecuteNonQuery();

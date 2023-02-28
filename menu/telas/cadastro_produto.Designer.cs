@@ -32,6 +32,7 @@ namespace menu.telas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro_produto));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonNewProduct = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textCODPRODUTO = new System.Windows.Forms.TextBox();
@@ -51,15 +52,14 @@ namespace menu.telas
             this.textBoxPesquisaVestidos = new System.Windows.Forms.TextBox();
             this.button_AtualizarProd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonCloseProducts = new System.Windows.Forms.Button();
-            this.buttonNewProduct = new System.Windows.Forms.Button();
             this.ID_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODPRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VALOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonCloseProducts = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPagePESQUISA.SuspendLayout();
@@ -104,6 +104,19 @@ namespace menu.telas
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "CADASTRO";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // buttonNewProduct
+            // 
+            this.buttonNewProduct.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.buttonNewProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNewProduct.ForeColor = System.Drawing.Color.White;
+            this.buttonNewProduct.Location = new System.Drawing.Point(193, 422);
+            this.buttonNewProduct.Name = "buttonNewProduct";
+            this.buttonNewProduct.Size = new System.Drawing.Size(124, 40);
+            this.buttonNewProduct.TabIndex = 15;
+            this.buttonNewProduct.Text = "NOVO";
+            this.buttonNewProduct.UseVisualStyleBackColor = false;
+            this.buttonNewProduct.Click += new System.EventHandler(this.buttonNewProduct_Click);
             // 
             // label6
             // 
@@ -219,7 +232,7 @@ namespace menu.telas
             this.textBoxDescricao.Location = new System.Drawing.Point(782, 175);
             this.textBoxDescricao.Multiline = true;
             this.textBoxDescricao.Name = "textBoxDescricao";
-            this.textBoxDescricao.Size = new System.Drawing.Size(257, 41);
+            this.textBoxDescricao.Size = new System.Drawing.Size(274, 144);
             this.textBoxDescricao.TabIndex = 4;
             // 
             // label2
@@ -313,42 +326,6 @@ namespace menu.telas
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Goldenrod;
-            this.panel1.Controls.Add(this.buttonCloseProducts);
-            this.panel1.Location = new System.Drawing.Point(-4, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1186, 22);
-            this.panel1.TabIndex = 2;
-            // 
-            // buttonCloseProducts
-            // 
-            this.buttonCloseProducts.BackColor = System.Drawing.Color.Black;
-            this.buttonCloseProducts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCloseProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonCloseProducts.ForeColor = System.Drawing.Color.Goldenrod;
-            this.buttonCloseProducts.Location = new System.Drawing.Point(1142, -1);
-            this.buttonCloseProducts.Name = "buttonCloseProducts";
-            this.buttonCloseProducts.Size = new System.Drawing.Size(31, 23);
-            this.buttonCloseProducts.TabIndex = 16;
-            this.buttonCloseProducts.Text = "X";
-            this.buttonCloseProducts.UseVisualStyleBackColor = false;
-            this.buttonCloseProducts.Click += new System.EventHandler(this.buttonCloseProducts_Click);
-            // 
-            // buttonNewProduct
-            // 
-            this.buttonNewProduct.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.buttonNewProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNewProduct.ForeColor = System.Drawing.Color.White;
-            this.buttonNewProduct.Location = new System.Drawing.Point(193, 422);
-            this.buttonNewProduct.Name = "buttonNewProduct";
-            this.buttonNewProduct.Size = new System.Drawing.Size(124, 40);
-            this.buttonNewProduct.TabIndex = 15;
-            this.buttonNewProduct.Text = "NOVO";
-            this.buttonNewProduct.UseVisualStyleBackColor = false;
-            this.buttonNewProduct.Click += new System.EventHandler(this.buttonNewProduct_Click);
-            // 
             // ID_PRODUTO
             // 
             this.ID_PRODUTO.DataPropertyName = "ID_PRODUTO";
@@ -386,6 +363,29 @@ namespace menu.telas
             this.QUANTIDADE.DataPropertyName = "QUANTIDADE";
             this.QUANTIDADE.HeaderText = "QUANTIDADE";
             this.QUANTIDADE.Name = "QUANTIDADE";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel1.Controls.Add(this.buttonCloseProducts);
+            this.panel1.Location = new System.Drawing.Point(-4, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1186, 22);
+            this.panel1.TabIndex = 2;
+            // 
+            // buttonCloseProducts
+            // 
+            this.buttonCloseProducts.BackColor = System.Drawing.Color.Black;
+            this.buttonCloseProducts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCloseProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCloseProducts.ForeColor = System.Drawing.Color.Goldenrod;
+            this.buttonCloseProducts.Location = new System.Drawing.Point(1142, -1);
+            this.buttonCloseProducts.Name = "buttonCloseProducts";
+            this.buttonCloseProducts.Size = new System.Drawing.Size(31, 23);
+            this.buttonCloseProducts.TabIndex = 16;
+            this.buttonCloseProducts.Text = "X";
+            this.buttonCloseProducts.UseVisualStyleBackColor = false;
+            this.buttonCloseProducts.Click += new System.EventHandler(this.buttonCloseProducts_Click);
             // 
             // cadastro_produto
             // 

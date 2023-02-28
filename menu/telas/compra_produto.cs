@@ -121,6 +121,9 @@ namespace menu.telas
             textBoxComprasValor.Text = "";
             textBoxComprasDescricao.Text = "";
             textBoxQuantidade.Text = "";
+            textBoxDataLocacao.Text = "";
+            textBoxDataEntrega.Text = "";
+            textBoxDataDevolucao.Text = "";
         }
 
         private void salvar_compra()
@@ -131,13 +134,15 @@ namespace menu.telas
                     if (textBoxNomeCompras.Text != "" && textBoxComprasValor.Text != "")
                     {
                         open(connection);
-                        strSQL = "INSERT INTO COMPRA(NOME, VALOR, DESCRICAO, QUANTIDADE, DATA_COMPRA) VALUES (@NOME, @VALOR, @DESCRICAO, @QUANTIDADE, @DATA_COMPRA)";
+                        strSQL = "INSERT INTO COMPRA(NOME, VALOR, DESCRICAO, QUANTIDADE, DATA_LOCACAO, DATA_ENTREGA, DATA_DEVOLUCAO) VALUES (@NOME, @VALOR, @DESCRICAO, @QUANTIDADE, @DATA_LOCACAO, @DATA_ENTREGA, @DATA_DEVOLUCAO)";
                         command = new MySqlCommand(strSQL, connection);
                         command.Parameters.AddWithValue("@NOME", textBoxNomeCompras.Text);
                         command.Parameters.AddWithValue("@VALOR", textBoxComprasValor.Text);
                         command.Parameters.AddWithValue("@DESCRICAO", textBoxComprasDescricao.Text);
                         command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
-                        command.Parameters.AddWithValue("@DATA_COMPRA", DateTime.Now);
+                        command.Parameters.AddWithValue("@DATA_LOCACAO", DateTime.Now);
+                        command.Parameters.AddWithValue("@DATA_ENTREGA", DateTime.Now);
+                        command.Parameters.AddWithValue("@DATA_DEVOLUCAO", DateTime.Now);
 
                         command.ExecuteNonQuery();
                         close(connection);
@@ -202,7 +207,7 @@ namespace menu.telas
                 }
 
                 open(connection);
-                strSQL = "UPDATE COMPRA SET NOME = @NOME, VALOR = @VALOR, DESCRICAO = @DESCRICAO, QUANTIDADE = @QUANTIDADE, DATA_COMPRA = @DATA_COMPRA, WHERE ID_COMPRA = @ID_COMPRA";
+                strSQL = "UPDATE COMPRA SET NOME = @NOME, VALOR = @VALOR, DESCRICAO = @DESCRICAO, QUANTIDADE = @QUANTIDADE, DATA_LOCACAO = @DATA_LOCACAO, DATA_ENTREGA = @DATA_ENTREGA, DATA_DEVOLUCAO = @DATA_DEVOLUCAO, WHERE ID_COMPRA = @ID_COMPRA";
                 command = new MySqlCommand(strSQL, connection);
 
                 command.Parameters.AddWithValue("@ID_COMPRA", Convert.ToInt32(IDCOMPRAESCONDIDO.Text));
@@ -210,7 +215,9 @@ namespace menu.telas
                 command.Parameters.AddWithValue("@VALOR", textBoxComprasValor.Text);
                 command.Parameters.AddWithValue("@DESCRICAO", textBoxComprasDescricao.Text);
                 command.Parameters.AddWithValue("@QUANTIDADE", textBoxQuantidade.Text);
-                command.Parameters.AddWithValue("@DATA_COMPRA", textBoxPegarData.Text);
+                command.Parameters.AddWithValue("@DATA_LOCACAO", textBoxDataLocacao.Text);
+                command.Parameters.AddWithValue("@DATA_ENTREGA", textBoxDataEntrega.Text);
+                command.Parameters.AddWithValue("@DATA_DEVOLUCAO", textBoxDataDevolucao.Text);
 
 
                 command.ExecuteNonQuery();
@@ -336,10 +343,12 @@ namespace menu.telas
             string indexVALOR = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["VALOR"].Value);
             string indexDESCRICAO = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["DESCRICAO"].Value);
             string indexQUANTIDADE = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["QUANTIDADE"].Value);
-            string indexDATA_COMPRA = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["DATA_COMPRA"].Value);
+            string indexDATA_LOCACAO = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["DATA_LOCACAO"].Value);
+            string indexDATA_ENTREGA = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["DATA_ENTREGA"].Value);
+            string indexDATA_DEVOLUCAO = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["DATA_DEVOLUCAO"].Value);
 
             string[] V;
-            V = indexDATA_COMPRA.Split(char.Parse(" "));
+            V = indexDATA_LOCACAO.Split(char.Parse(" "));
             //indexDATA_COMPRA = Convert.ToChar(indexDATA_COMPRA.Split();
 
             IDCOMPRAESCONDIDO.Text = indexID_COMPRA.ToString();
@@ -347,7 +356,7 @@ namespace menu.telas
             textBoxComprasValor.Text = indexVALOR.ToString();
             textBoxComprasDescricao.Text = indexDESCRICAO.ToString();
             textBoxComprasDescricao.Text = indexQUANTIDADE.ToString();
-            textBoxPegarData.Text = V[0];
+            textBoxDataLocacao.Text = V[0];
 
 
             tabControl1.SelectedIndex = 0;
@@ -380,7 +389,7 @@ namespace menu.telas
             // MySqlDataAdapter dados = new MySqlDataAdapter();
             // dados.SelectCommand = cmd;
 
-            //  dados.Fill(id_prod);
+            //  dados.Fill(id_produto);
 
             // textBoxNomeCompras.Items.Clear();
             //textBoxComprasValor.Text = id_prod;
@@ -425,14 +434,18 @@ namespace menu.telas
                         string VALOR = lerBanco.GetString("VALOR");
                         string DESCRICAO = lerBanco.GetString("DESCRICAO");
                         string QUANTIDADE = lerBanco.GetString("QUANTIDADE");
-                        string DATA_COMPRA = lerBanco.GetString("DATA_COMPRA");
+                        string DATA_LOCACAO = lerBanco.GetString("DATA_LOCACAO");
+                        string DATA_ENTREGA = lerBanco.GetString("DATA_ENTREGA");
+                        string DATA_DEVOLUCAO = lerBanco.GetString("DATA_DEVOLUCAO");
 
 
                         textBoxIdEscondidoCompra.Text = ID_ESCONDIDO;
                         textBoxComprasValor.Text = VALOR;
                         textBoxComprasDescricao.Text = DESCRICAO;
                         textBoxQuantidade.Text = QUANTIDADE;
-                        textBoxPegarData.Text = DATA_COMPRA;
+                        textBoxDataLocacao.Text = DATA_LOCACAO;
+                        textBoxDataEntrega.Text = DATA_ENTREGA;
+                        textBoxDataDevolucao.Text = DATA_DEVOLUCAO;
 
                     }
 
@@ -464,14 +477,18 @@ namespace menu.telas
                         string VALOR = lerBanco.GetString("VALOR");
                         string DESCRICAO = lerBanco.GetString("DESCRICAO");
                         string QUANTIDADE = lerBanco.GetString("QUANTIDADE");
-                        string DATA_COMPRA = lerBanco.GetString("DATA_COMPRA");
+                        string DATA_LOCACAO = lerBanco.GetString("DATA_LOCACAO");
+                        string DATA_ENTREGA = lerBanco.GetString("DATA_ENTREGA");
+                        string DATA_DEVOLUCAO = lerBanco.GetString("DATA_DEVOLUCAO");
 
 
                         textBoxIdEscondidoCompra.Text = ID_ESCONDIDO;
                         textBoxComprasValor.Text = VALOR;
                         textBoxComprasDescricao.Text = DESCRICAO;
                         textBoxQuantidade.Text = QUANTIDADE;
-                        textBoxPegarData.Text = DATA_COMPRA;
+                        textBoxDataLocacao.Text = DATA_LOCACAO;
+                        textBoxDataEntrega.Text = DATA_ENTREGA;
+                        textBoxDataDevolucao.Text = DATA_DEVOLUCAO;
 
                         close(connection);
                     }
